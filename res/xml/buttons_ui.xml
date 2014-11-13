@@ -47,5 +47,10 @@
 	 android:fragment="com.aim.freedomhub.categories.VolumeRockerSettings"
          android:title="@string/volume_rocker_category" />
 
+   <Preference
+        android:key="button_settings"
+        android:icon="@drawable/ic_hwkeys"
+        android:title="@string/button_pref_title"
+        android:fragment="com.aim.freedomhub.categories.HardwareKeys" />
 
 </PreferenceScreen>
