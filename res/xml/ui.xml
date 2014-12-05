@@ -62,6 +62,7 @@
 <PreferenceScreen
             android:key="LockClock_ui"
             android:fragment="com.aim.freedomhub.categories.LockClock"
+            android:summary="@string/lockscreen_ui_summary"
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/lockclock_ui_title" />
 

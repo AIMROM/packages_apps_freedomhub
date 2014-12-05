@@ -11,10 +11,29 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
+<!-- lockscreen shortcuts -->
 <PreferenceScreen 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/lockclock_ui_title">
+    android:title="@string/lockscreen_ui_title">
+
+    <PreferenceScreen
+        android:key="lockscreen_shortcuts"
+        android:fragment="com.aim.freedomhub.dslv.ActionListViewSettings"
+        android:summary="@string/lockscreen_shortcuts_summary"
+        android:title="@string/lockscreen_shortcuts_title">
+            <extra android:name="actionMode" android:value="4" />
+            <extra android:name="maxAllowedActions" android:value="5" />
+            <extra android:name="disableLongpress" android:value="true" />
+            <extra android:name="useAppPickerOnly" android:value="true" />
+    </PreferenceScreen>
+
+    <SwitchPreference
+        android:key="lockscreen_shortcuts_longpress"
+        android:title="@string/lockscreen_shorcuts_longpress_title"
+        android:summary="@string/lockscreen_shorcuts_longpress_summary" />
+
 
 <!-- Hide Lockscreen clock & date -->
 

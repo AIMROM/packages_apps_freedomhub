@@ -53,18 +53,18 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.screwd.ActionConfig;
-import com.android.internal.util.screwd.ActionConstants;
-import com.android.internal.util.screwd.ActionHelper;
-import com.android.internal.util.screwd.ImageHelper;
-import com.android.internal.util.screwd.DeviceUtils;
-import com.android.internal.util.screwd.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.aicp.ActionConfig;
+import com.android.internal.util.aicp.ActionConstants;
+import com.android.internal.util.aicp.ActionHelper;
+import com.android.internal.util.aicp.ImageHelper;
+import com.android.internal.util.aicp.DeviceUtils;
+import com.android.internal.util.aicp.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.mrapocalypse.screwdshop.dslv.DragSortListView;
-import com.mrapocalypse.screwdshop.dslv.DragSortController;
-import com.mrapocalypse.screwdshop.ShortcutPickerHelper;
+import com.aim.freedomhub.dslv.DragSortListView;
+import com.aim.freedomhub.dslv.DragSortController;
+import com.aim.freedomhub.fragments.ShortcutPickerHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -516,8 +516,10 @@ public class ActionListViewSettings extends ListFragment implements
     }
 
     private ArrayList<ActionConfig> getConfig() {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
         switch (mActionMode) {
+            case LOCKSCREEN_SHORTCUT:
+                return ActionHelper.getLockscreenShortcutConfig(mActivity);
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -533,18 +535,19 @@ public class ActionListViewSettings extends ListFragment implements
             case POWER_MENU_SHORTCUT:
                 return PolicyHelper.getPowerMenuConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
-            case LOCKSCREEN_SHORTCUT:
-                return ActionHelper.getLockscreenShortcutConfig(mActivity);
             case SHAKE_EVENTS_DISABLED:
                 return ActionHelper.getDisabledShakeApps(mActivity);
-        }
 */
+        }
         return null;
     }
 
     private void setConfig(ArrayList<ActionConfig> actionConfigs, boolean reset) {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
         switch (mActionMode) {
+            case LOCKSCREEN_SHORTCUT:
+                ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
+                break;
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -560,14 +563,11 @@ public class ActionListViewSettings extends ListFragment implements
             case POWER_MENU_SHORTCUT:
                 PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
                 break;
-            case LOCKSCREEN_SHORTCUT:
-                ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
-                break;
             case SHAKE_EVENTS_DISABLED:
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
                 break;
-        }
 */
+        }
     }
 
     private class ViewHolder {
