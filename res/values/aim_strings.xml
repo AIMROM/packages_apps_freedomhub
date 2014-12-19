@@ -14,9 +14,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- FreedomHub Title -->
-    <string name="freedomhub_title">Freedomhub</string>
-
     <!-- Categories -->
     <string name="buttons_cat_title">Buttons</string>
     <string name="gestures_cat_title">Gestures</string>
@@ -27,5 +24,15 @@
     <string name="notifications_cat_title">Notifications</string>
     <string name="qs_cat_title">Quick Settings</string>
     <string name="statusbar_cat_title">Status Bar</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
 
 </resources>
