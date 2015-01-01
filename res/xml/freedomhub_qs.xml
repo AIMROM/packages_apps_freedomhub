@@ -62,6 +62,12 @@
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
 
+        <com.aim.freedomhub.preferences.SecureSettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/quick_settings_vibrate_title"
+            android:summary="@string/quick_settings_vibrate_summary"
+            android:defaultValue="false"/>
+
         <!-- QS clock -->
         <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"

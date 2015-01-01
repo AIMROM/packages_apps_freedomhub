@@ -742,4 +742,8 @@
     <string name="fod_pressed_state_icon_white">Icon (White)</string>
     <string name="fod_pressed_state_solid_color">Solid color (usually Green)</string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+
 </resources>
