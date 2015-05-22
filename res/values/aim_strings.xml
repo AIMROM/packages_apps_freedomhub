@@ -95,5 +95,8 @@
      <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
      <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
  
+   <!-- membar -->
+     <string name="recents_show_membar_title">Memory bar</string>
+     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string> 
 
 </resources>
