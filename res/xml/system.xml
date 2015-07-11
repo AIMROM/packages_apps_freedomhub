@@ -54,4 +54,11 @@
 
       </PreferenceCategory>
 
+
+<PreferenceScreen
+            android:key="vol_steps"
+            android:fragment="com.aim.freedomhub.fragments.VolumeStepsFragment"
+            android:title="@string/volume_steps_fragment_title"
+            android:summary="@string/volume_steps_summary" /> 
+
 </PreferenceScreen>
