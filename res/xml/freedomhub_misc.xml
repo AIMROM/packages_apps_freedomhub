@@ -27,4 +27,11 @@
           android:title="@string/screenshot_sound_title"
           android:defaultValue="false" />
 
+    <!-- Toast Icon -->
+    <com.aim.freedomhub.preferences.GlobalSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:summary="@string/toast_icon_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
