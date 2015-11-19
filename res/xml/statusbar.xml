@@ -41,4 +41,11 @@
          android:summary="@string/status_bar_double_tap_to_sleep_summary"
          android:defaultValue="true" />
 
+<!-- Custom carrier label -->
+        <PreferenceScreen
+        android:key="aim_carrier"
+        android:fragment="com.aim.freedomhub.fragments.CarrierLabel"
+        android:title="@string/carrier_title" 
+        android:icon="@drawable/freedomhub_ico" />
+
 </PreferenceScreen>
