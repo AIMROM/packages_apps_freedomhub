@@ -38,4 +38,10 @@
              android:fragment="com.aim.freedomhub.fragments.AlarmBlocker"
              android:title="@string/alarm_blocker" />
 
+
+<PreferenceScreen
+            android:key="systemappremover"
+            android:fragment="com.aim.freedomhub.preference.SystemappRemover"
+            android:title="@string/system_app_remover" />
+
 </PreferenceScreen>
