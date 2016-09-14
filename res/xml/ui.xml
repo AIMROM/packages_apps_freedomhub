@@ -66,5 +66,11 @@
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/lockscreen_ui_title" />
 
+<PreferenceScreen
+        android:key="animations_category"
+        android:title="@string/animations_title"
+	android:icon="@drawable/freedomhub_ico"
+        android:fragment="com.aim.freedomhub.fragments.AnimationSettings" />
+
 </PreferenceScreen>
 

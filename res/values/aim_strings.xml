@@ -556,4 +556,68 @@
 <!-- The Fekking Drill -->
     <string name="drill_title">The Drill</string>
     <string name="drill_summary">Have any problem bud?</string>
+ 
+     <!-- AOKP custom system animations -->
+     <string name="animations_title">Transition Animations</string>
+     <string name="animation_fade">Fade</string>
+     <string name="animation_slide_right">Slide in right</string>
+     <string name="animation_slide_left">Slide in left</string>
+     <string name="animation_slide_right_no_fade">Slide in right (No fade)</string>
+     <string name="animation_slide_left_no_fade">Slide in left (No fade)</string>
+     <string name="animation_slide_up">Slide in bottom</string>
+     <string name="animation_slide_down">Slide in top</string>
+     <string name="animation_default">Default</string>
+     <string name="animation_translucent">Translucent</string>
+     <string name="animation_grow_shrink">Grow in (Top)</string>
+     <string name="animation_grow_shrink_center">Grow in (Center)</string>
+     <string name="animation_grow_shrink_bottom">Grow in (Bottom)</string>
+     <string name="animation_grow_shrink_left">Grow in (Left)</string>
+     <string name="animation_grow_shrink_right">Grow in (Right)</string>
+     <string name="action_null">Blank</string>
+     <string name="animation_title">Animations</string>  
+     <string name="system_animation_title">System animations</string>
+     <string name="activity_open_title">Activity open animation</string>
+     <string name="activity_close_title">Activity close animation</string>
+     <string name="task_open_title">Task open animation</string>
+     <string name="task_open_behind_title">Task open behind animation</string>
+     <string name="task_close_title">Task close animation</string>
+     <string name="task_move_to_front_title">Move to front animation</string>
+     <string name="task_move_to_back_title">Move to back animation</string>
+     <string name="wallpaper_open_title">Wallpaper open animation</string>
+     <string name="wallpaper_close_title">Wallpaper close animation</string>
+     <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
+     <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+     <string name="animation_duration_title">Animation duration</string>
+     <string name="title_animation_no_override">Prevent app overrides</string>
+     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
+     <string name="animation_duration_default">Default</string>
+     <string name="system_animations">System animations</string>
+ 
+     <string name="lv_dur_default">Default</string>
+     <string name="lv_dur_100">100ms</string>
+     <string name="lv_dur_200">200ms</string>
+     <string name="lv_dur_300">300ms</string>
+     <string name="lv_dur_400">400ms</string>
+     <string name="lv_dur_500">500ms</string>
+     <string name="lv_dur_1000">1000ms</string>
+     <string name="lv_dur_1500">1500ms</string>
+     <string name="lv_dur_2000">2000ms</string>
+     <string name="lv_dur_2500">2500ms</string>
+     <string name="lv_dur_3000">3000ms</string>
+     <string name="lv_dur_3500">3500ms</string>
+     <string name="lv_dur_4000">4000ms</string>
+     <string name="lv_dur_4500">4500ms</string>
+     <string name="lv_dur_5000">5000ms</string>
+     <string name="lv_dur_5500">5500ms</string>
+     <string name="lv_dur_6000">6000ms</string>
+     <string name="lv_dur_6500">6500ms</string>
+     <string name="lv_dur_7000">7000ms</string>
+     <string name="lv_dur_7500">7500ms</string>
+     <string name="lv_dur_8000">8000ms</string>
+     <string name="lv_dur_8500">8500ms</string>
+     <string name="lv_dur_9000">9000ms</string>
+     <string name="lv_dur_9500">9500ms</string>
+     <string name="lv_dur_10000">10000ms</string>
+     <string name="task_open_behind_title">Task open behind animation</string>
+
 </resources>
