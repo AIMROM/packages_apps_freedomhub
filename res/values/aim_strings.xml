@@ -265,4 +265,8 @@
     <string name="systemui_recents_mem_display_summaryOn">RAM bar enabled</string>
     <string name="systemui_recents_mem_display_summaryOff">RAM bar disabled</string>
 
+<!-- carrier text size and fonts -->
+    <string name="status_bar_carrier_size">Carrier label text size</string>
+    <string name="status_bar_carrier_font_style_title">Carrier Label Font</string>
+ 
 </resources>
