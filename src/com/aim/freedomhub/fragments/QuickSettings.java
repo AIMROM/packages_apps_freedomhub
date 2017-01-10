@@ -26,14 +26,26 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
     private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
+    private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
 
     private ListPreference mSysuiQqsCount;
     private ListPreference mDaylightHeaderPack;
     private CustomSeekBarPreference mHeaderShadow;
+    private ListPreference mHeaderProvider;
+    private String mDaylightHeaderProvider;
+    private PreferenceScreen mHeaderBrowse;
 
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.AIM;
+    }
+
+    private boolean isBrowseHeaderAvailable() {
+        PackageManager pm = getPackageManager();
+        Intent browse = new Intent();
+        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
+        return pm.resolveActivity(browse, 0) != null;
     }
 
     @Override
@@ -83,6 +95,21 @@ public class QuickSettings extends SettingsPreferenceFragment
         mHeaderShadow.setValue(headerShadow);
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
+        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
+        String providerName = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
+        if (providerName == null) {
+            providerName = mDaylightHeaderProvider;
+        }
+        mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
+        valueIndex = mHeaderProvider.findIndexOfValue(providerName);
+        mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mHeaderProvider.setSummary(mHeaderProvider.getEntry());
+        mHeaderProvider.setOnPreferenceChangeListener(this);
+        mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
+
+        mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
+        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
 
         }
 
@@ -98,16 +125,24 @@ public class QuickSettings extends SettingsPreferenceFragment
             mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
             return true;
            } else if (preference == mDaylightHeaderPack) {
-            String value = (String) objValue;
+            String value = (String) newValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
             return true;
          } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) objValue;
+            Integer headerShadow = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
+            return true;
+         } else if (preference == mHeaderProvider) {
+            String value = (String) newValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, value);
+            int valueIndex = mHeaderProvider.findIndexOfValue(value);
+            mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
+            mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
             return true;
         }
         return false;
