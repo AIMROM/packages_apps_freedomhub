@@ -35,10 +35,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class System extends SettingsPreferenceFragment implements
-
 import com.aim.freedomhub.preference.SystemSettingSwitchPreference;
 
+public class System extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
