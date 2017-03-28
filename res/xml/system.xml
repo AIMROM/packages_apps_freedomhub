@@ -56,6 +56,13 @@
       </PreferenceCategory>
 
 
+<Preference
+            android:key="sound"
+            android:fragment="com.aim.freedomhub.fragments.SoundSettings"
+            android:icon="@drawable/freedomhub_ico"
+            android:title="@string/sound_title" />
+			
+
 <PreferenceScreen
             android:key="vol_steps"
             android:fragment="com.aim.freedomhub.fragments.VolumeStepsFragment"
