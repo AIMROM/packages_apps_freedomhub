@@ -162,4 +162,8 @@
     <string name="lockscreen_enable_qs_title">Quick settings</string>
     <string name="lockscreen_enable_qs_summary">Allow accessing quick settings and swipe shortcuts on secure lock screen</string>
 
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Show roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+
 </resources>
