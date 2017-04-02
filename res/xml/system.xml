@@ -67,4 +67,10 @@
             android:title="@string/volume_steps_fragment_title"
             android:summary="@string/volume_steps_summary" /> 
 
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="screenshot_crop_and_share"
+            android:title="@string/screenshot_crop_and_share_title"
+            android:summary="@string/screenshot_crop_and_share_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
