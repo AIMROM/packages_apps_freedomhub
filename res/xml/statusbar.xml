@@ -37,7 +37,7 @@
     <cyanogenmod.preference.CMSystemSettingSwitchPreference
          android:key="double_tap_sleep_gesture"
          android:title="@string/status_bar_double_tap_to_sleep_title"
-         android:icon="@drawable/ic_freedomhub_ico"
+         android:icon="@drawable/freedomhub_ico"
          android:summary="@string/status_bar_double_tap_to_sleep_summary"
          android:defaultValue="true" />
 
@@ -47,5 +47,11 @@
         android:fragment="com.aim.freedomhub.fragments.CarrierLabel"
         android:title="@string/carrier_title" 
         android:icon="@drawable/freedomhub_ico" />
+
+<PreferenceScreen
+            android:key="quicksettings"
+            android:fragment="com.aim.freedomhub.fragments.QuickSettings"
+            android:icon="@drawable/freedomhub_ico"
+            android:title="@string/quicksettings_title" />
 
 </PreferenceScreen>
