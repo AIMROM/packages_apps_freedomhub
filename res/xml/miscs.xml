@@ -33,4 +33,8 @@
                android:summary="@string/show_su_indicator_summary"
                android:defaultValue="true" />
 
+     <com.android.settings.display.DensityPreference
+            android:key="density"
+            android:title="@string/developer_smallest_width" />
+
 </PreferenceScreen>
