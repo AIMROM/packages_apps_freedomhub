@@ -27,7 +27,15 @@
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/aim_hardware_keys_title" />
 
-    <PreferenceScreen
+	<PreferenceScreen
+         android:key="pie_settings"
+         android:title="@string/pie_settings"
+	 android:icon="@drawable/freedomhub_ico"
+         android:fragment="com.aim.freedomub.fragmets.PieSettings"
+	 android:summary="@string/pie_settings_summary" />
+    
+
+<PreferenceScreen
             android:key="powermenu_category"
             android:fragment="com.aim.freedomhub.fragments.PowerMenuSettings"
             android:icon="@drawable/freedomhub_ico"
