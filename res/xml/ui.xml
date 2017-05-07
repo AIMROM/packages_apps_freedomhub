@@ -37,5 +37,11 @@
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/main_nav_bar_title" />
 
+      <com.aim.freedomhub.preference.SecureSettingSwitchPreference
+               android:key="lockscreen_enable_qs"
+               android:title="@string/lockscreen_enable_qs_title"
+               android:summary="@string/lockscreen_enable_qs_summary"
+               android:defaultValue="true" />
+
 </PreferenceScreen>
 
