@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The AIMROM
+ * Copyright (C) 2017 The ABC rom
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aim.freedomhub.categories;
+package com.abc.settings;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -29,7 +29,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class volume extends SettingsPreferenceFragment implements
+public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
@@ -39,7 +39,7 @@ public class volume extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.sound_settings);
+        addPreferencesFromResource(R.xml.abc_volumerocker_settings);
         ContentResolver resolver = getActivity().getContentResolver();
 
         mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
@@ -52,7 +52,7 @@ public class volume extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.AIM;
+        return MetricsProto.MetricsEvent.ABC;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
