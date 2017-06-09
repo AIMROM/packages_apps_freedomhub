@@ -24,14 +24,23 @@
 <PreferenceScreen
         android:fragment="com.aim.freedomhub.fragments.NetworkTrafficSettings"
         android:key="pure_nettraffic_settings"
+        android:icon="@drawable/freedomhub_ico"
         android:title="@string/nettraffic_settings_title"
         android:summary="@string/nettraffic_settings_summary" />
 
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/roaming_indicator_icon_title"
             android:summary="@string/roaming_indicator_icon_summary"
             android:defaultValue="true"/>
+
+<!--Battery bar coustumization -->
+   <Preference
+        android:key="batterybar"
+        android:title="@string/battery_bar_title"
+        android:icon="@drawable/freedomhub_ico"
+        android:fragment="com.aim.freedomhub.fragments.BatteryBar" />
 
 <!-- Double tap to sleep -->
     <cyanogenmod.preference.CMSystemSettingSwitchPreference
