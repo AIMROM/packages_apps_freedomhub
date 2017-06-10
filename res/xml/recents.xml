@@ -17,7 +17,7 @@
         android:key="show_clear_all_recents"
         android:title="@string/show_clear_all_recents_button_title"
         android:summaryOn="@string/show_clear_all_recents_button_summary_on"
-        android:icon="@drawable/ic_freedomhub_ico"
+        android:icon="@drawable/freedomhub_ico"
         android:summaryOff="@string/show_clear_all_recents_button_summary_off"
         android:defaultValue="false" />
 
@@ -26,7 +26,7 @@
         android:title="@string/recents_clear_all_location_title"
         android:entries="@array/recents_clear_all_location_entries"
         android:entryValues="@array/recents_clear_all_location_values"
-        android:icon="@drawable/ic_freedomhub_ico"
+        android:icon="@drawable/freedomhub_ico"
         android:defaultValue="3"
         android:dependency="show_clear_all_recents" />
 
@@ -34,8 +34,15 @@
         android:key="immersive_recents"
         android:title="@string/immersive_recents_title"
         android:entries="@array/immersive_recents_entries"
-        android:icon="@drawable/ic_freedomhub_ico"
+        android:icon="@drawable/freedomhub_ico"
         android:entryValues="@array/immersive_recents_values"
         android:persistent="false" />
+
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="recents_use_grid"
+            android:title="@string/recents_use_grid_title"
+            android:summary="@string/recents_use_grid_summary"
+            android:icon="@drawable/freedomhub_ico"
+            android:defaultValue="true" />
 
 </PreferenceScreen> 
