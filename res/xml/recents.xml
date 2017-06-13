@@ -45,4 +45,12 @@
             android:icon="@drawable/freedomhub_ico"
             android:defaultValue="true" />
 
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+           android:key="systemui_recents_mem_display"
+           android:title="@string/systemui_recents_mem_display_title"
+           android:summaryOn="@string/systemui_recents_mem_display_summaryOn"
+           android:summaryOff="@string/systemui_recents_mem_display_summaryOff"
+           android:icon="@drawable/freedomhub_ico"
+           android:defaultValue="false" />
+
 </PreferenceScreen> 
