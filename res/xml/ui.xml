@@ -23,6 +23,7 @@
 
 <com.android.settings.display.DensityPreference
             android:key="density"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/developer_smallest_width" />
 
   <PreferenceScreen
@@ -34,6 +35,7 @@
    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
         android:key="lockscreen_media_metadata"
         android:title="@string/media_art_title"
+        android:icon="@drawable/freedomhub_ico"
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
@@ -46,8 +48,16 @@
       <com.aim.freedomhub.preference.SecureSettingSwitchPreference
                android:key="lockscreen_enable_qs"
                android:title="@string/lockscreen_enable_qs_title"
+               android:icon="@drawable/freedomhub_ico"
                android:summary="@string/lockscreen_enable_qs_summary"
                android:defaultValue="true" />
+
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:icon="@drawable/freedomhub_ico"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
 
 </PreferenceScreen>
 

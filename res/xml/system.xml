@@ -24,15 +24,18 @@
 <PreferenceScreen
             android:key="hardware_keys"
             android:fragment="com.aim.freedomhub.fragments.HardwareKeys"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/aim_hardware_keys_title" />
 
     <PreferenceScreen
             android:key="powermenu_category"
             android:fragment="com.aim.freedomhub.fragments.PowerMenuSettings"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/aim_power_menu_title" />
 
       <cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="advanced_reboot"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/advanced_reboot_title"
             android:summary="@string/advanced_reboot_summary" />
 
@@ -44,10 +47,12 @@
              android:key="fingerprint_success_vib"
              android:title="@string/fprint_sucess_vib_title"
              android:summary="@string/fprint_sucess_vib_summary"
+             android:icon="@drawable/freedomhub_ico"
              android:defaultValue="true" />
 
     <SwitchPreference
             android:key="fp_unlock_keystore"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/fp_unlock_keystore_title"
             android:summary="@string/fp_unlock_keystore_summary"
             android:persistent="false" />
@@ -58,6 +63,7 @@
 <PreferenceScreen
             android:key="vol_steps"
             android:fragment="com.aim.freedomhub.fragments.VolumeStepsFragment"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/volume_steps_fragment_title"
             android:summary="@string/volume_steps_summary" /> 
 
