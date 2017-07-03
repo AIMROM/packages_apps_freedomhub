@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2014-2016 The Dirty Unicorns Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Tabs -->
+    <string name="system_category">System</string>
+    <string name="lockscreen_category">Lockscreen</string>
+    <string name="statusbar_category">Status Bar</string>
+    <string name="navigation_category">Navigation</string>
+    <string name="multitasking_category">Multi-Tasking</string>
+
+    <!-- Dialog -->
+    <string name="dirtytweaks_dialog_title">Help Us, Help You!!</string>
+    <string name="dirtytweaks_dialog_message">Unfortunately we are not wizards!\n\nSo if you find a bug with any of these settings, please open up a ticket on Jira or contact a DU developer with the following.\n\n1. Logcat or Last_Kmsg\n2. Kernel and Mods used\n3. Useful information\n\nIf you fail to report something, do not expect things to be fixed. Remember, we are not wizards so we do miss things.</string>
+    <string name="dirtytweaks_dialog_toast">READ THE WHOLE THING!</string>
+
+</resources>
