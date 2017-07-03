@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.dutweaks.tabs;
-
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -34,22 +32,22 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class MultiTasking extends SettingsPreferenceFragment implements
+public class System extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "MultiTasking";
+    private static final String TAG = "System";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.multitasking);
+        addPreferencesFromResource(R.xml.system);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.DIRTYTWEAKS;
+        return MetricsEvent.AMIFY;
     }
 
     @Override
