@@ -47,11 +47,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.aim.freedomhub.tabs.Statusbar;
 import com.aim.freedomhub.tabs.System;
-import com.aim.freedomhub.tabs.Lockscreen;
-import com.aim.freedomhub.tabs.StatusBar;
-import com.aim.freedomhub.tabs.Navigation;
-import com.aim.freedomhub.tabs.MultiTasking;
+import com.aim.freedomhub.tabs.Ui;
+import com.aim.freedomhub.tabs.Recents;
+import com.aim.freedomhub.tabs.Miscs;
 import com.aim.freedomhub.PagerSlidingTabStrip;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -173,11 +173,11 @@ public class freedomhub extends SettingsPreferenceFragment {
 
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new System();
-            frags[1] = new Lockscreen();
-            frags[2] = new StatusBar();
-            frags[3] = new Navigation();
-            frags[4] = new MultiTasking();
+            frags[0] = new Statusbar();
+            frags[1] = new System();
+            frags[2] = new Ui();
+            frags[3] = new Recents();
+            frags[4] = new Miscs();
         }
 
         @Override
@@ -199,11 +199,11 @@ public class freedomhub extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.system_category),
-                    getString(R.string.lockscreen_category),
                     getString(R.string.statusbar_category),
-                    getString(R.string.navigation_category),
-                    getString(R.string.multitasking_category)};
+                    getString(R.string.system_category),
+                    getString(R.string.ui_category),
+                    getString(R.string.recents_category),
+                    getString(R.string.miscs_category)};
         return titleString;
     }
 }

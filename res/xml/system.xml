@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2014-2016 The Dirty Unicorns Project
+<!--  Copyright (C) 2017 AIMROM
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -20,11 +20,5 @@
     android:title="@string/system_category"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-         <Preference
-            android:key="powermenu"
-            android:fragment="com.aim.freedomhub.fragments.PowerMenu"
-            android:layout="@layout/preference_powermenu"
-            android:title="@string/powermenu_category" />
 
 </PreferenceScreen>
