@@ -20,6 +20,12 @@
     android:title="@string/ui_category"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+<PreferenceScreen
+            android:key="main_nav_bar"
+            android:fragment="com.android.settings.aim.navbar.NavBarSettings"
+            android:icon="@drawable/ic_freedomhub_ico"
+            android:title="@string/main_nav_bar_title" />
   
 </PreferenceScreen>
 
