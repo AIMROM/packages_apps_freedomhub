@@ -23,7 +23,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import android.telephony.TelephonyManager;
-public class Misc extends SettingsPreferenceFragment {
+public class Miscs extends SettingsPreferenceFragment {
 
 private static final String AIM_INCALL = "aim_incall";
 

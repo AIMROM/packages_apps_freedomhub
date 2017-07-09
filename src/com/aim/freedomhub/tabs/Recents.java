@@ -41,7 +41,7 @@ public class Recents extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.aim_recents_tab);
+        addPreferencesFromResource(R.xml.recents);
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
 
