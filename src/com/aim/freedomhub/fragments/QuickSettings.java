@@ -35,7 +35,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.quicksettings_settings);
+        addPreferencesFromResource(R.xml.quicksettings);
 
         ContentResolver resolver = getActivity().getContentResolver();
 
