@@ -3,6 +3,7 @@ package com.aim.freedomhub.fragments;
 import android.os.Bundle;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.content.pm.PackageManager;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -11,11 +12,18 @@ import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 
 import com.android.settings.R;
 import com.aim.freedomhub.preference.CustomSeekBarPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+
+import java.util.List;
+import java.util.ArrayList;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
