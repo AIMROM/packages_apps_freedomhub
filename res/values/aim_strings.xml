@@ -532,4 +532,14 @@
 <string name="screenshot_crop_and_share_title">Screenshot crop &amp; share</string>
     <string name="screenshot_crop_and_share_summary">Show an editor window after taking a screenshot in order to do some operations like cropping, saving or sharing it</string>
 
+<!-- Time-context headers in notification header -->
+     <string name="custom_header_cat">Statusbar Header Image</string>  
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="daylight_header_pack_title">Header image pack</string>
+    <string name="status_bar_custom_header_shadow_title">Shadow header image</string>
+    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
+    <string name="unit_percent">\u0025</string>
+
+
 </resources>
