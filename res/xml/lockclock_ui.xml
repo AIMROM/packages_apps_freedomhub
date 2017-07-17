@@ -16,4 +16,53 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockclock_ui_title">
 
+<!-- Hide Lockscreen clock & date -->
+
+         <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_clock"
+            android:title="@string/hide_lockscreen_clock_title"
+            android:defaultValue="true" />
+
+         <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_date"
+            android:title="@string/hide_lockscreen_date_title"
+            android:defaultValue="true" />
+
+
+    <ListPreference
+        android:key="lock_clock_fonts"
+        android:title="@string/lock_clock_font_title"
+        android:dialogTitle="@string/lock_clock_font_title"
+        android:entries="@array/lock_clock_fonts_entries"
+        android:entryValues="@array/lock_clock_fonts_values"
+        android:summary="@string/lock_clock_font_summary"
+        android:persistent="false" />
+
+     <!-- lockclock color options -->
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_owner_info_color"
+            android:title="@string/lockscreen_owner_info_color"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_alarm_color"
+            android:title="@string/lockscreen_alarm_color"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_clock_color"
+            android:title="@string/lockscreen_clock_color"
+            android:dependency="hide_lockscreen_clock"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_clock_date_color"
+            android:title="@string/lockscreen_clock_date_color"
+            android:defaultValue="0xffffffff" />
+
+        <Preference
+            android:key="lockscreen_colors_reset"
+            android:title="@string/lockscreen_colors_reset_title" />
+
 </PreferenceScreen>
