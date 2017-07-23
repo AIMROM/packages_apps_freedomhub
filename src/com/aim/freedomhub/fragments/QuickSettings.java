@@ -34,10 +34,16 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
     private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String PREF_COLUMNS = "qs_columns";
 
     private ListPreference mSysuiQqsCount;
     private ListPreference mDaylightHeaderPack;
     private CustomSeekBarPreference mHeaderShadow;
+    private ListPreference mRowsPortrait;
+    private ListPreference mRowsLandscape;
+    private ListPreference mQsColumns;
 
     @Override
     protected int getMetricsCategory() {
@@ -91,13 +97,37 @@ public class QuickSettings extends SettingsPreferenceFragment
         mHeaderShadow.setValue(headerShadow);
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
+         mRowsPortrait = (ListPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_ROWS_PORTRAIT, 3);
+        mRowsPortrait.setValue(String.valueOf(rowsPortrait));
+        mRowsPortrait.setSummary(mRowsPortrait.getEntry());
+        mRowsPortrait.setOnPreferenceChangeListener(this);
+
+       
+        int defaultValue = getResources().getInteger(com.android.internal.R.integer.config_qs_num_rows_landscape_default);
+        mRowsLandscape = (ListPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_ROWS_LANDSCAPE, defaultValue);
+        mRowsLandscape.setValue(String.valueOf(rowsLandscape));
+        mRowsLandscape.setSummary(mRowsLandscape.getEntry());
+        mRowsLandscape.setOnPreferenceChangeListener(this);
+
+        mQsColumns = (ListPreference) findPreference(PREF_COLUMNS);
+        int columnsQs = Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_COLUMNS, 3);
+        mQsColumns.setValue(String.valueOf(columnsQs));
+        mQsColumns.setSummary(mQsColumns.getEntry());
+        mQsColumns.setOnPreferenceChangeListener(this);
 
         }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mSysuiQqsCount) {
+        int intValue;
+        int index;
+	if (preference == mSysuiQqsCount) {
             String SysuiQqsCount = (String) newValue;
             int SysuiQqsCountValue = Integer.parseInt(SysuiQqsCount);
             Settings.Secure.putInt(resolver,
@@ -106,16 +136,37 @@ public class QuickSettings extends SettingsPreferenceFragment
             mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
             return true;
            } else if (preference == mDaylightHeaderPack) {
-            String value = (String) objValue;
+            String value = (String) newValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
             return true;
          } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) objValue;
+            Integer headerShadow = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
+            return true;
+	} else if (preference == mRowsPortrait) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mRowsPortrait.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.QS_ROWS_PORTRAIT, intValue);
+            preference.setSummary(mRowsPortrait.getEntries()[index]);
+            return true;
+        } else if (preference == mRowsLandscape) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mRowsLandscape.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.QS_ROWS_LANDSCAPE, intValue);
+            preference.setSummary(mRowsLandscape.getEntries()[index]);
+            return true;
+        } else if (preference == mQsColumns) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mQsColumns.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.QS_COLUMNS, intValue);
+            preference.setSummary(mQsColumns.getEntries()[index]);
             return true;
         }
         return false;
