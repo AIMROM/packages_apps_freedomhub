@@ -28,6 +28,13 @@
          android:fragment="com.android.settings.devs" />
 
 
+<!-- The Drill -->
+        <PreferenceScreen
+            android:key="drill"
+            android:fragment="com.aim.freedomhub.fragments.Drill"
+            android:title="@string/drill_title"
+            android:summary="@string/drill_summary"/>
+
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
                android:key="show_su_indicator"
                android:title="@string/show_su_indicator_title"

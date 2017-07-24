@@ -553,4 +553,7 @@
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
 
+<!-- The Fekking Drill -->
+    <string name="drill_title">The Drill</string>
+    <string name="drill_summary">Have any problem bud?</string>
 </resources>
