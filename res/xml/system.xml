@@ -21,11 +21,18 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<!-- button settings -->
+<PreferenceScreen
+            android:key="buttons"
+            android:icon="@drawable/freedomhub_ico"
+	    android:fragment="com.aim.freedomhub.fragments.Buttons"
+            android:title="@string/buttons_title" />
+	
  <!-- powermenu -->
   <Preference
             android:key="powermenu"
-            android:fragment="com.aim.freedomhub.fragments.PowerMenu"
-            android:layout="@layout/preference_powermenu"
+            android:icon="@drawable/freedomhub_ico"
+	    android:fragment="com.aim.freedomhub.fragments.PowerMenu"
             android:title="@string/powermenu_category" />
 
 <PreferenceCategory

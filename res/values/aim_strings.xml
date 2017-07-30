@@ -485,6 +485,7 @@
 <!-- Power Menu -->
     <string name="powermenu_category">Power Menu</string>
     <string name="powermenu_screenshot">Screenshot</string>
+    <string name="power_menu_onthego_title">On-The-Go mode</string>
     <string name="powermenu_power">Power</string>
     <string name="powermenu_reboot">Reboot</string>
     <string name="powermenu_airplane">Airplane</string>
