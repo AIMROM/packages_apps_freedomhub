@@ -52,9 +52,11 @@ public class PowerMenu extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     final static String TAG = "PowerMenu";
+    private static final String POWER_MENU_ONTHEGO = "onthego";
 
     private CheckBoxPreference mRebootPref;
     private CheckBoxPreference mScreenshotPref;
+    private CheckBoxPreference mOnTheGoPowerMenu;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mUsersPref;
     private CheckBoxPreference mSettingsPref;
@@ -120,6 +122,9 @@ public class PowerMenu extends SettingsPreferenceFragment
         }
 
         getUserConfig();
+
+	mOnTheGoPowerMenu = (CheckBoxPreference) prefScreen.findPreference(POWER_MENU_ONTHEGO);
+        mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -135,6 +140,12 @@ public class PowerMenu extends SettingsPreferenceFragment
         if (mScreenshotPref != null) {
             mScreenshotPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENSHOT));
         }
+
+	if (mOnTheGoPowerMenu != null) {
+            mOnTheGoPowerMenu.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1));
+        }
+
 
         if (mAirplanePref != null) {
             mAirplanePref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_AIRPLANE));
@@ -188,6 +199,10 @@ public class PowerMenu extends SettingsPreferenceFragment
         } else if (preference == mScreenshotPref) {
             mScreenshotPref.setChecked(value);
             updateUserConfig(value, GLOBAL_ACTION_KEY_SCREENSHOT);
+
+	 } else if (preference == mOnTheGoPowerMenu) {
+            mOnTheGoPowerMenu.setChecked(value);
+            Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ONTHEGO_ENABLED, value ? 1 : 0);
 
         } else if (preference == mAirplanePref) {
             mAirplanePref.setChecked(value);

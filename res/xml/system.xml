@@ -25,7 +25,7 @@
 <PreferenceScreen
             android:key="buttons"
             android:icon="@drawable/freedomhub_ico"
-	    android:fragment="com.aim.freedomhub.fragments.Buttons"
+	    android:fragment="com.aim.freedomhub.fragments.ButtonSettings"
             android:title="@string/buttons_title" />
 	
  <!-- powermenu -->
