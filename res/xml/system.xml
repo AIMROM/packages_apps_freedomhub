@@ -21,11 +21,12 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-      <cyanogenmod.preference.CMSecureSettingSwitchPreference
-            android:key="advanced_reboot"
-            android:icon="@drawable/freedomhub_ico"
-            android:title="@string/advanced_reboot_title"
-            android:summary="@string/advanced_reboot_summary" />
+ <!-- powermenu -->
+  <Preference
+            android:key="powermenu"
+            android:fragment="com.aim.freedomhub.fragments.PowerMenu"
+            android:layout="@layout/preference_powermenu"
+            android:title="@string/powermenu_category" />
 
 <PreferenceCategory
             android:key="category_fp"
