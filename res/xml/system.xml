@@ -21,18 +21,6 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-<PreferenceScreen
-            android:key="hardware_keys"
-            android:fragment="com.aim.freedomhub.fragments.HardwareKeys"
-            android:icon="@drawable/freedomhub_ico"
-            android:title="@string/aim_hardware_keys_title" />
-
-    <PreferenceScreen
-            android:key="powermenu_category"
-            android:fragment="com.aim.freedomhub.fragments.PowerMenuSettings"
-            android:icon="@drawable/freedomhub_ico"
-            android:title="@string/aim_power_menu_title" />
-
       <cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="advanced_reboot"
             android:icon="@drawable/freedomhub_ico"
