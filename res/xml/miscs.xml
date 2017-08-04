@@ -32,6 +32,7 @@
         <PreferenceScreen
             android:key="drill"
             android:fragment="com.aim.freedomhub.fragments.Drill"
+            android:icon="@drawable/freedomhub_ico"
             android:title="@string/drill_title"
             android:summary="@string/drill_summary"/>
 
