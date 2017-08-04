@@ -26,6 +26,11 @@
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/developer_smallest_width" />
 
+    <com.android.settings.display.ThemePreference
+                android:key="theme"
+                android:icon="@drawable/freedomhub_ico" 
+		android:title="@string/theme" />
+
   <PreferenceScreen
             android:key="daynight"
             android:fragment="com.aim.freedomhub.fragments.DayNightSettings"
