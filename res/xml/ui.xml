@@ -39,9 +39,9 @@
 
     <!-- Blur UI -->
  	<PreferenceScreen
-             android:fragment="com.aim.freedomhub.fragments.BlurPersonalizations"
              android:key="blur_personalization"
              android:title="@string/settings_blur_cat"
+	     android:fragment="com.aim.freedomhub.fragments.BlurPersonalizations"
              android:icon="@drawable/freedomhub_ico" />
  
 
