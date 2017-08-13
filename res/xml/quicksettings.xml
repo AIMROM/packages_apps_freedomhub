@@ -49,8 +49,13 @@
             android:dependency="status_bar_custom_header" />
     </PreferenceCategory>
 	
-    
- <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+	<PreferenceScreen
+             android:key="qs_header_icons"
+             android:fragment="com.aim.freedomhub.categories.QSHeaderIcons"
+             android:title="@string/qs_header_icons_category" />
+     
+ 
+  <com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="qs_fancy_animation"
          android:title="@string/qs_fancy_animation_title"
          android:summary="@string/qs_fancy_animation_summary"
