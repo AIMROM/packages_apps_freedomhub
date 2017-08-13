@@ -651,4 +651,9 @@
       <string name="blur_cat_notice">Notice</string>  
      <string name="blur_cat_notice_summary">Blur personalizations are disabled during keyguard view. Only translucent notifications are enabled.</string>
 
+<!-- Fancy tiles animation -->
+     <string name="qs_fancy_animation_title">Fancy QS animation</string>
+     <string name="qs_fancy_animation_summary">Animate when pulling down the statusbar</string>
+ 
+
 </resources>
