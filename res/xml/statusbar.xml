@@ -22,6 +22,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 <PreferenceScreen
+        android:fragment="com.aim.freedomhub.categories.clockbatery"
+        android:key="aim_clockbattery_settings"
+        android:icon="@drawable/freedomhub_ico"
+        android:title="@string/clockbattery_title"
+        android:summary="@string/clockbattery_summary" />
+
+<PreferenceScreen
         android:fragment="com.aim.freedomhub.fragments.NetworkTrafficSettings"
         android:key="pure_nettraffic_settings"
         android:icon="@drawable/freedomhub_ico"
