@@ -49,7 +49,14 @@
             android:dependency="status_bar_custom_header" />
     </PreferenceCategory>
 	
-    <com.aim.freedomhub.preference.CustomSeekBarPreference
+    
+ <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+         android:key="qs_fancy_animation"
+         android:title="@string/qs_fancy_animation_title"
+         android:summary="@string/qs_fancy_animation_summary"
+         android:defaultValue="true" />
+ 
+   <com.aim.freedomhub.preference.CustomSeekBarPreference
         android:key="sysui_qqs_count_key"
         android:title="@string/sysui_qqs_count_title"
         android:entries="@array/sysui_qqs_count_entries"
