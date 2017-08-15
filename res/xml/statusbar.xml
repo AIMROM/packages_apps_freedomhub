@@ -21,60 +21,27 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<!-- General statusbar items -->
 <PreferenceScreen
-        android:fragment="com.aim.freedomhub.categories.clockbatery"
-        android:key="aim_clockbattery_settings"
-        android:icon="@drawable/freedomhub_ico"
-        android:title="@string/clockbattery_title"
-        android:summary="@string/clockbattery_summary" />
-
-<PreferenceScreen
-        android:fragment="com.aim.freedomhub.fragments.NetworkTrafficSettings"
-        android:key="pure_nettraffic_settings"
-        android:icon="@drawable/freedomhub_ico"
-        android:title="@string/nettraffic_settings_title"
-        android:summary="@string/nettraffic_settings_summary" />
-
-<com.aim.freedomhub.preference.SystemSettingSwitchPreference
-            android:key="roaming_indicator_icon"
+            android:key="general_statusbar"
+            android:fragment="com.aim.freedomhub.categories.Generalstatusbar"
             android:icon="@drawable/freedomhub_ico"
-            android:title="@string/roaming_indicator_icon_title"
-            android:summary="@string/roaming_indicator_icon_summary"
-            android:defaultValue="true"/>
+            android:title="@string/generalstatusbar_title" />
 
-<!--Battery bar coustumization -->
-   <Preference
-        android:key="batterybar"
-        android:title="@string/battery_bar_title"
-        android:icon="@drawable/freedomhub_ico"
-        android:fragment="com.aim.freedomhub.fragments.BatteryBar" />
+<!-- Advanced statusbar items-->
+<PreferenceScreen
+            android:key="advanced_statusbar"
+            android:fragment="com.aim.freedomhub.categories.Advancedstatusbar"
+            android:icon="@drawable/freedomhub_ico"
+            android:title="@string/advancedstatusbar_title" />
 
-<!-- Double tap to sleep -->
-    <cyanogenmod.preference.CMSystemSettingSwitchPreference
-         android:key="double_tap_sleep_gesture"
-         android:title="@string/status_bar_double_tap_to_sleep_title"
-         android:icon="@drawable/freedomhub_ico"
-         android:summary="@string/status_bar_double_tap_to_sleep_summary"
-         android:defaultValue="true" />
 
-<!-- Custom carrier label -->
-        <PreferenceScreen
-        android:key="aim_carrier"
-        android:fragment="com.aim.freedomhub.fragments.CarrierLabel"
-        android:title="@string/carrier_title" 
-        android:icon="@drawable/freedomhub_ico" />
 
+<!-- quick settings fragment -->
 <PreferenceScreen
             android:key="quicksettings"
             android:fragment="com.aim.freedomhub.fragments.QuickSettings"
             android:icon="@drawable/freedomhub_ico"
             android:title="@string/quicksettings_title" />
-
-<com.aim.freedomhub.preference.SecureSettingSwitchPreference
-        android:key="qs_easy_toggle"
-        android:title="@string/qs_easy_toggle_title"
-        android:icon="@drawable/freedomhub_ico"
-        android:summary="@string/qs_easy_toggle_summary"
-        android:defaultValue="false" />
 
 </PreferenceScreen>

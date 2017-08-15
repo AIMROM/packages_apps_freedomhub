@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 AIM ROM
+<!-- Copyright (C) AIM ROM
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -10,12 +10,18 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 <PreferenceScreen
-            android:key="recentsettings"
-            android:fragment="com.aim.freedomhub.categories.Recentsettings"
-            android:title="@string/recentsettings_title" />
 
-    </PreferenceScreen> 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/qspulldown_title">
+
+    <cyanogenmod.preference.CMSystemSettingListPreference
+        android:key="qs_quick_pulldown"
+        android:title="@string/status_bar_quick_qs_pulldown_title"
+        android:entries="@array/status_bar_quick_qs_pulldown_entries"
+        android:entryValues="@array/status_bar_quick_qs_pulldown_values"
+        android:defaultValue="1" />
+
+</PreferenceScreen>

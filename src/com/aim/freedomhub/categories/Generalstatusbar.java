@@ -10,7 +10,7 @@
      limitations under the License.
 */
 
-package com.aim.freedomhub.tabs;
+package com.aim.freedomhub.categories;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -41,21 +41,21 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import cyanogenmod.preference.CMSystemSettingListPreference;
 
-public class Recents extends SettingsPreferenceFragment implements
+public class Generalstatusbar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.recents);
+        addPreferencesFromResource(R.xml.generalstatusbar);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.AMIFY;
+        return MetricsEvent.AIM;
     }
 
     @Override

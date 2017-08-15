@@ -17,22 +17,34 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/ui_category"
-    android:layout="@layout/tab"
+    android:title="@string/lockui_category"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-<PreferenceScreen
-            android:key="Interface"
-            android:fragment="com.aim.freedomhub.categories.Interface"
-            android:summary="@string/interface_ui_summary"
-            android:title="@string/interface_ui_title" />
- 
+
+   <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_media_metadata"
+        android:title="@string/media_art_title"
+        android:summary="@string/media_art_summary"
+        android:defaultValue="true" />
+
+
+      <com.aim.freedomhub.preference.SecureSettingSwitchPreference
+               android:key="lockscreen_enable_qs"
+               android:title="@string/lockscreen_enable_qs_title"
+               android:summary="@string/lockscreen_enable_qs_summary"
+               android:defaultValue="true" />
+
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
 
 <PreferenceScreen
-            android:key="Lockscreenui"
-            android:fragment="com.aim.freedomhub.categories.Lockscreenui"
+            android:key="LockClock_ui"
+            android:fragment="com.aim.freedomhub.categories.LockClock"
             android:summary="@string/lockscreen_ui_summary"
             android:title="@string/lockscreen_ui_title" />
 
-</PreferenceScreen>
 
+</PreferenceScreen>

@@ -661,6 +661,7 @@
      <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
      <string name="status_bar_notif_count_title">Show Notification Count</string>
      <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+	 <string name="qspulldown_title">Quick Pulldown</string>
      <string name="status_bar_quick_qs_pulldown_title">Quick Pulldown</string>
      <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
      <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
@@ -771,4 +772,19 @@
      <string name="qs_expand_indicator_summary">Enable the expand indicator (^) in the header</string>
 	 <string name="qs_header_icons_category">Header icons</string>
 
+<!-- Freedomhub redo strings -->
+    <string name="interface_ui_summary">Custumize Systemui</string>
+	<string name="interface_ui_title">Interface Mods</string>	
+	<string name="interface_ui_category">Interface Mods</string>
+	<string name="lockscreen_ui_summary">Lockscreen Modifications</string>
+	<string name="lockscreen_ui_title">lockscreen Mods</string>
+	<string name="lockui_category">Lockscreen Mods</string>
+	<string name="Advancedstatusbar_category">Advanced statusbar Mods</string>
+	<string name="advancedstatusbar_title">Advanced Statusbar Mods</string>	
+	<string name="Generalstatusbar_category">General statusbar</string>
+	<string name="generalstatusbar_title">General statusbar Mods</string>
+	<string name="quicksettings_title">Custom Qs mods</string>
+	<string name="recentsettings_title">Recents Mods</string>
+	<string name="statusbar_items_title">Statusbar icons</string>
+ 
 </resources>

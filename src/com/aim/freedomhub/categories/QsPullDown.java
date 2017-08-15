@@ -1,4 +1,4 @@
-/*Copyright (C) 2017 AIM-ROM
+/*Copyright (C) 2017 AIMROM
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -10,7 +10,7 @@
      limitations under the License.
 */
 
-package com.aim.freedomhub.tabs;
+package com.aim.freedomhub.categories;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -34,6 +34,7 @@ import android.provider.Settings;
 import android.os.UserHandle;
 import android.view.View;
 import android.widget.EditText;
+import android.text.format.DateFormat;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -41,31 +42,40 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import cyanogenmod.preference.CMSystemSettingListPreference;
 
-public class Recents extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class QsPullDown extends SettingsPreferenceFragment
+        implements Preference.OnPreferenceChangeListener {
+
+    private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+    private CMSystemSettingListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.recents);
+        addPreferencesFromResource(R.xml.qspulldown);
+        final ContentResolver resolver = getActivity().getContentResolver();
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        mQuickPulldown = (CMSystemSettingListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
+    }
+
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+        updatePulldownSummary(mQuickPulldown.getIntValue(0));
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.status_bar_quick_qs_pulldown_summary_left
+                    : R.string.status_bar_quick_qs_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
+        }
     }
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.AMIFY;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
+        return MetricsEvent.AIM;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

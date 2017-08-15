@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2017 AIMROM
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/Advancedstatusbar_category"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+<!-- clock and battery -->
+<PreferenceScreen
+        android:fragment="com.aim.freedomhub.fragments.clockbattery"
+        android:key="aim_clockbattery_settings"
+        android:title="@string/clockbattery_title"
+        android:summary="@string/clockbattery_summary" />
+
+<!-- Network traffic -->
+<PreferenceScreen
+        android:fragment="com.aim.freedomhub.fragments.NetworkTrafficSettings"
+        android:key="pure_nettraffic_settings"
+        android:title="@string/nettraffic_settings_title"
+        android:summary="@string/nettraffic_settings_summary" />
+
+
+<!--Battery bar coustumization -->
+   <Preference
+        android:key="batterybar"
+        android:title="@string/battery_bar_title"
+        android:fragment="com.aim.freedomhub.fragments.BatteryBar" />
+
+
+<!-- Custom carrier label -->
+        <PreferenceScreen
+        android:key="aim_carrier"
+        android:fragment="com.aim.freedomhub.fragments.CarrierLabel"
+        android:title="@string/carrier_title" />
+
+<!-- qs easy toggle -->
+<com.aim.freedomhub.preference.SecureSettingSwitchPreference
+        android:key="qs_easy_toggle"
+        android:title="@string/qs_easy_toggle_title"
+        android:summary="@string/qs_easy_toggle_summary"
+        android:defaultValue="false" />
+
+</PreferenceScreen>

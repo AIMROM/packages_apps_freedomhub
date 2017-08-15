@@ -63,7 +63,6 @@ public class clockbattery extends SettingsPreferenceFragment
         private static final String PREF_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
 	private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
         private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-	private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
 
 	private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
 	private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -82,7 +81,6 @@ public class clockbattery extends SettingsPreferenceFragment
         private CMSystemSettingListPreference mClockDatePosition;
 	private CMSystemSettingListPreference mStatusBarBattery;
 	private CMSystemSettingListPreference mStatusBarBatteryShowPercent;
-        private CMSystemSettingListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,7 +98,6 @@ public class clockbattery extends SettingsPreferenceFragment
 	mStatusBarBattery = (CMSystemSettingListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
 	mStatusBarBatteryShowPercent =
 		(CMSystemSettingListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mQuickPulldown = (CMSystemSettingListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
 	mFontStyle = (CMSystemSettingListPreference) findPreference(PREF_FONT_STYLE);
 	mStatusBarClockFontSize = (CustomSeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
 	mClockDatePosition = (CMSystemSettingListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
@@ -150,7 +147,6 @@ public class clockbattery extends SettingsPreferenceFragment
 
         mStatusBarBattery.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
-	updatePulldownSummary(mQuickPulldown.getIntValue(0));
 	setStatusBarDateDependencies();
     }
 
@@ -330,20 +326,6 @@ public class clockbattery extends SettingsPreferenceFragment
         }
         mStatusBarDateFormat.setEntries(parsedDateEntries);
      }
-
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.status_bar_quick_qs_pulldown_summary_left
-                    : R.string.status_bar_quick_qs_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
-        }
-    }
 
    @Override
     protected int getMetricsCategory() {
