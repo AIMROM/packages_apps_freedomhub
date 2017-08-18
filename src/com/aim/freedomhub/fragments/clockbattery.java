@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aim.freedomhub.categories;
+package com.aim.freedomhub.fragments;
 
 import com.aim.freedomhub.preference.CustomSeekBarPreference;
 import android.app.AlertDialog;
