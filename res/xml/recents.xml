@@ -16,6 +16,7 @@
 <PreferenceScreen
             android:key="recentsettings"
             android:fragment="com.aim.freedomhub.categories.Recentsettings"
+	    android:icon="@drawable/ic_recents"
             android:title="@string/recentsettings_title" />
 
     </PreferenceScreen> 

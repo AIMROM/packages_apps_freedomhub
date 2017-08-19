@@ -25,14 +25,14 @@
 <PreferenceScreen
             android:key="general_statusbar"
             android:fragment="com.aim.freedomhub.categories.Generalstatusbar"
-            android:icon="@drawable/freedomhub_ico"
+            android:icon="@drawable/ic_genstatusbar"
             android:title="@string/generalstatusbar_title" />
 
 <!-- Advanced statusbar items-->
 <PreferenceScreen
             android:key="advanced_statusbar"
             android:fragment="com.aim.freedomhub.categories.Advancedstatusbar"
-            android:icon="@drawable/freedomhub_ico"
+            android:icon="@drawable/ic_advstatusbar"
             android:title="@string/advancedstatusbar_title" />
 
 
@@ -41,7 +41,7 @@
 <PreferenceScreen
             android:key="quicksettings"
             android:fragment="com.aim.freedomhub.fragments.QuickSettings"
-            android:icon="@drawable/freedomhub_ico"
+            android:icon="@drawable/ic_customqs"
             android:title="@string/quicksettings_title" />
 
 </PreferenceScreen>

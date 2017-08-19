@@ -25,13 +25,15 @@
             android:key="Interface"
             android:fragment="com.aim.freedomhub.categories.Interface"
             android:summary="@string/interface_ui_summary"
-            android:title="@string/interface_ui_title" />
+            android:icon="@drawable/ic_systemui"
+	    android:title="@string/interface_ui_title" />
  
 
 <PreferenceScreen
             android:key="Lockscreenui"
             android:fragment="com.aim.freedomhub.categories.Lockscreenui"
             android:summary="@string/lockscreen_ui_summary"
+	    android:icon="@drawable/ic_lockscreen"
             android:title="@string/lockscreen_ui_title" />
 
 </PreferenceScreen>
