@@ -837,4 +837,14 @@
     <string name="slim_recents_enter_exit_animation_translate">Translate</string>
     <string name="slim_recents_enter_exit_animation_fade">Fade</string>
 
+    <!-- Omni Switch -->
+    <string name="keys_action_app_switch_defaut">Default</string>
+    <string name="keys_action_omniswitch_short">OmniSwitch</string>
+    <string name="navbar_recents_style_title">Recents style</string>
+    <string name="omniswitch_settings">Settings</string>
+    <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
+    <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
+    <string name="omniswitch_title">Recents style</string>
+    <string name="recents_style_info_title">Only valid if 3-button navigation mode is used.</string>
+
 </resources>

@@ -16,8 +16,10 @@
 
 package com.aim.freedomhub.fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -35,6 +37,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.aim.Utils;
+import com.android.internal.util.aim.PackageUtils;
 import com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference;
 
 import com.aim.freedomhub.fragments.ImeSettings;
@@ -48,12 +51,14 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String PREF_STOCK_RECENTS_CATEGORY = "stock_recents_category";
     private static final String PREF_ALTERNATIVE_RECENTS_CATEGORY = "alternative_recents_category";
     private static final String PREF_SWIPE_UP_ENABLED = "swipe_up_enabled_warning";
+    private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
 
     private SwitchPreference mShowCpuInfo;
     private ListPreference mFlashlightOnCall;
     private PreferenceCategory mStockRecentsCategory;
     private PreferenceCategory mAlternativeRecentsCategory;
     private Context mContext;
+    private ListPreference mNavbarRecentsStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -71,6 +76,14 @@ public class Misc extends SettingsPreferenceFragment implements
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         if (!Utils.deviceSupportsFlashLight(mContext))
             prefScreen.removePreference(mFlashlightOnCall);
+
+        mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
+        int recentsStyle = Settings.System.getInt(resolver,
+                Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0);
+
+        mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
+        mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
+        mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
         mStockRecentsCategory = (PreferenceCategory) findPreference(PREF_STOCK_RECENTS_CATEGORY);
         mAlternativeRecentsCategory =
@@ -185,8 +198,54 @@ public class Misc extends SettingsPreferenceFragment implements
         if (preference == mShowCpuInfo) {
             writeCpuInfoOptions(mContext, (Boolean) newValue);
             return true;
+        } else if (preference == mNavbarRecentsStyle) {
+            int value = Integer.valueOf((String) newValue);
+            if (value == 1) {
+                if (!isOmniSwitchInstalled()){
+                    doOmniSwitchUnavail();
+                } else if (!Utils.isOmniSwitchRunning(getActivity())) {
+                    doOmniSwitchConfig();
+                }
+            }
+            int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
+            mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(), Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
+            return true;
         }
         return false;
+    }
+
+    private void checkForOmniSwitchRecents() {
+        if (!isOmniSwitchInstalled()){
+            doOmniSwitchUnavail();
+        } else if (!Utils.isOmniSwitchRunning(getActivity())) {
+            doOmniSwitchConfig();
+        }
+    }
+
+    private void doOmniSwitchConfig() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+        alertDialogBuilder.setTitle(R.string.omniswitch_title);
+        alertDialogBuilder.setMessage(R.string.omniswitch_dialog_running_new)
+            .setPositiveButton(R.string.omniswitch_settings, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id) {
+                    startActivity(Utils.INTENT_LAUNCH_APP);
+                }
+            });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+    private void doOmniSwitchUnavail() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+        alertDialogBuilder.setTitle(R.string.omniswitch_title);
+        alertDialogBuilder.setMessage(R.string.omniswitch_dialog_unavail);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+    private boolean isOmniSwitchInstalled() {
+        return PackageUtils.isAvailableApp(Utils.APP_PACKAGE_NAME, getActivity());
     }
 }
 
