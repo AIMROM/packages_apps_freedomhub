@@ -52,13 +52,16 @@
 
     <!-- Frags -->
     <!-- General mods -->
-    <string name="general_mods_title">General Tweaks</string>
+    <string name="general_mods_title">General Mods</string>
 
     <!-- Network traffic -->
     <string name="traffic_title">Traffic indicators</string>
 
     <!-- Recents UI -->
     <string name="recents_ui_title">Recents UI</string>
+
+    <!-- Categories -->
+    <string name="general_navigation_category">General Navbar</string>
 
     <!-- App info dialog -->
     <string name="freedomhub_dialog_title">Help us help you!</string>
@@ -106,5 +109,8 @@
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
+    <!-- navbar doubletap to sleep -->
+    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
+    
 </resources>
 
