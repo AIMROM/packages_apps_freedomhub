@@ -107,4 +107,8 @@
      <string name="status_bar_logo_left">Left</string>
      <string name="status_bar_logo_right">Right</string>
 
+<!-- StatusBar -->
+ 	<string name="status_bar_quick_qs_pulldown">Pulldown statusbar from right side to show QS panel</string>
+	<string name="quick_qs_category">Quick Settings</string>
+
 </resources>
