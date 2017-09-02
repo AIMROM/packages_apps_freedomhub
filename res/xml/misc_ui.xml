@@ -39,4 +39,14 @@
 	 android:fragment="com.aim.freedomhub.categories.sound"
          android:title="@string/sound_settings" />
 
+     <Preference
+         android:key="wakelock_blocker"
+         android:fragment="com.aim.freedomhub.categories.WakeLockBlocker"
+         android:title="@string/wakelock_blocker_title" />
+
+     <Preference
+         android:id="@+id/alarm_blocker"
+         android:fragment="com.aim.freedomhub.categories.AlarmBlocker"
+         android:title="@string/alarm_blocker" />
+
 </PreferenceScreen>
