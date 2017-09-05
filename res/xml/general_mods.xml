@@ -30,4 +30,11 @@
              android:summary="@string/toast_icon_summary"
              android:defaultValue="false" />
 
+
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+             android:key="mtp_dirty_hack"
+             android:title="@string/enable_mtp_dirtyhack_title"
+             android:summary="@string/enable_mtp_dirtyhack_summary"
+             android:defaultValue="false" />
+
 </PreferenceScreen>
