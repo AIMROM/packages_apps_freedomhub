@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 AospExtended ROM Project
+     Copyright (C) 2017 AIMROM
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -17,8 +17,13 @@
     android:title="@string/general_tweaks_title">
 
     <PreferenceCategory
-        android:key="general_tweaks_general_category"
-        android:title="@string/general_category">
+        android:key="light_category"
+        android:title="@string/light_category">
+
+     <Preference
+         android:key="battery_charging_light"
+         android:fragment="com.aim.freedomhub.BatteryLightSettings"
+         android:title="@string/battery_light_settings" />
 
 
     </PreferenceCategory>
