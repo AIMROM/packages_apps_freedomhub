@@ -32,20 +32,19 @@
  	     android:summary="@string/power_menu_title_summary"
  	     android:fragment="com.aim.freedomhub.categories.PowerMenuSettings" />
      </PreferenceCategory>
- 
+
+
+<Preference
+        android:fragment="com.aim.freedomhub.categories.ButtonSettings"
+        android:key="Buttons"
+        android:icon="@drawable/ic_buttons"
+        android:title="@string/buttons_category" />
+
 
 <Preference
         android:fragment="com.aim.freedomhub.categories.navbar"
         android:key="navbar_sleep"
         android:icon="@drawable/ic_navigation"
         android:title="@string/general_navigation_category" />
-
-
-<Preference
-         android:key="rocker_settings"
-         android:icon="@drawable/ic_rockers"
-	 android:fragment="com.aim.freedomhub.categories.VolumeRockerSettings"
-         android:title="@string/volume_rocker_category" />
-
 
 </PreferenceScreen>
