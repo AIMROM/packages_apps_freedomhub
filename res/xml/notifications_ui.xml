@@ -30,4 +30,11 @@
  
      </PreferenceCategory>
 
+	   <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+             android:key="battery_save_mode_color"
+             android:title="@string/battery_saver_color_title"
+             android:icon="@drawable/battery_saver"
+	     android:summary="@string/battery_saver_color_summary"
+             android:defaultValue="false" />
+
 </PreferenceScreen>

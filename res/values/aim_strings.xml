@@ -276,5 +276,8 @@
      <string name="kill_app_longpress_back">Kill app back button</string>
      <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 
+ <!-- Battery saver color -->
+     <string name="battery_saver_color_title">Warning color</string>
+     <string name="battery_saver_color_summary">Enable orange status - navigation bars when battery saver is activated</string>
 
 </resources>
