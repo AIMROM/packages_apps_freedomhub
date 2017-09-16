@@ -21,5 +21,10 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+         <Preference
+            android:key="general_mods"
+            android:fragment="com.aim.freedomhub.categories.Generalmodss"
+            android:icon="@drawable/ic_generalmods"
+            android:title="@string/general_mods_title" />
 
 </PreferenceScreen>
