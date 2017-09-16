@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AIM-ROM
+ * Copyright (C) 2017 AIMROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,59 +19,38 @@ package com.aim.freedomhub.tabs;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
-import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
+import android.preference.ListPreference;
+import android.preference.SwitchPreference;
+import android.preference.Preference;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
-
-import com.aim.freedomhub.preference.SystemSettingSwitchPreference;
 
 public class System extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
-    private static final String CATEGORY_FP = "category_fp";
-    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
-
-    private FingerprintManager mFingerprintManager;
-
-    private SwitchPreference mFpKeystore;
-    private SystemSettingSwitchPreference mFingerprintVib;
+        private static final String TAG = "System";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.system);
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
 
-        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
-        final PreferenceCategory fpCat = (PreferenceCategory) prefScreen.findPreference(CATEGORY_FP);
-        if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(fpCat);
-       } else {
-       mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
-              Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
-       mFpKeystore.setOnPreferenceChangeListener(this);
-     }
-   }
+        ContentResolver resolver = getActivity().getContentResolver();
+    }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.AMIFY;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.AIM;
     }
 
     @Override
@@ -86,13 +65,8 @@ public class System extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-      if (preference == mFpKeystore) {
-          boolean value = (Boolean) objValue;
-          Settings.System.putInt(getActivity().getContentResolver(),
-                   Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
         return true;
-    }
-         return false;
     }
 
 }
+
