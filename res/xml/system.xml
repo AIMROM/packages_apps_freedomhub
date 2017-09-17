@@ -23,7 +23,7 @@
 
          <Preference
             android:key="general_mods"
-            android:fragment="com.aim.freedomhub.categories.Generalmodss"
+            android:fragment="com.aim.freedomhub.categories.Generalmods"
             android:icon="@drawable/ic_generalmods"
             android:title="@string/general_mods_title" />
 
