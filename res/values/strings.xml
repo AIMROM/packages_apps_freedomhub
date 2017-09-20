@@ -60,8 +60,9 @@
     <!-- Recents UI -->
     <string name="recents_ui_title">Recents UI</string>
 
-    <!-- Categories -->
+    <!-- Categories1 -->
     <string name="general_navigation_category">General Navbar</string>
+    <string name="sound_settings">sound settings</string>
 
     <!-- App info dialog -->
     <string name="freedomhub_dialog_title">Help us help you!</string>
@@ -111,6 +112,12 @@
 
     <!-- navbar doubletap to sleep -->
     <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
-    
+      
+    <!-- swap volume buton -->
+    <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
+    <string name="sound_category">sound system</string>
+    <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
+    <string name="volume_keys_control_media_stream_summary">Volume panel will show media volume slider by default</string>
+
 </resources>
 

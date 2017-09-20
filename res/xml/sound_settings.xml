@@ -14,13 +14,18 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout="@layout/tab"
-    android:title="@string/general_navigation_category"
+    android:title="@string/sound_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
-         android:key="double_tap_sleep_navbar"
-         android:title="@string/double_tap_sleep_navbar"
+         android:key="swap_volume_buttons"
+         android:title="@string/swap_volume_buttons"
+         android:defaultValue="true" />
+
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+         android:key="volume_keys_control_media_stream"
+         android:title="@string/volume_keys_control_media_stream_title"
+         android:summary="@string/volume_keys_control_media_stream_summary"
          android:defaultValue="true" />
 
 </PreferenceScreen>
-
