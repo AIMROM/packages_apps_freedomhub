@@ -60,6 +60,7 @@
     <!-- Categories1 -->
     <string name="general_navigation_category">General Navbar</string>
     <string name="sound_settings">sound settings</string>
+    <string name="powermenu_torch">Flashlight</string>
 
     <!-- App info dialog -->
     <string name="freedomhub_dialog_title">Help us help you!</string>
