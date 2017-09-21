@@ -21,10 +21,25 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<PreferenceCategory
+         android:key="power_menu"
+         android:title="@string/power_menu_title">
+ 
+    <Preference
+ 	     android:key="power_menu"
+             android:title="@string/power_menu_title"
+             android:icon="@drawable/ic_powermenu"
+ 	     android:summary="@string/power_menu_title_summary"
+ 	     android:fragment="com.aim.freedomhub.categories.PowerMenuSettings" />
+     </PreferenceCategory>
+ 
+
+
 <PreferenceScreen
         android:fragment="com.aim.freedomhub.categories.navbar"
         android:key="navbar_sleep"
         android:icon="@drawable/ic_navigation"
         android:title="@string/general_navigation_category" />
+
 
 </PreferenceScreen>
