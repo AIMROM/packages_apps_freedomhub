@@ -34,7 +34,7 @@
 
      <PreferenceScreen
            android:key="volume_settings"
-         android:fragment="com.aim.freedomhub.ctegories.volume"
+         android:fragment="com.aim.freedomhub.categories.volume"
          android:title="@string/sound_settings" />
 
     </PreferenceCategory>
