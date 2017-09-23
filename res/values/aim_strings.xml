@@ -99,4 +99,9 @@
      <string name="recents_show_membar_title">Memory bar</string>
      <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string> 
 
+<!-- Power menu on secure lockscreen -->
+     <string name="lockscreen_power_menu_disabled_title">Power menu when locked</string>
+     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
+ 
+
 </resources>
