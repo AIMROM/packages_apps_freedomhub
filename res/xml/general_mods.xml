@@ -17,6 +17,13 @@
     android:title="@string/general_mods"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+ <Preference
+            android:key="app_ops"
+            android:fragment="com.android.settings.applications.AppOpsSummary"
+            android:icon="@drawable/ic_settings_appops"
+            android:title="@string/app_ops_category" />
+
+
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
              android:key="toast_icon"
              android:title="@string/toast_icon_title"
