@@ -207,4 +207,8 @@
     <string name="ambient_display_bottom_info_battery">Battery percent</string>
     <string name="ambient_display_bottom_info_weather">Brief weather info</string>
 
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
  </resources>
