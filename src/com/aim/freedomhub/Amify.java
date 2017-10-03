@@ -225,7 +225,7 @@ public class Amify extends SettingsPreferenceFragment {
         @Override
         public void setListening(boolean listening) {
             if (listening) {
-                mSummaryLoader.setSummary(this, mContext.getString(R.string.build_tweaks_summary_title));
+                mSummaryLoader.setSummary(this, mContext.getString(R.string.freedomhub_title_summary));
             }
         }
     }
