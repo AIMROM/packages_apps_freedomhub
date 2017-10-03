@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 ABC Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
+    <!-- Battery light -->
+    <string name="battery_light_settings">Battery charging light</string>
+    <string name="battery_light_enable">Battery light</string>
+    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
+    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
+    <string name="battery_light_cat">Battery light color when charging</string>
+    <string name="battery_light_low_color">Low battery</string>
+    <string name="battery_light_medium_color">Medium battery</string>
+    <string name="battery_light_full_color">Almost full battery</string>
+    <string name="battery_light_reallyfull_color">Full (100) battery</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Network traffic</string>
+    <string name="network_traffic_type">Select net activity type</string>
+    <string name="show_network_traffic_up">Uplink</string>
+    <string name="show_network_traffic_down">Downlink</string>
+    <string name="show_network_traffic_all">Uplink and Downlink</string>
+    <string name="network_traffic_state_title">Show net activity in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
+    <!-- Recents panel settings -->
+    <string name="show_clear_all_recents_button_title">Clear all button</string>
+    <string name="show_clear_all_recents_button_summary">Show clear all button</string>
+    <string name="recents_clear_all_location_title">Clear all location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+
+    <!-- navbar doubletap to sleep -->
+    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
+    <!-- doubletap to sleep on lockscreen -->
+    <string name="double_tap_sleep_lockscreen">Double tap to sleep on lockscreen</string>
+
+    <!-- swap volume buton -->
+    <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
+    <string name="sound_category">sound system</string>
+    <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
+    <string name="volume_keys_control_media_stream_summary">Volume panel will show media volume slider by default</string>
+    <!-- Launch music player when headset is connected -->
+     <string name="headset_connect_player_title">Launch music app on headset connection</string>
+     <string name="headset_connect_player_disabled">Disabled</string>
+     <string name="headset_connect_player_wired">When wired headset is plugged in</string>
+     <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>
+     <string name="headset_connect_player_bt">When BT headset is plugged in</string>
+     <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
+     <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
+
+<!-- Headset ringtone audio focus -->
+     <string name="ringtone_focus_mode_title">Where to play ringtones from</string>
+     <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
+     <string name="ringtone_focus_mode_stock">"From speakerphone (aosp default)"</string>
+
+</resources>
