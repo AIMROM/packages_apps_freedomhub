@@ -13,38 +13,58 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aim.freedomhub.categories;
 
+import android.app.ActivityManagerNative;
+import android.content.Context;
 import android.content.ContentResolver;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v7.preference.ListPreference;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.util.Log;
+import android.view.WindowManagerGlobal;
+import android.view.IWindowManager;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import com.android.internal.logging.nano.MetricsProto;
+import java.util.Locale;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.Utils;
 
-public class volume extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class volume extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
-    private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
+ private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
+ private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
 
-    private ListPreference mLaunchPlayerHeadsetConnection;
-    private ListPreference mHeadsetRingtoneFocus;
+ private ListPreference mLaunchPlayerHeadsetConnection;
+ private ListPreference mHeadsetRingtoneFocus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.sound_settings);
-        ContentResolver resolver = getActivity().getContentResolver();
 
-        mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
+        addPreferencesFromResource(R.xml.sound_settings);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefSet = getPreferenceScreen();
+
+		mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);
         int mLaunchPlayerHeadsetConnectionValue = Settings.System.getIntForUser(resolver,
                 Settings.System.HEADSET_CONNECT_PLAYER, 4, UserHandle.USER_CURRENT);
         mLaunchPlayerHeadsetConnection.setValue(Integer.toString(mLaunchPlayerHeadsetConnectionValue));
