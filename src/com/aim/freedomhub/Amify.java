@@ -55,13 +55,13 @@ import com.android.settings.dashboard.SummaryLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aim.freedomhub.tabs.System;
-import com.aim.freedomhub.PagerSlidingTabStrip;
 import com.aim.freedomhub.tabs.StatusBar;
-import com.aim.freedomhub.tabs.Recents;
+import com.aim.freedomhub.PagerSlidingTabStrip;
+import com.aim.freedomhub.tabs.Interface;
 import com.aim.freedomhub.tabs.Lockscreen;
-import com.aim.freedomhub.tabs.NotificationsPanel;
-import com.aim.freedomhub.tabs.Navigation;
+import com.aim.freedomhub.tabs.Buttons;
+import com.aim.freedomhub.tabs.Recents;
+import com.aim.freedomhub.tabs.Misc;
 
 public class Amify extends SettingsPreferenceFragment {
 
@@ -204,7 +204,7 @@ public class Amify extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                     getString(R.string.status_bar_category),
-                    getString(R.string.interface_panel_category),
+                    getString(R.string.interface_category),
                     getString(R.string.lockscreen_category),
                     getString(R.string.buttons_category),
                     getString(R.string.recents_category),
