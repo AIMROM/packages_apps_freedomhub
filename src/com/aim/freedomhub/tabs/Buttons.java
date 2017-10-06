@@ -34,16 +34,16 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class NotificationsPanel extends SettingsPreferenceFragment implements
+public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "NotificationsPanel";
+    private static final String TAG = "Buttons";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.notificationspanel);
+        addPreferencesFromResource(R.xml.buttons_ui);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }

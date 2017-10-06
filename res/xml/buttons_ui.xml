@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2017 Aimrom-project
+<!--  Copyright (C) 2017 AimRom-project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -17,15 +17,14 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/lockscreen_category"
+    android:title="@string/buttons_category"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-<com.aim.freedomhub.preference.SystemSettingSwitchPreference
-         android:key="double_tap_sleep_lockscreen"
-         android:title="@string/double_tap_sleep_lockscreen"
-         android:icon="@drawable/doubletap_sleep"
-	 android:defaultValue="true" />
+<PreferenceScreen
+        android:fragment="com.aim.freedomhub.categories.navbar"
+        android:key="navbar_sleep"
+        android:icon="@drawable/ic_navigation"
+        android:title="@string/general_navigation_category" />
 
 </PreferenceScreen>
-

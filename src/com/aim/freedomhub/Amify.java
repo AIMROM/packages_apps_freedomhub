@@ -177,11 +177,11 @@ public class Amify extends SettingsPreferenceFragment {
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new StatusBar();
-            frags[1] = new NotificationsPanel();
-            frags[2] = new Navigation();
-            frags[3] = new Recents();
-	    frags[4] = new Lockscreen();
-            frags[5] = new System();
+            frags[1] = new Interface();
+            frags[2] = new Lockscreen();
+            frags[3] = new Buttons();
+	        frags[4] = new Recents();
+            frags[5] = new Misc();
         }
 
         @Override
@@ -204,11 +204,11 @@ public class Amify extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                     getString(R.string.status_bar_category),
-                    getString(R.string.notifications_panel_category),
-                    getString(R.string.navigation_category),
-                    getString(R.string.recents_category),
+                    getString(R.string.interface_panel_category),
                     getString(R.string.lockscreen_category),
-                    getString(R.string.system_category)};
+                    getString(R.string.buttons_category),
+                    getString(R.string.recents_category),
+                    getString(R.string.misc_category)};
         return titleString;
     }
 

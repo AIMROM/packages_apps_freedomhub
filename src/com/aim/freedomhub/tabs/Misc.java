@@ -29,21 +29,21 @@ import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
-public class Navigation extends SettingsPreferenceFragment implements
+public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "Navigation";
+        private static final String TAG = "Misc";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.navigation);
+        addPreferencesFromResource(R.xml.misc_ui);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }
@@ -67,4 +67,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
         return true;
     }
+
 }
+

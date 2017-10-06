@@ -34,16 +34,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
-public class System extends SettingsPreferenceFragment implements
+public class Interface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-        private static final String TAG = "System";
+    
+    private static final String TAG = "Interface";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.system);
+        addPreferencesFromResource(R.xml.ui);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }
@@ -69,4 +69,3 @@ public class System extends SettingsPreferenceFragment implements
     }
 
 }
-
