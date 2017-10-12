@@ -109,4 +109,11 @@
      <string name="lockscreen_power_menu_disabled_title">Power menu when locked</string>
      <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
  
+<!-- statusbar logo -->
+<string name="status_bar_logo_title">AIM logo</string>
+<string name="status_bar_logo_dialog_title">AIM logo position</string>
+     <string name="status_bar_logo_disabled">Disabled</string>
+     <string name="status_bar_logo_left">Left</string>
+     <string name="status_bar_logo_right">Right</string>
+
 </resources>
