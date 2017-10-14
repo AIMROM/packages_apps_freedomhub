@@ -50,7 +50,7 @@
     <string name="interface_category">Interface</string>
 
     <!-- Frags -->
-
+   <string name="general_mods">General Mods</string>
     <!-- Network traffic -->
     <string name="traffic_title">Traffic indicators</string>
 
