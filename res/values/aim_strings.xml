@@ -75,6 +75,12 @@
      <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
      <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
 
+     <!-- Headset ringtone audio focus -->
+      <string name="ringtone_focus_mode_title">Where to play ringtones from</string>
+      <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
+      <string name="ringtone_focus_mode_stock">"From speakerphone (aosp default)"</string>
+ 
+
 <!-- Statusbar Iten -->
      <string name="statusbar_items_category">Statusbar items</string>
 
@@ -103,5 +109,4 @@
      <string name="lockscreen_power_menu_disabled_title">Power menu when locked</string>
      <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
  
-
 </resources>
