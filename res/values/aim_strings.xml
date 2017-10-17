@@ -119,4 +119,23 @@
      <string name="enable_mtp_dirtyhack_title">MTP instead Charging</string>
      <string name="enable_mtp_dirtyhack_summary">Enable MTP instead Charging after connect to PC</string>
 
+<!-- QS footer warnings -->
+     <string name="qs_footer_warnings_title">QS footer warnings</string>
+     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+  	
+<!-- QS rows and columns -->
+     <string name="qs_rows_columns_title">Quick Tiles Rows and Columns</string>
+     <string name="qs_rows_portrait_title">Tiles Rows on Portrait</string>
+     <string name="qs_rows_landscape_title">Tiles Rows on Landscape</string>
+     <string name="qs_columns_portrait_title">Tiles Columns on Portrait</string>
+     <string name="qs_columns_landscape_title">Tiles Columns on Landscape</string>
+  	
+<!-- Heads up options -->
+     <string name="less_boring_heads_up_title">Heads-Up Less Intrusive</string>
+     <string name="less_boring_heads_up_summary">Show heads-up only for dialer or messaging app if they are not in foreground</string>
+  
+<!-- qstile visibility -->
+<string name="qs_tile_title_visibility_title">Show tiles title</string>
+
+
 </resources>
