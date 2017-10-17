@@ -64,22 +64,13 @@
     <!-- swap volume buton -->
     <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
     <string name="sound_category">sound system</string>
+	<string name="volume_rocker_category">Volume Rockers</string>
     <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
     <string name="volume_keys_control_media_stream_summary">Volume panel will show media volume slider by default</string>
-    <!-- Launch music player when headset is connected -->
-     <string name="headset_connect_player_title">Launch music app on headset connection</string>
-     <string name="headset_connect_player_disabled">Disabled</string>
-     <string name="headset_connect_player_wired">When wired headset is plugged in</string>
-     <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>
-     <string name="headset_connect_player_bt">When BT headset is plugged in</string>
-     <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
-     <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
-
-     <!-- Headset ringtone audio focus -->
-      <string name="ringtone_focus_mode_title">Where to play ringtones from</string>
-      <string name="ringtone_focus_mode_dynamic">From headset if connected and playing music</string>
-      <string name="ringtone_focus_mode_stock">"From speakerphone (aosp default)"</string>
- 
+    
+<!-- Launch music player when headset is connected -->
+      <string name="headset_connect_player_title">Launch music app on headset connection</string>
+      <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string> 
 
 <!-- Statusbar Iten -->
      <string name="statusbar_items_category">Statusbar items</string>
