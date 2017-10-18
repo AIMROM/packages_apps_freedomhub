@@ -57,6 +57,10 @@
     <!-- Recents UI -->
     <string name="recents_ui_title">Recents UI</string>
 
+     <!-- Animations -->
+     <string name="aim_animation">Animation</string>
+     <string name="animation_settings">Animation Customizations</string>
+
     <!-- Categories1 -->
     <string name="general_navigation_category">General Navbar</string>
     <string name="sound_settings">sound settings</string>

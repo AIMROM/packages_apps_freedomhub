@@ -21,4 +21,18 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+<PreferenceCategory
+         android:key="animation_cat"
+         android:title="@string/aim_animation">
+ 
+         <PreferenceScreen
+             android:key="hexa_animation_settings_cat"
+             android:fragment="com.com.aim.freedomhub.categories.Animations"
+             android:icon="@drawable/ic_animation"
+	     android:title="@string/animation_settings" />
+ 			
+     </PreferenceCategory>
+ 	
+
 </PreferenceScreen>
