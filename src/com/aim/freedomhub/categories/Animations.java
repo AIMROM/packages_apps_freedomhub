@@ -33,6 +33,7 @@ import com.android.settings.search.Indexable;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 

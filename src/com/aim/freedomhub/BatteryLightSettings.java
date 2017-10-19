@@ -24,6 +24,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
+import java.io.FileNotFoundException;
 
 import com.android.internal.logging.nano.MetricsProto;
 

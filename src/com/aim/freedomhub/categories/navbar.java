@@ -25,6 +25,7 @@
  
  import com.android.internal.logging.nano.MetricsProto;
  
+ import java.io.FileNotFoundException;
  import com.android.settings.R;
  import com.android.settings.SettingsPreferenceFragment;
  
