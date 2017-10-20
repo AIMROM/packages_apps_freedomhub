@@ -42,8 +42,7 @@
             android:icon="@drawable/ic_quickqs"
             android:title="@string/quick_qs_category" />
 
-
-  <ListPreference
+  <com.aim.freedomhub.preference.SystemSettingSwitchPreference
         android:key="status_bar_logo"
         android:icon="@drawable/ic_statusbarlogo"
 	android:title="@string/status_bar_logo_title"
