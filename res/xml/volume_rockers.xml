@@ -18,7 +18,6 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="swap_volume_buttons"
          android:title="@string/swap_volume_buttons"

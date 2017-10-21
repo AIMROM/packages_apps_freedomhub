@@ -34,7 +34,7 @@
      </PreferenceCategory>
  
 
-<PreferenceScreen
+<Preference
         android:fragment="com.aim.freedomhub.categories.navbar"
         android:key="navbar_sleep"
         android:icon="@drawable/ic_navigation"
@@ -44,7 +44,7 @@
 <Preference
          android:key="rocker_settings"
          android:icon="@drawable/ic_rockers"
-	     android:fragment="com.aim.freedomhub.categories.VolumeRockerSettings"
+	 android:fragment="com.aim.freedomhub.categories.VolumeRockerSettings"
          android:title="@string/volume_rocker_category" />
 
 
