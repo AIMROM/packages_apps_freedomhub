@@ -62,6 +62,7 @@ import com.aim.freedomhub.tabs.Lockscreen;
 import com.aim.freedomhub.tabs.Buttons;
 import com.aim.freedomhub.tabs.Recents;
 import com.aim.freedomhub.tabs.Misc;
+import com.aim.freedomhub.tabs.Notifications;
 
 public class Amify extends SettingsPreferenceFragment {
 
@@ -179,9 +180,10 @@ public class Amify extends SettingsPreferenceFragment {
             frags[0] = new StatusBar();
             frags[1] = new Interface();
             frags[2] = new Lockscreen();
-            frags[3] = new Buttons();
-	        frags[4] = new Recents();
-            frags[5] = new Misc();
+	    frags[3] = new Notifications();
+            frags[4] = new Buttons();
+	    frags[5] = new Recents();
+            frags[6] = new Misc();
         }
 
         @Override
@@ -206,6 +208,7 @@ public class Amify extends SettingsPreferenceFragment {
                     getString(R.string.status_bar_category),
                     getString(R.string.interface_category),
                     getString(R.string.lockscreen_category),
+		    getString(R.string.notifications_ui),
                     getString(R.string.buttons_category),
                     getString(R.string.recents_category),
                     getString(R.string.misc_category)};

@@ -48,6 +48,7 @@
     <string name="buttons_category">Buttons</string>
     <string name="lockscreen_category">Lockscreen</string>
     <string name="interface_category">Interface</string>
+    <string name="notifications_ui">Notifications</string>
 
     <!-- Frags -->
    <string name="general_mods">General Mods</string>
