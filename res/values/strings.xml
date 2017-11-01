@@ -78,5 +78,9 @@
     <string name="toast_icon_title">App\'s icon in toast</string>
     <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">Auto brightness icon</string>
+    <string name="brightness_icon_summary">Show a brightness icon to the right of the brightness slider to toggle auto-brightness</string>
+
 </resources>
 
