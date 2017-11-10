@@ -12,18 +12,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<!-- AIM logo location -->
-     <string-array name="status_bar_logo_entries" translatable="false">
-         <item>@string/status_bar_logo_disabled</item>
-         <item>@string/status_bar_logo_left</item>
-         <item>@string/status_bar_logo_right</item>
+<!-- AIMROM Custom Logos -->
+     <string-array name="status_bar_custom_logos_entries" translatable="false">
+         <item>Aim Default</item>
+         <item>Wolf lite</item>
+         <item>Wolf round</item>
+         <item>Wolf aimify</item>
+	 <item>snoopy droid </item>
      </string-array>
  
-     <string-array name="status_bar_logo_values" translatable="false">
+     <string-array name="status_bar_custom_logos_values" translatable="false">
          <item>0</item>
          <item>1</item>
          <item>2</item>
+         <item>3</item>
+	 <item>4</item>
      </string-array>
+ 
 
 <!-- Quick Pulldown -->
      <string-array name="quick_pulldown_entries" translatable="false">

@@ -42,13 +42,10 @@
             android:icon="@drawable/ic_quickqs"
             android:title="@string/quick_qs_category" />
 
-  <com.aim.freedomhub.preference.SystemSettingSwitchPreference
-        android:key="status_bar_logo"
-        android:icon="@drawable/ic_statusbarlogo"
-	android:title="@string/status_bar_logo_title"
-        android:dialogTitle="@string/status_bar_logo_dialog_title"
-        android:entries="@array/status_bar_logo_entries"
-        android:entryValues="@array/status_bar_logo_values"
-        android:defaultValue="1" />
+  <Preference
+            android:key="status_bar_logo"
+            android:fragment="com.aim.freedomhub.categories.statusbar_logos"
+            android:icon="@drawable/ic_statusbarlogo"
+            android:title="@string/statusbarlogo_title" />
 
 </PreferenceScreen>

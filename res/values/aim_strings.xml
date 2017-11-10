@@ -224,5 +224,9 @@
      <string name="listview_overshoot_interpolator">Overshoot</string>
      <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
      <string name="listview_bounce_interpolator">Bounce</string>
-
+     
+     <!-- aimrom custom logos -->
+     <string name="statusbarlogo_title">Custom Logos</string>
+     <string name="status_bar_custom_logos_title">Aimrom Custom logos</string>
+     <string name="status_bar_logo_color_title">Select color</string>
 </resources>

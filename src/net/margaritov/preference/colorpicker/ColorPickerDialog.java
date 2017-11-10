@@ -111,9 +111,9 @@ public class ColorPickerDialog
         mOldColor.setColor(color);
         mColorPicker.setColor(color, true);
 
-        setColorAndClickAction(mWhite, Color.WHITE);
-        setColorAndClickAction(mBlack, Color.BLACK);
-        setColorAndClickAction(mCyan, 0xff33b5e5);
+        setColorAndClickAction(mWhite, 0xff33b5e5);
+        setColorAndClickAction(mBlack, 0xfff1d744);
+        setColorAndClickAction(mCyan, 0xff009688);
         setColorAndClickAction(mRed, Color.RED);
         setColorAndClickAction(mGreen, Color.GREEN);
         setColorAndClickAction(mYellow, Color.YELLOW);
