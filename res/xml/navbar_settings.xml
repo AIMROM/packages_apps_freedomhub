@@ -17,9 +17,14 @@
     android:title="@string/general_navigation_category"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<SwitchPreference
+        android:key="navigation_bar_enabled"
+        android:title="@string/navigation_bar_enabled_title" />
+
 <com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="double_tap_sleep_navbar"
          android:title="@string/double_tap_sleep_navbar"
+	 android:dependency="navigation_bar_enabled"
          android:defaultValue="true" />
 
 </PreferenceScreen>
