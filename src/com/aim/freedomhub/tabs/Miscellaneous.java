@@ -35,16 +35,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
-public class Misc extends SettingsPreferenceFragment implements
+public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-        private static final String TAG = "Misc";
+        private static final String TAG = "Miscellaneous";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.misc_ui);
+        addPreferencesFromResource(R.xml.miscellaneous_ui);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }
@@ -70,4 +70,3 @@ public class Misc extends SettingsPreferenceFragment implements
     }
 
 }
-

@@ -17,12 +17,12 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/misc_category"
+    android:title="@string/miscellaneous_category"
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 <Preference
-         android:key="general_miscs"
+         android:key="general_Miscellaneous"
          android:fragment="com.aim.freedomhub.categories.generalmods"
          android:icon="@drawable/general_mods"
 	 android:title="@string/general_mods" />
