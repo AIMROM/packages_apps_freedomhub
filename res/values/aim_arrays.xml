@@ -15,10 +15,10 @@
 <!-- AIMROM Custom Logos -->
      <string-array name="status_bar_custom_logos_entries" translatable="false">
          <item>Aim Default</item>
-         <item>Wolf lite</item>
-         <item>Wolf round</item>
-         <item>Wolf aimify</item>
-	 <item>snoopy droid </item>
+         <item>Wolf Lite</item>
+         <item>Wolf Round</item>
+         <item>Wolf Aimify</item>
+	 <item>Snoopy Droid </item>
      </string-array>
  
      <string-array name="status_bar_custom_logos_values" translatable="false">
