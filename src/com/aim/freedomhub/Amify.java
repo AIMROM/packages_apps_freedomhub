@@ -61,7 +61,7 @@ import com.aim.freedomhub.tabs.Interface;
 import com.aim.freedomhub.tabs.Lockscreen;
 import com.aim.freedomhub.tabs.Buttons;
 import com.aim.freedomhub.tabs.Recents;
-import com.aim.freedomhub.tabs.Misc;
+import com.aim.freedomhub.tabs.Miscellaneous;
 import com.aim.freedomhub.tabs.Notifications;
 
 public class Amify extends SettingsPreferenceFragment {
@@ -183,7 +183,7 @@ public class Amify extends SettingsPreferenceFragment {
 	    frags[3] = new Notifications();
             frags[4] = new Buttons();
 	    frags[5] = new Recents();
-            frags[6] = new Misc();
+            frags[6] = new Miscellaneous();
         }
 
         @Override
@@ -211,7 +211,7 @@ public class Amify extends SettingsPreferenceFragment {
 		    getString(R.string.notifications_ui),
                     getString(R.string.buttons_category),
                     getString(R.string.recents_category),
-                    getString(R.string.misc_category)};
+                    getString(R.string.miscellaneous_category)};
         return titleString;
     }
 
@@ -243,4 +243,3 @@ public class Amify extends SettingsPreferenceFragment {
     };
 
 }
-

@@ -54,7 +54,7 @@ public class sound extends SettingsPreferenceFragment implements OnPreferenceCha
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.sound_misc);
+        addPreferencesFromResource(R.xml.sound_miscellaneous);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
