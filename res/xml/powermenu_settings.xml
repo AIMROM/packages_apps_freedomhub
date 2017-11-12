@@ -71,4 +71,11 @@
             android:key="powermenu_users"
             android:title="@string/powermenu_users"
             android:defaultValue="false" />
+	
+	<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="powermenu_screenrecord"
+            android:title="@string/powermenu_screenrecord"
+            android:defaultValue="false" />
+ 
+
 </PreferenceScreen>
