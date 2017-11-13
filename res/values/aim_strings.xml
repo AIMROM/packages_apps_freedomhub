@@ -230,4 +230,9 @@
      <string name="statusbarlogo_title">Custom Logos</string>
      <string name="status_bar_custom_logos_title">Aimrom Custom logos</string>
      <string name="status_bar_logo_color_title">Select color</string>
+    
+	<!-- Bholte switch -->
+      <string name="volte_icon_title">Volte icon</string>
+      <string name="volte_icon_summary">Toggle VoLTE icon on statusbar</string>
+
 </resources>
