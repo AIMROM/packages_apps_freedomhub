@@ -60,8 +60,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-import org.com.aim.freedomhub.preference.SystemSettingSwitchPreference;
-import org.com.aim.freedomhub.preference.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.SystemSettingSwitchPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -306,7 +306,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EXTENSIONS;
+        return MetricsEvent.AIM;
     }
 
     @Override

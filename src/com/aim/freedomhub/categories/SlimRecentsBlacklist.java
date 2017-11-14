@@ -128,7 +128,7 @@ public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EXTENSIONS;
+        return MetricsEvent.AIM;
     }
 
     @Override
