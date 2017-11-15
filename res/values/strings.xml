@@ -53,7 +53,7 @@
     <!-- Frags -->
    <string name="general_mods">General Mods</string>
     <!-- Network traffic -->
-    <string name="traffic_title">Traffic indicators</string>
+    <string name="traffic_title">Traffic Indicators</string>
 
     <!-- Recents UI -->
     <string name="recents_ui_title">Recents UI</string>
@@ -64,7 +64,7 @@
 
     <!-- Categories1 -->
     <string name="general_navigation_category">General Navbar</string>
-    <string name="sound_settings">Sound settings</string>
+    <string name="sound_settings">Sound Settings</string>
     <string name="powermenu_torch">Flashlight</string>
 
     <!-- App Ops -->
