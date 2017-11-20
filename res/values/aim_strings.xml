@@ -228,7 +228,7 @@
      
      <!-- aimrom custom logos -->
      <string name="statusbarlogo_title">Custom Logos</string>
-     <string name="status_bar_custom_logos_title">AimRom Custom Logos</string>
+     <string name="status_bar_custom_logos_title">Aim Custom Logos</string>
      <string name="status_bar_logo_color_title">Select Color</string>
     
 	<!-- Bholte switch -->
