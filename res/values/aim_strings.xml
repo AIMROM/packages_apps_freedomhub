@@ -72,11 +72,11 @@
       <string name="headset_connect_player_title">Launch music app on headset connection</string>
       <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string> 
 
-<!-- Statusbar Iten -->
-     <string name="statusbar_items_category">Statusbar items</string>
+<!-- Statusbar Item -->
+     <string name="statusbar_items_category">Statusbar Items</string>
 
 <!-- Power Menu -->
-     <string name="power_menu_title">Power menu</string>
+     <string name="power_menu_title">Power Menu</string>
      <string name="power_menu_title_summary">View or change power menu entries</string>
      <string name="powermenu_screenshot">Screenshot</string>
      <string name="powermenu_power">Power</string>
@@ -102,15 +102,15 @@
      <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
  
 <!-- statusbar logo -->
-<string name="status_bar_logo_title">AIM logo</string>
-<string name="status_bar_logo_dialog_title">AIM logo position</string>
+<string name="status_bar_logo_title">AIM Logo</string>
+<string name="status_bar_logo_dialog_title">AIM Logo Position</string>
      <string name="status_bar_logo_disabled">Disabled</string>
      <string name="status_bar_logo_left">Left</string>
      <string name="status_bar_logo_right">Right</string>
 
         <!-- Quick pull down-->
      <string name="quick_qs_category">Quick Settings</string>
-     <string name="quick_pulldown_title">Quick pulldown</string>
+     <string name="quick_pulldown_title">Quick Pulldown</string>
      <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
      <string name="quick_pulldown_summary_always">Always show Quick Settings on status bar pulldown</string>
      <string name="quick_pulldown_off">Off</string>
