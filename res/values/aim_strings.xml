@@ -26,35 +26,35 @@
     <string name="color_default">Default</string>
 
     <!-- Battery light -->
-    <string name="battery_light_settings">Battery charging light</string>
-    <string name="battery_light_enable">Battery light</string>
+    <string name="battery_light_settings">Battery Charging Light</string>
+    <string name="battery_light_enable">Battery Light</string>
     <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
     <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
     <string name="battery_light_cat">Battery light color when charging</string>
-    <string name="battery_light_low_color">Low battery</string>
-    <string name="battery_light_medium_color">Medium battery</string>
-    <string name="battery_light_full_color">Almost full battery</string>
+    <string name="battery_light_low_color">Low Battery</string>
+    <string name="battery_light_medium_color">Medium Battery</string>
+    <string name="battery_light_full_color">Almost Full Battery</string>
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
 
     <!-- Network traffic -->
-    <string name="network_traffic_title">Network traffic</string>
-    <string name="network_traffic_type">Select net activity type</string>
+    <string name="network_traffic_title">Network Traffic</string>
+    <string name="network_traffic_type">Select Net Activity Type</string>
     <string name="show_network_traffic_up">Uplink</string>
     <string name="show_network_traffic_down">Downlink</string>
     <string name="show_network_traffic_all">Uplink and Downlink</string>
-    <string name="network_traffic_state_title">Show net activity in statusbar</string>
-    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+    <string name="network_traffic_state_title">Show Net Activity in Statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net Activity AutoHide Threshold (KB/s)</string>
 
     <!-- Recents panel settings -->
-    <string name="show_clear_all_recents_button_title">Clear all button</string>
+    <string name="show_clear_all_recents_button_title">Clear All Button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
-    <string name="recents_clear_all_location_title">Clear all location</string>
-    <string name="recents_clear_all_location_top_right">Top right</string>
-    <string name="recents_clear_all_location_top_left">Top left</string>
-    <string name="recents_clear_all_location_top_center">Top center</string>
-    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
-    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
-    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+    <string name="recents_clear_all_location_title">Clear All Location</string>
+    <string name="recents_clear_all_location_top_right">Top Right</string>
+    <string name="recents_clear_all_location_top_left">Top Left</string>
+    <string name="recents_clear_all_location_top_center">Top Center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom Right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom Left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom Center</string>
 
     <!-- navbar doubletap to sleep -->
     <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
@@ -62,11 +62,11 @@
     <string name="double_tap_sleep_lockscreen">Double tap to sleep on lockscreen</string>
 
     <!-- swap volume buton -->
-    <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
-    <string name="sound_category">Sound system</string>
+    <string name="swap_volume_buttons">Swap Volume Buttons Rotation Based</string>
+    <string name="sound_category">Sound System</string>
 	<string name="volume_rocker_category">Volume Rockers</string>
-    <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
-    <string name="volume_keys_control_media_stream_summary">Volume panel will show media volume slider by default</string>
+    <string name="volume_keys_control_media_stream_title">Volume Keys Control Media Volume</string>
+    <string name="volume_keys_control_media_stream_summary">Volume Panel will show Media Volume Slider by Default</string>
     
 <!-- Launch music player when headset is connected -->
       <string name="headset_connect_player_title">Launch music app on headset connection</string>
@@ -81,24 +81,24 @@
      <string name="powermenu_screenshot">Screenshot</string>
      <string name="powermenu_power">Power</string>
      <string name="powermenu_restart">Restart</string>
-     <string name="powermenu_restart_recovery">Advanced restart</string>
+     <string name="powermenu_restart_recovery">Advanced Restart</string>
      <string name="powermenu_airplane">Airplane</string>
      <string name="powermenu_settings">Settings</string>
      <string name="powermenu_lockdown">Lock Down</string>
-     <string name="powermenu_screenrecord">Screenrecord</string>
+     <string name="powermenu_screenrecord">Screen Recorder</string>
      <string name="powermenu_soundpanel">Sound Panel</string>
      <string name="powermenu_users">Users</string>
  
  <!-- Lockscreen battery info indicator  -->
-     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+     <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
      <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
  
    <!-- membar -->
-     <string name="recents_show_membar_title">Memory bar</string>
+     <string name="recents_show_membar_title">Memory Bar</string>
      <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string> 
 
 <!-- Power menu on secure lockscreen -->
-     <string name="lockscreen_power_menu_disabled_title">Power menu when locked</string>
+     <string name="lockscreen_power_menu_disabled_title">Power Menu When Locked</string>
      <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
  
 <!-- statusbar logo -->
@@ -120,15 +120,15 @@
  
 
 <!-- Lockscreen Media art -->
-     <string name="media_art_title">Media cover art</string>
+     <string name="media_art_title">Media Cover Art</string>
      <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
 <!-- MTP Dirty Hack -->
-     <string name="enable_mtp_dirtyhack_title">MTP instead Charging</string>
+     <string name="enable_mtp_dirtyhack_title">MTP Instead Charging</string>
      <string name="enable_mtp_dirtyhack_summary">Enable MTP instead Charging after connect to PC</string>
 
 <!-- QS footer warnings -->
-     <string name="qs_footer_warnings_title">QS footer warnings</string>
+     <string name="qs_footer_warnings_title">QS Footer Warnings</string>
      <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
   	
 <!-- QS rows and columns -->
@@ -143,47 +143,47 @@
      <string name="less_boring_heads_up_summary">Show heads-up only for dialer or messaging app if they are not in foreground</string>
   
 <!-- qstile visibility -->
-<string name="qs_tile_title_visibility_title">Show tiles title</string>
+<string name="qs_tile_title_visibility_title">Show Tiles Title</string>
 
 <!-- Statusbar ticker -->
      <string name="ticker_screen_title">Ticker</string>
-     <string name="ticker_mode_title">Statusbar notification ticker</string>
+     <string name="ticker_mode_title">Statusbar Notification Ticker</string>
      <string name="ticker_disabled">Disabled</string>
-     <string name="ticker_enabled">Notification ticker</string>
-     <string name="ticker_media_enabled">Notification and music ticker</string>
+     <string name="ticker_enabled">Notification Ticker</string>
+     <string name="ticker_media_enabled">Notification and Music Ticker</string>
  
 <!-- recents iconpack support -->
      <string name="recents_icon_pack_title">Icon Pack</string>
      <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
      <string name="no_iconpacks_summary">No icon packs installed</string>
-     <string name="dialog_pick_iconpack_title">Pick icon pack</string>
-     <string name="default_iconpack_title">Default icons</string>
+     <string name="dialog_pick_iconpack_title">Pick a Icon Pack</string>
+     <string name="default_iconpack_title">Default Icons</string>
  
 <!-- MASS ANIMATIONS SQUASH -->
 
 <!-- AOKP custom system animations -->
-      <string name="system_animations">System animations</string>
+      <string name="system_animations">System Animations</string>
 	  <string name="task_open_behind_title">Task open behind animation</string>
      <string name="animation_title">Animations</string>  
-     <string name="system_animation_title">System animations</string>
-     <string name="activity_open_title">Activity open animation</string>
-     <string name="activity_close_title">Activity close animation</string>
-     <string name="task_open_title">Task open animation</string>
-     <string name="task_close_title">Task close animation</string>
-     <string name="task_move_to_front_title">Move to front animation</string>
-     <string name="task_move_to_back_title">Move to back animation</string>
-     <string name="wallpaper_open_title">Wallpaper open animation</string>
-     <string name="wallpaper_close_title">Wallpaper close animation</string>
-     <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
-     <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
-     <string name="animation_duration_title">Animation duration</string>
+     <string name="system_animation_title">System Animations</string>
+     <string name="activity_open_title">Activity Open Animation</string>
+     <string name="activity_close_title">Activity Close Animation</string>
+     <string name="task_open_title">Task Open Animation</string>
+     <string name="task_close_title">Task Close Animation</string>
+     <string name="task_move_to_front_title">Move to Front Animation</string>
+     <string name="task_move_to_back_title">Move to Back Animation</string>
+     <string name="wallpaper_open_title">Wallpaper Open Animation</string>
+     <string name="wallpaper_close_title">Wallpaper Close Animation</string>
+     <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>
+     <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>
+     <string name="animation_duration_title">Animation Duration</string>
      <string name="title_animation_no_override">Prevent app overrides</string>
      <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
      <string name="animation_duration_default">Default</string>
       <string name="aim_toast">Toast</string>
 
 <!-- Toast Animation -->
-     <string name="toast_animation_title">Toast animation</string>
+     <string name="toast_animation_title">Toast Animation</string>
      <string name="toast_none_animation">None</string>
      <string name="toast_default_animation">Default</string>
      <string name="toast_fade_animation">Fade</string>
@@ -204,7 +204,7 @@
       <string name="aim_listview">ListView</string>
 
 <!-- ListView animation -->
-     <string name="listview_animation_title">ListView animation</string>
+     <string name="listview_animation_title">ListView Animation</string>
      <string name="listview_off">Default</string>
      <string name="listview_wave_left">Wave (left)</string>
      <string name="listview_wave_right">Wave (right)</string>
@@ -214,10 +214,10 @@
      <string name="listview_stack_bottom">Stack (bottom)</string>
      <string name="listview_unfold">Unfold</string>
      <string name="listview_fold">Fold</string>
-     <string name="listview_translate_left">Translate (left)</string>
-     <string name="listview_translate_right">Translate (right)</string>
+     <string name="listview_translate_left">Translate (Left)</string>
+     <string name="listview_translate_right">Translate (Right)</string>
      <!-- ListView interpolator -->
-     <string name="listview_interpolator_title">ListView interpolator</string>
+     <string name="listview_interpolator_title">ListView Interpolator</string>
      <string name="listview_accelerate_interpolator">Accelerate</string>
      <string name="listview_decelerate_interpolator">Decelerate</string>
      <string name="listview_accelerate_decelerate_interpolator">Accelerate and decelerate</string>
@@ -228,19 +228,19 @@
      
      <!-- aimrom custom logos -->
      <string name="statusbarlogo_title">Custom Logos</string>
-     <string name="status_bar_custom_logos_title">Aimrom Custom logos</string>
-     <string name="status_bar_logo_color_title">Select color</string>
+     <string name="status_bar_custom_logos_title">AimRom Custom Logos</string>
+     <string name="status_bar_logo_color_title">Select Color</string>
     
 	<!-- Bholte switch -->
-      <string name="volte_icon_title">Volte icon</string>
-      <string name="volte_icon_summary">Toggle VoLTE icon on statusbar</string>
+      <string name="volte_icon_title">Volte Icon</string>
+      <string name="volte_icon_summary">Toggle VoLTE icon on StatusBar</string>
 
 <!-- Hardware keys -->
      <string name="buttons_category">Buttons</string>
  
      <!-- Buttons backlight timeout -->
-     <string name="backlight_timeout_title">Buttons backlight timeout</string>
-     <string name="backlight_timeout_on">Enabled always</string>
+     <string name="backlight_timeout_title">Buttons Backlight Timeout</string>
+     <string name="backlight_timeout_on">Always enable</string>
      <string name="backlight_timeout_3s">3 sec</string>
      <string name="backlight_timeout_default">5 sec (default)</string>
      <string name="backlight_timeout_10s">10 sec</string>
@@ -252,24 +252,24 @@
      <string name="button_brightness_title">Backlight</string>
 
     <!-- Hardware keys -->
-     <string name="hardware_keys_home_key_title">Home button</string>
-     <string name="hardware_keys_menu_key_title">Menu button</string>
-     <string name="hardware_keys_back_key_title">Back button</string>
-     <string name="hardware_keys_short_press_title">Short press action</string>
-     <string name="hardware_keys_long_press_title">Long press action</string>
-     <string name="hardware_keys_double_tap_title">Double tap action</string>
-     <string name="hardware_keys_action_nothing">No action</string>
-     <string name="hardware_keys_action_menu">Open/close menu</string>
-     <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-     <string name="hardware_keys_action_search">Search assistant</string>
-     <string name="hardware_keys_action_voice_search">Voice search</string>
+     <string name="hardware_keys_home_key_title">Home Button</string>
+     <string name="hardware_keys_menu_key_title">Menu Button</string>
+     <string name="hardware_keys_back_key_title">Back Button</string>
+     <string name="hardware_keys_short_press_title">Short Press Action</string>
+     <string name="hardware_keys_long_press_title">Long Press Action</string>
+     <string name="hardware_keys_double_tap_title">Double Tap Action</string>
+     <string name="hardware_keys_action_nothing">No Action</string>
+     <string name="hardware_keys_action_menu">Open/Close Menu</string>
+     <string name="hardware_keys_action_app_switch">Recent Apps Switcher</string>
+     <string name="hardware_keys_action_search">Search Assistant</string>
+     <string name="hardware_keys_action_voice_search">Voice Search</string>
      <string name="hardware_keys_action_in_app_search">In-app search</string>
-     <string name="hardware_keys_action_launch_camera">Launch camera</string>
-     <string name="hardware_keys_action_sleep">Turn screen off</string>
-     <string name="hardware_keys_action_last_app">Last app</string>
-     <string name="hardware_keys_action_split_screen">Split screen</string>
+     <string name="hardware_keys_action_launch_camera">Launch Camera</string>
+     <string name="hardware_keys_action_sleep">Turn Screen Off</string>
+     <string name="hardware_keys_action_last_app">Last App</string>
+     <string name="hardware_keys_action_split_screen">Split Screen</string>
      <string name="hardware_keys_action_screenshot">Screenshot</string>
-     <string name="hardware_keys_action_partial_screenshot">Partial screenshot</string>
+     <string name="hardware_keys_action_partial_screenshot">Partial Screenshot</string>
      <string name="hardware_keys_action_pip">PiP</string> 
 
      <!-- Kill app long press back -->
@@ -277,7 +277,7 @@
      <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 
  <!-- Battery saver color -->
-     <string name="battery_saver_color_title">Warning color</string>
+     <string name="battery_saver_color_title">Warning Color</string>
      <string name="battery_saver_color_summary">Enable orange status - navigation bars when battery saver is activated</string>
 
 <!-- Enabble HW keys -->
