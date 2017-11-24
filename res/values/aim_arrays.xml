@@ -222,7 +222,172 @@
          <item>10</item>
          <item>11</item>
          <item>12</item> 
-	
+	</string-array>
+
+        <!-- Ticker mode -->
+    <string-array name="ticker_mode_entries">
+        <item>@string/ticker_disabled</item>
+        <item>@string/ticker_enabled</item>
+        <item>@string/ticker_media_enabled</item>
+    </string-array>
+
+    <string-array name="ticker_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string-array name="notification_pulse_length_entries" translatable="false">
+        <item>@string/pulse_length_always_on</item>
+        <item>@string/pulse_length_very_short</item>
+        <item>@string/pulse_length_short</item>
+        <item>@string/pulse_length_normal</item>
+        <item>@string/pulse_length_long</item>
+        <item>@string/pulse_length_very_long</item>
+    </string-array>
+
+    <string-array name="notification_pulse_length_values" translatable="false">
+        <item>1</item>
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+    </string-array>
+
+    <string-array name="notification_pulse_speed_entries" translatable="false">
+        <item>@string/pulse_speed_very_fast</item>
+        <item>@string/pulse_speed_fast</item>
+        <item>@string/pulse_speed_normal</item>
+        <item>@string/pulse_speed_slow</item>
+        <item>@string/pulse_speed_very_slow</item>
+    </string-array>
+
+    <string-array name="notification_pulse_speed_values" translatable="false">
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+    </string-array>
+
+    <!-- led color list -->
+    <string-array name="entries_led_colors" translatable="false">
+        <item>@string/led_color_green</item>
+        <item>@string/led_color_red</item>
+    </string-array>
+
+    <string-array name="values_led_colors" translatable="false">
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+    </string-array>
+
+    <!-- DUI -->
+    <string-array name="action_dialog_entries">
+        <item>@string/action_entry_default_action</item>
+        <item>@string/action_entry_custom_action</item>
+        <item>@string/action_entry_select_app</item>
+    </string-array>
+
+    <string-array name="action_dialog_values" translatable="false">
+        <item>@string/action_value_default_action</item>
+        <item>@string/action_value_custom_action</item>
+        <item>@string/action_value_select_app</item>
+    </string-array>
+
+    <string-array name="action_dialog_no_default_entries">
+        <item>@string/action_entry_custom_action</item>
+        <item>@string/action_entry_select_app</item>
+    </string-array>
+
+    <string-array name="action_dialog_no_default_values" translatable="false">
+        <item>@string/action_value_custom_action</item>
+        <item>@string/action_value_select_app</item>
+    </string-array>
+
+    <string-array name="systemui_navbar_mode_entries">
+        <item>@string/default_string</item>
+        <item>@string/smartbar_interface</item>
+        <item>@string/fling_interface</item>
+    </string-array>
+
+    <string-array name="systemui_navbar_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="systemui_navbar_mode_settings">
+        <item>@string/default_settings</item>
+        <item>@string/smartbar_settings_title</item>
+        <item>@string/fling_settings</item>
+    </string-array>
+
+    <string-array name="smartbar_button_animation_entries">
+        <item>@string/smartbar_button_animation_ripple</item>
+        <item>@string/smartbar_button_animation_spring</item>
+        <item>@string/smartbar_button_animation_flip</item>
+        <item>@string/smartbar_button_animation_pixel</item>
+        <item>@string/smartbar_button_animation_pixel_home</item>
+      <item>@string/smartbar_button_animation_pixel_home_ripple</item>
+    </string-array>
+
+    <string-array name="smartbar_button_animation_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="smartbar_ime_action_entries">
+        <item>@string/smartbar_ime_action_none</item>
+        <item>@string/smartbar_ime_action_arrows</item>
+        <item>@string/smartbar_ime_action_switcher</item>
+        <item>@string/smartbar_ime_action_dynamic</item>
+    </string-array>
+
+    <string-array name="smartbar_ime_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="smartbar_longpress_delay_entries">
+        <item>@string/smartbar_longpress_delay_default</item>
+        <item>@string/smartbar_longpress_delay_normal</item>
+        <item>@string/smartbar_longpress_delay_long</item>
+    </string-array>
+
+    <string-array name="smartbar_longpress_delay_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Pulse config -->
+    <string-array name="pulse_render_mode_entries">
+       <item>@string/pulse_render_mode_fading_bars</item>
+       <item>@string/pulse_render_mode_solid_lines</item>
+    </string-array>
+
+    <string-array name="pulse_render_mode_values" translatable="false">
+      <item>0</item>
+      <item>1</item>
+    </string-array>
+
+    <!-- SmartBar context menu position  -->
+    <string-array name="smartbar_context_menu_side_entries">
+        <item>@string/smartbar_right</item>
+        <item>@string/smartbar_left</item>
+    </string-array>
+
+    <string-array name="smartbar_context_menu_side_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
 </resources>
