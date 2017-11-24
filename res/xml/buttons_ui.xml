@@ -42,8 +42,8 @@
 
 
 <Preference
-        android:fragment="com.aim.freedomhub.categories.navbar"
-        android:key="navbar_sleep"
+        android:fragment="com.aim.freedomhub.categories.NavbarSettings"
+        android:key="Dui"
         android:icon="@drawable/ic_navigation"
         android:title="@string/general_navigation_category" />
 
