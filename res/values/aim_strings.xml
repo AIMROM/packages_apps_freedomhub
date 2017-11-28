@@ -56,8 +56,6 @@
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
-    <!-- navbar doubletap to sleep -->
-    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
     <!-- doubletap to sleep on lockscreen -->
     <string name="double_tap_sleep_lockscreen">Double tap to sleep on lockscreen</string>
 
