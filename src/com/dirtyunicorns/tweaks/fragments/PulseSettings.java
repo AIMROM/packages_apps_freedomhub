@@ -24,7 +24,7 @@ import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
-import com.dirtyunicorns.tweaks.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v14.preference.SwitchPreference;
@@ -264,6 +264,6 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+        return MetricsProto.MetricsEvent.AIM;
     }
 }

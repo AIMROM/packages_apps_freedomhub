@@ -54,7 +54,7 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.dirtyunicorns.tweaks.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 
 public class SmartbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -213,7 +213,7 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             case DIALOG_RESET_CONFIRM:
             case DIALOG_RESTORE_PROFILE:
             case DIALOG_SAVE_PROFILE:
-                return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+                return MetricsProto.MetricsEvent.AIM;
             default:
                 return 0;
         }
@@ -445,6 +445,6 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+        return MetricsProto.MetricsEvent.AIM;
     }
 }

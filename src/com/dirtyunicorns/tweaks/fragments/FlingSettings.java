@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import com.dirtyunicorns.tweaks.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.du.ActionConstants;
@@ -370,6 +370,6 @@ public class FlingSettings extends ActionFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+        return MetricsProto.MetricsEvent.AIM;
     }
 }

@@ -33,7 +33,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.dirtyunicorns.tweaks.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.Config;
@@ -194,6 +194,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements Prefere
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+        return MetricsProto.MetricsEvent.AIM;
     }
 }
