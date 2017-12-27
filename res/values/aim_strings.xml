@@ -266,9 +266,6 @@
      <string name="hardware_keys_action_sleep">Turn Screen Off</string>
      <string name="hardware_keys_action_last_app">Last App</string>
      <string name="hardware_keys_action_split_screen">Split Screen</string>
-     <string name="hardware_keys_action_screenshot">Screenshot</string>
-     <string name="hardware_keys_action_partial_screenshot">Partial Screenshot</string>
-     <string name="hardware_keys_action_pip">PiP</string> 
 
      <!-- Kill app long press back -->
      <string name="kill_app_longpress_back">Kill app back button</string>
