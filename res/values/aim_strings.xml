@@ -278,7 +278,4 @@
      <string name="battery_saver_color_title">Warning Color</string>
      <string name="battery_saver_color_summary">Enable orange status - navigation bars when battery saver is activated</string>
 
-<!-- Enabble HW keys -->
-     <string name="enable_hw_keys_title">Enable hardware keys</string>
-
 </resources>
