@@ -466,4 +466,9 @@
     <string name="button_timeout_title">Backlight timeout</string>
     <string name="button_backlight_on_touch_only_title">Button backlight touch</string>
     <string name="button_backlight_on_touch_only_summary">Button backlight will only appear when buttons are pressed rather than on all the time. Timeout still impacts this feature.</string>
+
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
+    <string name="lockscreen_visualizer_summary">Displays a live design on lock screen while music is playing (works with most audio apps)</string>
+
 </resources>
