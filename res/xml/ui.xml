@@ -34,5 +34,9 @@
  			
      </PreferenceCategory>
  	
+    <Preference
+         android:key="smartpixel"
+         android:fragment="com.aim.freedomhub.fragments.SmartPixels"
+         android:title="@string/smartpixels_title"/>
 
 </PreferenceScreen>
