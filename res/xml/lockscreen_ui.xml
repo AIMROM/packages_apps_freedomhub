@@ -52,6 +52,12 @@
         android:key="face_auto_unlock"
         android:title="@string/face_auto_unlock_title"
         android:summary="@string/face_auto_unlock_summary"
+        android:defaultValue="false"/>
+
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="force_ambient_for_media"
+        android:title="@string/force_ambient_for_media_title"
+        android:summary="@string/force_ambient_for_media_summary"
         android:defaultValue="false" />
 
 </PreferenceScreen>

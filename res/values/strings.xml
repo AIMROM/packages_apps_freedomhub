@@ -535,5 +535,8 @@
     <string name="battery_percent_outside">Show near icon</string>
     <string name="battery_percent_inside">Show inside icon</string> -->
 
+    <string name="force_ambient_for_media_title">Show Ambient on new track</string>
+    <string name="force_ambient_for_media_summary">Show an Ambient Display notification when a new track is being played</string>
+
 </resources>
 
