@@ -52,6 +52,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     SwitchPreference mShowPulse;
     ListPreference mRenderMode;
+    SwitchPreference mAutoColor;
     ColorPickerPreference mPulseColor;
     SwitchPreference mLavaLampEnabled;
     CustomSeekBarPreference mCustomDimen;
@@ -89,6 +90,11 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
         PreferenceCategory solidBarsCat = (PreferenceCategory) findPreference("pulse_2");
         solidBarsCat.setEnabled(renderMode == RENDER_STYLE_SOLID_LINES);
+
+        mAutoColor = (SwitchPreference) findPreference("pulse_auto_color");
+        mAutoColor.setChecked(Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_AUTO_COLOR, 0, UserHandle.USER_CURRENT) == 1);
+        mAutoColor.setOnPreferenceChangeListener(this);
 
         int pulseColor = Settings.Secure.getIntForUser(getContentResolver(),
                 Settings.Secure.FLING_PULSE_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
@@ -189,6 +195,11 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             boolean enabled = ((Boolean) newValue).booleanValue();
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.FLING_PULSE_ENABLED, enabled ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference.equals(mAutoColor)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.PULSE_AUTO_COLOR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mPulseColor)) {
             int color = ((Integer) newValue).intValue();
