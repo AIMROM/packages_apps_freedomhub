@@ -487,6 +487,23 @@
     <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="status_bar_show_image">Show image</string>
 
+     Lockscreen Weather
+    <string name="lock_screen_weather_category_title">Lockscreen</string>
+    <string name="lock_screen_show_weather_title">Weather display</string>
+    <string name="lock_screen_show_weather_summaryOn">Weather is shown on Lockscreen</string>
+    <string name="lock_screen_show_weather_summaryOff">Weather is hidden on Lockscreen</string>
+    <string name="lock_screen_show_location_title">Location display</string>
+    <string name="lock_screen_show_location_summaryOn">Location is shown on Lockscreen</string>
+    <string name="lock_screen_show_location_summaryOff">Location is hidden on Lockscreen</string>
+    <string name="lock_screen_weather_condition_icon_title">Condition icon display</string>
+    <string name="lock_screen_weather_condition_icon_summaryOn">Condition icon is shown on Lockscreen</string>
+    <string name="lock_screen_weather_condition_icon_summaryOff">Condition icon is hidden on Lockscreen</string>
+
+    <!--Ambient Weather 
+    <string name="ambient_weather_lockscreen_title">Ambient weather</string>
+    <string name="ambient_weather_lockscreen_summary">Show weather on the lockscreen and when dozing</string>
+
+     Battery Bar 
     <string name="battery_bar_title">Battery bar</string>
     <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
     <string name="battery_bar_location">Battery bar location</string>
@@ -533,7 +550,7 @@
     <string name="show_battery_percent_title">Show battery percentage</string>
     <string name="battery_percent_none">Don\'t show</string>
     <string name="battery_percent_outside">Show near icon</string>
-    <string name="battery_percent_inside">Show inside icon</string> -->
+    <string name="battery_percent_inside">Show inside icon</string> 
 
     <string name="force_ambient_for_media_pref_title">Ambient music ticker</string>
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
@@ -542,6 +559,5 @@
     <string name="force_ambient_for_media_off">Disabled</string>
     <string name="force_ambient_for_media_on">Normal</string>
     <string name="force_ambient_for_media_on_forced">Normal (forced)</string>
-    <string name="force_ambient_for_media_on_forced_clean">Minimal (forced)</string>
+    <string name="force_ambient_for_media_on_forced_clean">Minimal (forced)</string-->
 </resources>
-
