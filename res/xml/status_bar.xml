@@ -49,6 +49,12 @@
             android:title="@string/carrierlabel_title" />
 
          <Preference
+            android:key="weather"
+            android:icon="@drawable/ic_weather"
+            android:fragment="com.aim.freedomhub.categories.Weather"
+            android:title="@string/weather_title" />
+
+         <Preference
             android:key="quick_qs"
             android:fragment="com.aim.freedomhub.categories.quicksettings"
             android:icon="@drawable/ic_quickqs"
