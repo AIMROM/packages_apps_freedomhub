@@ -54,6 +54,13 @@
             android:fragment="com.aim.freedomhub.categories.Weather"
             android:title="@string/weather_title" />
 
+         <PreferenceScreen
+            android:key="battery_bar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.aim.freedomhub.categories.BatteryBar"
+            settings:allowDividerAbove="false" />
+
          <Preference
             android:key="quick_qs"
             android:fragment="com.aim.freedomhub.categories.quicksettings"
