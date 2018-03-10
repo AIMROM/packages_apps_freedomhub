@@ -74,4 +74,10 @@
          android:summary="@string/less_boring_heads_up_summary"
          android:defaultValue="true" />
 
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="qs_quickbar_scroll_enabled"
+        android:title="@string/qqs_scroll_title" 
+        android:summary="@string/qqs_scroll_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
