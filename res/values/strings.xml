@@ -360,4 +360,16 @@
     <string name="qqs_scroll_title">Scroll small QS tiles</string>
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
 
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+
+    <!-- 4G Icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
+    <!-- Data Disabled Icon -->
+    <string name="data_disabled_icon_title">Show data disabled icon</string>
+    <string name="data_disabled_icon_summary">Display the cross next to statusbar when data is disabled</string>
+
 </resources>
