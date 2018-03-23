@@ -55,4 +55,10 @@
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="qs_header"
+        android:icon="@drawable/ic_header"
+        android:fragment="com.aim.freedomhub.categories.QSHeader"
+        android:title="@string/qs_header_title"/>
+
 </PreferenceScreen>
