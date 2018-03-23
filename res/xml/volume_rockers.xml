@@ -18,16 +18,41 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="swap_volume_buttons"
          android:title="@string/swap_volume_buttons"
          android:defaultValue="true" />
 
-<com.aim.freedomhub.preference.SystemSettingSwitchPreference
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="volume_keys_control_media_stream"
          android:title="@string/volume_keys_control_media_stream_title"
          android:summary="@string/volume_keys_control_media_stream_summary"
          android:defaultValue="true" />
+
+     <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="volume_button_music_control"
+        android:summary="@string/volume_rocker_music_controls_summary"
+        android:title="@string/volume_rocker_music_controls_title"
+        android:defaultValue="true" />
+
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="volume_wake_screen"
+        android:summary="@string/volume_rocker_wake_summary"
+        android:title="@string/volume_rocker_wake_title"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:dialogTitle="@string/volume_key_cursor_control_title"
+        android:entries="@array/volume_key_cursor_control_entries"
+        android:entryValues="@array/volume_key_cursor_control_values"
+        android:key="volume_key_cursor_control"
+        android:title="@string/volume_key_cursor_control_title" />
+
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="call_volume_answer"
+        android:title="@string/volume_answer_call_title"
+        android:summary="@string/volume_answer_call_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
 
