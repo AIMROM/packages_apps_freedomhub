@@ -68,4 +68,10 @@
         android:summary="@string/screen_state_toggles_summary_opt"
         android:fragment="com.aim.freedomhub.categories.SuspendActions" />
 
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="disable_fc_notifications"
+            android:title="@string/disable_fc_notifications_title"
+            android:summary="@string/disable_fc_notifications_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
