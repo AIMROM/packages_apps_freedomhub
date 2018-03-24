@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+x<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017 ABC Rom
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -148,7 +148,10 @@
     <string name="ticker_disabled">Disabled</string>
     <string name="ticker_enabled">Notification Ticker</string>
     <string name="ticker_media_enabled">Notification and Music Ticker</string>
- 
+    <string name="ticker_animation_mode_title">Ticker animation</string> 
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
+    <string name="ticker_animation_mode_scroll">Scroll</string>
+
     <!-- Recents iconpack support -->
     <string name="recents_icon_pack_title">Icon Pack</string>
     <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>

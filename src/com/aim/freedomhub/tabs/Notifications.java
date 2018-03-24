@@ -16,12 +16,15 @@
 
 package com.aim.freedomhub.tabs;
 
+import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.content.Context;
+import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -30,6 +33,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
@@ -43,14 +47,19 @@ import android.view.View;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.development.DevelopmentSettings;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
 public class Notifications extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+
     private ListPreference mTickerMode;
     private ListPreference mNoisyNotification;
     private ListPreference mAnnoyingNotification;
+    private SwitchPreference mDisableIM;
+    private ListPreference mTickerAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +78,14 @@ public class Notifications extends SettingsPreferenceFragment implements OnPrefe
         mTickerMode.setValue(String.valueOf(tickerMode));
         mTickerMode.setSummary(mTickerMode.getEntry());
 
+        mTickerAnimation = (ListPreference) findPreference("status_bar_ticker_animation_mode");
+        mTickerAnimation.setOnPreferenceChangeListener(this);
+        int tickerAnimationMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE,
+                1, UserHandle.USER_CURRENT);
+        mTickerAnimation.setValue(String.valueOf(tickerAnimationMode));
+        mTickerAnimation.setSummary(mTickerAnimation.getEntry());
+
         mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
         mNoisyNotification.setOnPreferenceChangeListener(this);
         int mode = Settings.System.getIntForUser(getContentResolver(),
@@ -83,6 +100,13 @@ public class Notifications extends SettingsPreferenceFragment implements OnPrefe
                 Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                 30000, UserHandle.USER_CURRENT);
         mAnnoyingNotification.setValue(String.valueOf(threshold));
+
+        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
+            mDisableIM.setOnPreferenceChangeListener(this);
+            int DisableIM = Settings.System.getInt(getContentResolver(),
+                    DISABLE_IMMERSIVE_MESSAGE, 0);
+            mDisableIM.setChecked(DisableIM != 0);
+        }
     }
 
     @Override
@@ -106,6 +130,14 @@ public class Notifications extends SettingsPreferenceFragment implements OnPrefe
             mTickerMode.setSummary(
                     mTickerMode.getEntries()[index]);
             return true;
+        } else if (preference.equals(mTickerAnimation)) {
+            int tickerAnimationMode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, tickerAnimationMode, UserHandle.USER_CURRENT);
+            int index = mTickerAnimation.findIndexOfValue((String) newValue);
+            mTickerAnimation.setSummary(
+                    mTickerAnimation.getEntries()[index]);
+            return true;
         } else if (preference.equals(mNoisyNotification)) {
             int mode = Integer.parseInt(((String) newValue).toString());
             Settings.System.putIntForUser(getContentResolver(),
@@ -118,6 +150,11 @@ public class Notifications extends SettingsPreferenceFragment implements OnPrefe
             int mode = Integer.parseInt(((String) newValue).toString());
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, mode, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mDisableIM) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE,
+                    value ? 1 : 0);
             return true;
         }
         return false;
