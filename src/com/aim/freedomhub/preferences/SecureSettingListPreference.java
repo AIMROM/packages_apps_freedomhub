@@ -20,21 +20,21 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-public class SystemSettingListPreference extends ListPreference {
+public class SecureSettingListPreference extends ListPreference {
 
-    public SystemSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingListPreference(Context context, AttributeSet attrs) {
+    public SecureSettingListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingListPreference(Context context) {
+    public SecureSettingListPreference(Context context) {
         super(context);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
     }
 
     @Override
