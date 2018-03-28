@@ -107,7 +107,6 @@ public class Notifications extends SettingsPreferenceFragment implements OnPrefe
                     DISABLE_IMMERSIVE_MESSAGE, 0);
             mDisableIM.setChecked(DisableIM != 0);
         }
-    }
 
     @Override
     public int getMetricsCategory() {

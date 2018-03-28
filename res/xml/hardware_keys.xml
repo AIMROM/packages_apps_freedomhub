@@ -27,12 +27,12 @@
         android:key="button_backlight_options_category"
         android:title="@string/button_backlight_options_category" >
 
-        <com.gzr.wolvesden.preference.SystemSettingSwitchPreference
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
             android:key="button_backlight_enable"
             android:title="@string/button_backlight_enable_title"
             android:defaultValue="true"/>
 
-        <com.gzr.wolvesden.preference.SystemSettingSwitchPreference
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
             android:key="custom_button_use_screen_brightness"
             android:title="@string/button_link_brightness"
             android:summary="@string/button_link_brightness_summary"
@@ -40,7 +40,7 @@
             android:dependency="button_backlight_enable"
             android:disableDependentsState="true" />
 
-        <com.gzr.wolvesden.preference.CustomSeekBarPreference
+        <com.aim.freedomhub.preference.CustomSeekBarPreference
             android:key="button_manual_brightness_new"
             android:title="@string/button_manual_brightness"
             android:max="255"
@@ -48,7 +48,7 @@
             android:persistent="false"
             android:dependency="custom_button_use_screen_brightness" />
 
-        <com.gzr.wolvesden.preference.CustomSeekBarPreference
+        <com.aim.freedomhub.preference.CustomSeekBarPreference
             android:key="button_timeout"
             android:title="@string/button_timeout_title"
             android:max="30"
@@ -56,7 +56,7 @@
             android:persistent="false"
             android:dependency="button_backlight_enable" />
 
-        <com.gzr.wolvesden.preference.SystemSettingSwitchPreference
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
             android:key="button_backlight_on_touch_only"
             android:title="@string/button_backlight_on_touch_only_title"
             android:summary="@string/button_backlight_on_touch_only_summary"
@@ -91,7 +91,7 @@
 
     <PreferenceCategory
         android:key="home_key"
-        android:title="@string/hardware_keys_home_key_title" 
+        android:title="@string/hardware_keys_home_key_title" >
 
         <com.aim.freedomhub.preference.ActionPreference
             android:key="hwkeys_button_home_single_tap"

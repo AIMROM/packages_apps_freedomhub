@@ -47,6 +47,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.aim.AIMUtils;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.DUActionUtils;
+import com.aim.freedomhub.dui.ActionFragment;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -55,7 +56,7 @@ import com.android.settings.Utils;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.bootleggers.dumpster.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 
 public class HardwareKeys extends ActionFragment implements
         Preference.OnPreferenceChangeListener {
@@ -99,7 +100,7 @@ public class HardwareKeys extends ActionFragment implements
 
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mManualButtonBrightness = (CustomSeekBarPreference) findPreference(
                 KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);

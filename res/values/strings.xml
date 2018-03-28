@@ -415,32 +415,30 @@
     <string name="screen_state_off_delay_title">Screen Off actions delay</string>
     <string name="screen_state_off_delay_summary">Number of minutes to wait before performing actions after screen off</string>
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
-    <string name="screen_state_on_delay_summary">Number of minutes to wait before performing actions after screen on</string> -->
-
-    <!-- Disable music track title in QS tile -->
+    <string name="screen_state_on_delay_summary">Number of minutes to wait before performing actions after screen on</string>
     <string name="qs_music_tile_track_optional_title">Music tile track title</string>
     <string name="qs_music_tile_track_optional_summary">Show the music track title as the QS tile title</string>
 
-    <!-- Volume rocker music control -->
+    Volume rocker music control
     <string name="volume_rocker_music_controls_title">Playback control</string>
     <string name="volume_rocker_music_controls_summary">When the screen is off, long-pressing the volume keys will seek music tracks</string>
 
-    <!-- Language options - Volume rocker cursor control -->
+    Language options - Volume rocker cursor control
     <string name="cursor_section_header">Cursor</string>
     <string name="volume_key_cursor_control_title">Volume key cursor control</string>
     <string name="volume_key_cursor_control_off">Disabled</string>
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-    <!-- Volume rocker wake -->
+     Volume rocker wake 
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
 
-    <!-- Incall Home button behavior-->
+     Incall Home button behavior
     <string name="allow_incall_home_title">Home button when ringing</string>
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
 
-    <!-- Hardware button navigation -->
+     Hardware button navigation 
     <string name="button_pref_title">Hardware keys</string>
     <string name="hardware_keys_volume_keys_title">Volume rocker</string>
     <string name="hardware_keys_home_key_title">Home button</string>
@@ -457,7 +455,7 @@
     <string name="hardware_keys_category">Hardware keys</string>
     <string name="hardware_keys_disable_title">Disable hardware keys</string>
 
-    <!-- Button brightness -->
+     Button brightness
     <string name="button_backlight_options_category">Backlight options</string>
     <string name="button_backlight_enable_title">Allow button backlight</string>
     <string name="button_link_brightness">Link to screen brightness</string>
@@ -466,12 +464,10 @@
     <string name="button_timeout_title">Backlight timeout</string>
     <string name="button_backlight_on_touch_only_title">Button backlight touch</string>
     <string name="button_backlight_on_touch_only_summary">Button backlight will only appear when buttons are pressed rather than on all the time. Timeout still impacts this feature.</string>
-
-    <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
     <string name="lockscreen_visualizer_summary">Displays a live design on lock screen while music is playing (works with most audio apps)</string>
 
-    <!-- Weather - OmniJaws Settings -->
+     Weather - OmniJaws Settings  
     <string name="weather_title">Statusbar Weather</string>
     <string name="weather_config_title">Service settings</string>
     <string name="weather_config_summary"></string>
@@ -480,7 +476,7 @@
     <string name="weather_icon_pack_title">Condition icon pack</string>
     <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
 
-    <!-- StatusBar weather settings -->
+     StatusBar weather settings
     <string name="statusbar_weather_title">Status bar weather</string>
     <string name="statusbar_weather_summary">Configure from QS settings/Weather</string>
     <string name="statusbar_weather_dialog_title">Status bar weather style</string>
@@ -491,7 +487,6 @@
     <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="status_bar_show_image">Show image</string>
 
-    <!-- Battery Bar -->
     <string name="battery_bar_title">Battery bar</string>
     <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
     <string name="battery_bar_location">Battery bar location</string>
@@ -514,23 +509,16 @@
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
 
-    <!-- Disabling FC notifications -->
     <string name="disable_fc_notifications_title">Diable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 
-    <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force Expanded Notifications</string>
     <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
 
-    <!-- Disabling immersive mode messages -->
     <string name="disable_immersive_message_title">Disable immersive mode messages</string>
     <string name="disable_immersive_message_summary">Hide all messages shown in immersive mode</string>
-
-    <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Kill app button</string>
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
-
-    <!-- Battery Styles -->
     <string name="status_bar_battery_style_title">Statusbar battery style</string>
     <string name="battery_style_title">Battery icon style</string>
     <string name="battery_style_port">Portrait</string>
@@ -545,5 +533,7 @@
     <string name="show_battery_percent_title">Show battery percentage</string>
     <string name="battery_percent_none">Don\'t show</string>
     <string name="battery_percent_outside">Show near icon</string>
-    <string name="battery_percent_inside">Show inside icon</string>
+    <string name="battery_percent_inside">Show inside icon</string> -->
+
 </resources>
+
