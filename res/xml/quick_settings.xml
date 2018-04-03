@@ -76,6 +76,7 @@
 
     <com.aim.freedomhub.preference.SystemSettingSwitchPreference
         android:key="qs_quickbar_scroll_enabled"
+        android:icon="@drawable/ic_gesture_swipe_left"
         android:title="@string/qqs_scroll_title" 
         android:summary="@string/qqs_scroll_summary"
         android:defaultValue="false"/>

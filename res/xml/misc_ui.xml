@@ -39,18 +39,9 @@
 	 android:fragment="com.aim.freedomhub.categories.sound"
          android:title="@string/sound_settings" />
 
-     <Preference
-         android:key="wakelock_blocker"
-         android:fragment="com.aim.freedomhub.categories.WakeLockBlocker"
-         android:title="@string/wakelock_blocker_title" />
-
-     <Preference
-         android:id="@+id/alarm_blocker"
-         android:fragment="com.aim.freedomhub.categories.AlarmBlocker"
-         android:title="@string/alarm_blocker" />
-
     <com.aim.freedomhub.preference.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
+        android:icon="@drawable/ic_three_finger_gesture"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
@@ -68,10 +59,20 @@
         android:summary="@string/screen_state_toggles_summary_opt"
         android:fragment="com.aim.freedomhub.categories.SuspendActions" />
 
-        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
-            android:key="disable_fc_notifications"
-            android:title="@string/disable_fc_notifications_title"
-            android:summary="@string/disable_fc_notifications_summary"
-            android:defaultValue="false" />
+    <Preference
+        android:key="wakelock_blocker"
+        android:fragment="com.aim.freedomhub.categories.WakeLockBlocker"
+        android:title="@string/wakelock_blocker_title" />
+
+    <Preference
+        android:id="@+id/alarm_blocker"
+        android:fragment="com.aim.freedomhub.categories.AlarmBlocker"
+        android:title="@string/alarm_blocker" />
+
+    <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
