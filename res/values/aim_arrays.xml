@@ -22,6 +22,19 @@
 	 <item>Wolf Abstract </item>     
 	 <item>Wolf Oreo</item>
 	 <item>Wolf Warrier</item>
+         <item>Android</item>
+         <item>Apple</item>
+         <item>iOS</item>
+         <item>Emoticon</item>
+         <item>Emoticon cool</item>
+         <item>Emoticon dead</item>
+         <item>Emoticon devil</item>
+         <item>Emoticon happy</item>
+         <item>Blackberry</item>
+         <item>Cake</item>
+         <item>Biohazard</item>
+         <item>Linux</item>
+         <item>Ying-Yang</item>
       </string-array>
  
      <string-array name="status_bar_custom_logos_values" translatable="false">
@@ -33,6 +46,19 @@
 	 <item>5</item>
 	 <item>6</item>
 	 <item>7</item>
+         <item>8</item>
+         <item>9</item>
+         <item>10</item>
+         <item>11</item>
+         <item>12</item>
+         <item>13</item>
+         <item>14</item>
+         <item>15</item>
+         <item>16</item>
+         <item>17</item>
+         <item>18</item>
+         <item>19</item>
+         <item>20</item>
      </string-array>
  
 
