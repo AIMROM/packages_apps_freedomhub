@@ -62,6 +62,10 @@ public class Animations extends SettingsPreferenceFragment implements Preference
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
 
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
@@ -79,6 +83,7 @@ public class Animations extends SettingsPreferenceFragment implements Preference
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
     private ListPreference mScreenOffAnimation;
+    private ListPreference mScrollingCachePref;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -207,6 +212,11 @@ public class Animations extends SettingsPreferenceFragment implements Preference
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -216,6 +226,7 @@ public class Animations extends SettingsPreferenceFragment implements Preference
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mActivityOpenPref) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
@@ -298,6 +309,11 @@ public class Animations extends SettingsPreferenceFragment implements Preference
                     Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
             int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+            }
             return true;
         }
         preference.setSummary(getProperSummary(preference));
