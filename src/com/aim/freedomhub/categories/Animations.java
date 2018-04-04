@@ -318,6 +318,12 @@ public class Animations extends SettingsPreferenceFragment implements Preference
         return mAnimationsStrings[mNum];
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, 0);
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.AIM;
