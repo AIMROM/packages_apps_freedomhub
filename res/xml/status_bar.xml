@@ -107,10 +107,15 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
-         <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+         <com.aim.freedomhub.preference.SystemSettingSwitchPreference
             android:key="status_bar_brightness_control"
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
+
+         <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_sleep_gesture_title"
+            android:defaultValue="true" />
 
 </PreferenceScreen>

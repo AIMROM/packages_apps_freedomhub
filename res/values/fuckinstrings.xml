@@ -232,4 +232,8 @@
     <string name="qs_show_mini_title">Mini mode</string>
     <string name="qs_show_mini_summary">Make the header images smaller</string>
 
+    <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
+
+    <string name="status_bar_quick_qs_pulldown">Pulldown statusbar from right side to show QS panel</string>
+
  </resources>
