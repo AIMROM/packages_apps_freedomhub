@@ -229,4 +229,7 @@
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
 
+    <string name="qs_show_mini_title">Mini mode</string>
+    <string name="qs_show_mini_summary">Make the header images smaller</string>
+
  </resources>
