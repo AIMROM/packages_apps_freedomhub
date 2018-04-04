@@ -45,11 +45,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class Animations extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
-	
+
     private static final String ACTIVITY_OPEN = "activity_open";
     private static final String ACTIVITY_CLOSE = "activity_close";
     private static final String TASK_OPEN = "task_open";
-	private static final String TASK_OPEN_BEHIND = "task_open_behind";
+    private static final String TASK_OPEN_BEHIND = "task_open_behind";
     private static final String TASK_CLOSE = "task_close";
     private static final String TASK_MOVE_TO_FRONT = "task_move_to_front";
     private static final String TASK_MOVE_TO_BACK = "task_move_to_back";
@@ -58,14 +58,15 @@ public class Animations extends SettingsPreferenceFragment implements Preference
     private static final String WALLPAPER_CLOSE = "wallpaper_close";
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
-	private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
-	ListPreference mTaskOpenBehind;
+    ListPreference mTaskOpenBehind;
     ListPreference mTaskClosePref;
     ListPreference mTaskMoveToFrontPref;
     ListPreference mTaskMoveToBackPref;
@@ -74,29 +75,30 @@ public class Animations extends SettingsPreferenceFragment implements Preference
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
     SwitchPreference mAnimNoOverride;
-	private ListPreference mToastAnimation;
+    private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-	
+    private ListPreference mScreenOffAnimation;
+
     private int[] mAnimations;
     private String[] mAnimationsStrings;
     private String[] mAnimationsNum;
-	
+
     protected Context mContext;
 
     protected ContentResolver mContentRes;
-	
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.animation_settings);
-		
+
 		final ContentResolver resolver = getContentResolver();
-		
+
         mContext = getActivity().getApplicationContext();
 
         mContentRes = getActivity().getContentResolver();
-		
+
         mAnimations = AwesomeAnimationHelper.getAnimationsList();
         int animqty = mAnimations.length;
         mAnimationsStrings = new String[animqty];
@@ -127,7 +129,7 @@ public class Animations extends SettingsPreferenceFragment implements Preference
         mTaskOpenPref.setSummary(getProperSummary(mTaskOpenPref));
         mTaskOpenPref.setEntries(mAnimationsStrings);
         mTaskOpenPref.setEntryValues(mAnimationsNum);
-		
+
         mTaskOpenBehind = (ListPreference) findPreference(TASK_OPEN_BEHIND);
         mTaskOpenBehind.setOnPreferenceChangeListener(this);
         mTaskOpenBehind.setSummary(getProperSummary(mTaskOpenBehind));
@@ -175,7 +177,7 @@ public class Animations extends SettingsPreferenceFragment implements Preference
         mWallpaperIntraClose.setSummary(getProperSummary(mWallpaperIntraClose));
         mWallpaperIntraClose.setEntries(mAnimationsStrings);
         mWallpaperIntraClose.setEntryValues(mAnimationsNum);
-		
+
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
@@ -198,13 +200,20 @@ public class Animations extends SettingsPreferenceFragment implements Preference
         mListViewInterpolator.setOnPreferenceChangeListener(this);
         mListViewInterpolator.setEnabled(listviewanimation > 0);
 
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffStyle = Settings.System.getInt(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
     }
-	
+
     @Override
     public void onResume() {
         super.onResume();
     }
-	
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mActivityOpenPref) {
@@ -282,6 +291,13 @@ public class Animations extends SettingsPreferenceFragment implements Preference
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mScreenOffAnimation) {
+            String value = (String) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
+            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
         }
         preference.setSummary(getProperSummary(preference));
