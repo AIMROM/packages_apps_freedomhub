@@ -25,6 +25,11 @@
            android:title="@string/title_animation_no_override"
            android:summary="@string/summary_animation_no_override" />
 
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="system_default_animation"
+            android:title="@string/system_default_animation_title"
+            android:summary="@string/system_default_animation_summary" />
+
        <ListPreference
            android:key="activity_open"
            android:title="@string/activity_open_title" />
