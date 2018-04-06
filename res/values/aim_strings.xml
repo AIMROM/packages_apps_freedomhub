@@ -179,6 +179,7 @@
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
     <string name="aim_toast">Toast</string>
+    <string name="animation_duration_custom">Custom</string>
 
     <!-- Toast Animation -->
     <string name="toast_animation_title">Toast Animation</string>
