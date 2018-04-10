@@ -134,10 +134,6 @@
     <string name="qs_rows_landscape_title">Tiles Rows on Landscape</string>
     <string name="qs_columns_portrait_title">Tiles Columns on Portrait</string>
     <string name="qs_columns_landscape_title">Tiles Columns on Landscape</string>
-  	
-    <!-- Heads up options -->
-    <string name="less_boring_heads_up_title">Heads-Up Less Intrusive</string>
-    <string name="less_boring_heads_up_summary">Show heads-up only for dialer or messaging app if they are not in foreground</string>
   
     <!-- qstile visibility -->
     <string name="qs_tile_title_visibility_title">Show Tiles Title</string>

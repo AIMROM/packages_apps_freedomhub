@@ -66,12 +66,6 @@
          android:title="@string/qs_footer_warnings_title"
          android:summary="@string/qs_footer_warnings_summary"
          android:defaultValue="true" />
- 	
-<com.aim.freedomhub.preference.SystemSettingSwitchPreference
-         android:key="less_boring_heads_up"
-         android:title="@string/less_boring_heads_up_title"
-         android:summary="@string/less_boring_heads_up_summary"
-         android:defaultValue="true" />
 
     <com.aim.freedomhub.preference.SystemSettingSwitchPreference
         android:key="qs_quickbar_scroll_enabled"
