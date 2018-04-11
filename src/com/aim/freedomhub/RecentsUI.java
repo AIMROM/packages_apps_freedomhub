@@ -93,8 +93,6 @@ public class RecentsUI extends SettingsPreferenceFragment implements OnPreferenc
     private ListView mListView;
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
-    private SwitchPreference mSlimToggle;
-    private Preference mStockIconPacks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -113,15 +111,6 @@ public class RecentsUI extends SettingsPreferenceFragment implements OnPreferenc
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
-        mStockIconPacks = (Preference) findPreference("recents_icon_pack");
-        mSlimToggle = (SwitchPreference) findPreference("use_slim_recents");
-        boolean enabled = Settings.System.getIntForUser(
-                resolver, Settings.System.USE_SLIM_RECENTS, 0,
-                UserHandle.USER_CURRENT) == 1;
-        mSlimToggle.setChecked(enabled);
-        mStockIconPacks.setEnabled(!enabled);
-        mSlimToggle.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -136,7 +125,6 @@ public class RecentsUI extends SettingsPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mRecentsClearAllLocation) {
             int location = Integer.valueOf((String) objValue);
             int index = mRecentsClearAllLocation.findIndexOfValue((String) objValue);
@@ -144,21 +132,13 @@ public class RecentsUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
         return true;
-        } else if (preference == mSlimToggle) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.USE_SLIM_RECENTS, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mSlimToggle.setChecked(value);
-            mStockIconPacks.setEnabled(!value);
-            return true;
         }
         return false;
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mStockIconPacks) {
+        if (preference == findPreference("recents_icon_pack")) {
             pickIconPack(getContext());
             return true;
         }
