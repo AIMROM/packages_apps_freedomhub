@@ -162,4 +162,13 @@
             android:summary="@string/qs_footer_settings_summary"
             android:defaultValue="true"/>
 
+        <!-- QS panel opacity -->
+        <com.aim.freedomhub.preferences.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="0"
+            settings:units="" />
+
 </PreferenceScreen>
