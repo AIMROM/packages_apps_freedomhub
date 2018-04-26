@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2018 The AIMROM
+ * Copyright (C) 2017-2018 AIMROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import android.provider.Settings;
 import android.util.Log;
 import android.content.Context;
 import android.content.om.IOverlayManager;
@@ -42,11 +43,13 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-public class ThemesFragment extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class AimThemes extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
 
     private static final String KEY_THEME_COLOR = "theme_color";
     private static final String KEY_THEME_BASE = "theme_base";
+    private static final String KEY_SYSTEM_THEME_STYLE = "system_theme_style";
+
     private static final String accentPrefix = "com.aim.overlay.accent";
     private static final String basePrefix = "com.aim.overlay.base";
 
@@ -54,6 +57,7 @@ public class ThemesFragment extends SettingsPreferenceFragment implements Prefer
     private PackageManager mPackageManager;
     private ListPreference mSystemThemeColor;
     private ListPreference mSystemThemeBase;
+    private ListPreference mSystemThemeStyle;
     private Context mContext;
 
     @Override
@@ -67,6 +71,13 @@ public class ThemesFragment extends SettingsPreferenceFragment implements Prefer
         mContext = getContext();
         setupBasePreference();
         setupAccentPreference();
+        mSystemThemeStyle = (ListPreference) findPreference(KEY_SYSTEM_THEME_STYLE);
+        int systemThemeStyle = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSTEM_THEME_STYLE, 0);
+        int valueIndex = mSystemThemeStyle.findIndexOfValue(String.valueOf(systemThemeStyle));
+        mSystemThemeStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mSystemThemeStyle.setSummary(mSystemThemeStyle.getEntry());
+        mSystemThemeStyle.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -86,6 +97,7 @@ public class ThemesFragment extends SettingsPreferenceFragment implements Prefer
             if (Objects.equal(objValue, current)) {
                 return true;
             }
+            disableOverlaysFromPrefix(basePrefix);
             try {
                 mOverlayService.setEnabled((String) objValue, true, UserHandle.myUserId());
             } catch (RemoteException e) {
@@ -96,12 +108,18 @@ public class ThemesFragment extends SettingsPreferenceFragment implements Prefer
             if (Objects.equal(objValue, current)) {
                 return true;
             }
+            disableOverlaysFromPrefix(accentPrefix);
             try {
                 mOverlayService.setEnabled((String) objValue, true, UserHandle.myUserId());
             } catch (RemoteException e) {
                 return false;
             }
 
+        } else if (preference == mSystemThemeStyle) {
+            String value = (String) objValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_THEME_STYLE, Integer.valueOf(value));
+            int valueIndex = mSystemThemeStyle.findIndexOfValue(value);
+            mSystemThemeStyle.setSummary(mSystemThemeStyle.getEntries()[valueIndex]);
         }
         return true;
 
@@ -173,6 +191,18 @@ public class ThemesFragment extends SettingsPreferenceFragment implements Prefer
         mSystemThemeColor.setSummary(themeLabel);
         mSystemThemeColor.setValue(theme);
         mSystemThemeColor.setOnPreferenceChangeListener(this);
+    }
+
+    private void disableOverlaysFromPrefix(String prefix)
+    {
+        mPackageManager = mContext.getPackageManager();
+        String[] pkgs = getAvailableThemes(prefix);
+        for (int i = 0; i < pkgs.length; i++) {
+            try {
+                mOverlayService.setEnabled(pkgs[i], false, UserHandle.myUserId());
+            } catch (RemoteException e) {
+            }
+        }
     }
 
     @Override
