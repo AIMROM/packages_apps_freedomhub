@@ -44,4 +44,26 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="corners_category"
+        android:title="@string/corners_category" >
+
+        <com.aim.freedomhub.preferences.CustomSeekBarPreference
+	        android:key="sysui_rounded_size"
+	        android:title="@string/corner_radius"
+	        android:max="25"
+	        settings:min="0"
+	        settings:units=""
+	        android:persistent="false" />
+
+        <com.aim.freedomhub.preferences.CustomSeekBarPreference
+	        android:key="sysui_rounded_content_padding"
+	        android:title="@string/content_padding"
+	        android:max="10"
+	        settings:min="0"
+	        settings:units=""
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -34,6 +34,7 @@ import android.content.om.OverlayInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.support.v7.preference.ListPreference;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ import libcore.util.Objects;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.aim.freedomhub.preferences.CustomSeekBarPreference;
 
 public class AimThemes extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
@@ -49,6 +51,9 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
     private static final String KEY_THEME_COLOR = "theme_color";
     private static final String KEY_THEME_BASE = "theme_base";
     private static final String KEY_SYSTEM_THEME_STYLE = "system_theme_style";
+
+    private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+    private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
 
     private static final String accentPrefix = "com.aim.overlay.accent";
     private static final String basePrefix = "com.aim.overlay.base";
@@ -59,6 +64,9 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
     private ListPreference mSystemThemeBase;
     private ListPreference mSystemThemeStyle;
     private Context mContext;
+
+    private CustomSeekBarPreference mCornerRadius;
+    private CustomSeekBarPreference mContentPadding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,29 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
         mSystemThemeStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
         mSystemThemeStyle.setSummary(mSystemThemeStyle.getEntry());
         mSystemThemeStyle.setOnPreferenceChangeListener(this);
+
+        Resources res = null;
+        try {
+            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // Rounded Corner Radius
+        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
+        mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        int cornerRadius = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, res.getDimensionPixelSize(resourceIdRadius));
+        mCornerRadius.setValue(cornerRadius / 1);
+        mCornerRadius.setOnPreferenceChangeListener(this);
+
+        // Rounded Content Padding
+        int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
+        mContentPadding = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        int contentPadding = Settings.Secure.getInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, res.getDimensionPixelSize(resourceIdPadding));
+        mContentPadding.setValue(contentPadding / 1);
+        mContentPadding.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -120,9 +151,16 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
             Settings.System.putInt(getContentResolver(), Settings.System.SYSTEM_THEME_STYLE, Integer.valueOf(value));
             int valueIndex = mSystemThemeStyle.findIndexOfValue(value);
             mSystemThemeStyle.setSummary(mSystemThemeStyle.getEntries()[valueIndex]);
+        } else if (preference == mCornerRadius) {
+            int value = (Integer) objValue;
+            Settings.Secure.putInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1);
+        } else if (preference == mContentPadding) {
+            int value = (Integer) objValue;
+            Settings.Secure.putInt(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
         }
         return true;
-
     }
 
     private void setupBasePreference()
