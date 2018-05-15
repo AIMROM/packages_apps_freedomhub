@@ -39,7 +39,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class quicksettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
-	
+    
+    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
+    private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsRowsPort;
     private CustomSeekBarPreference mQsRowsLand;
     private CustomSeekBarPreference mQsColumnsPort;
@@ -75,6 +77,12 @@ public class quicksettings extends SettingsPreferenceFragment implements Prefere
         mQsColumnsLand = (CustomSeekBarPreference) findPreference("qs_columns_landscape");
         mQsColumnsLand.setValue(value);
         mQsColumnsLand.setOnPreferenceChangeListener(this);
+
+	 mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
+         int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
+                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+         mQsPanelAlpha.setValue(qsPanelAlpha);
+         mQsPanelAlpha.setOnPreferenceChangeListener(this);
     }
 	
     @Override
@@ -104,6 +112,12 @@ public class quicksettings extends SettingsPreferenceFragment implements Prefere
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
             return true;
+	} else if (preference == mQsPanelAlpha) {
+             int bgAlpha = (Integer) objValue;
+             Settings.System.putIntForUser(getContentResolver(),
+                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
+                     UserHandle.USER_CURRENT);
+             return true;
         }
         return false;
     }
