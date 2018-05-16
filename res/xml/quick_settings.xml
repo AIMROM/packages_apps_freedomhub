@@ -88,5 +88,11 @@
          android:defaultValue="0xffffff"
          android:persistent="false" />
  
+<com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+         android:key="qs_panel_bg_use_wall"
+         android:title="@string/qs_bg_wall_title"
+         android:summary="@string/qs_bg_wall_summary"
+         android:defaultValue="false"/>
+ 
 
 </PreferenceScreen>
