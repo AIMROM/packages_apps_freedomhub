@@ -44,6 +44,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.aim.freedomhub.preference.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.SystemSettingSwitchPreference;
 
 public class AimThemes extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
@@ -57,6 +58,7 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
 
     private static final String accentPrefix = "com.aim.overlay.accent";
     private static final String basePrefix = "com.aim.overlay.base";
+    private static final String SETTINGS_ICON_TINT = "settings_icon_tint";
 
     private OverlayManager mOverlayService;
     private PackageManager mPackageManager;
@@ -67,6 +69,7 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
 
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
+    private SystemSettingSwitchPreference mIconTint;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -109,6 +112,12 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, res.getDimensionPixelSize(resourceIdPadding));
         mContentPadding.setValue(contentPadding / 1);
         mContentPadding.setOnPreferenceChangeListener(this);
+        mIconTint = (SystemSettingSwitchPreference) findPreference(SETTINGS_ICON_TINT);
+        if (isDark()) {
+            mIconTint.setEnabled(true);
+        } else {
+            mIconTint.setEnabled(false);
+        }
     }
 
     @Override
@@ -159,6 +168,11 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
             int value = (Integer) objValue;
             Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
+        }
+        if (isDark()) {
+            mIconTint.setEnabled(true);
+        } else {
+            mIconTint.setEnabled(false);
         }
         return true;
     }
@@ -290,6 +304,17 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
         return new String[0];
     }
 
+    public boolean isDark() {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = mOverlayService.getOverlayInfo("com.android.system.theme.dark",
+                    UserHandle.myUserId());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+    }
+
     public static class OverlayManager {
         private final IOverlayManager mService;
 
@@ -311,6 +336,11 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
         public List<OverlayInfo> getOverlayInfosForTarget(String target, int userId)
                 throws RemoteException {
             return mService.getOverlayInfosForTarget(target, userId);
+        }
+
+        public OverlayInfo getOverlayInfo(String target, int userId)
+                throws RemoteException {
+            return mService.getOverlayInfo(target, userId);
         }
     }
 }

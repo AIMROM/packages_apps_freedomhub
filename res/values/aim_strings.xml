@@ -309,5 +309,7 @@
      <string name="qs_bg_wall_title">Use Wallpaper colors</string>
      <string name="qs_bg_wall_summary">Set QS background color from Wallpaper</string>
 
+<string name="settings_icon_tint_title">Tint settings icons</string>
+     <string name="settings_icon_tint_summary">Apply accent colors to settings icons</string>
 
 </resources>

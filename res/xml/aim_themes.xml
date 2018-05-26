@@ -42,6 +42,12 @@
              android:entryValues="@array/system_theme_style_values" />
   
 
+        <com.aim.freedomhub.preference.SystemSettingSwitchPreference
+            android:key="settings_icon_tint"
+            android:title="@string/settings_icon_tint_title"
+            android:summary="@string/settings_icon_tint_summary"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
