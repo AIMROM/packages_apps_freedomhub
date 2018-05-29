@@ -114,7 +114,7 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
         mContentPadding.setValue(contentPadding / 1);
         mContentPadding.setOnPreferenceChangeListener(this);
         mIconTint = (SystemSettingSwitchPreference) findPreference(SETTINGS_ICON_TINT);
-        if (isDark()) {
+        if (isDarkOrBlack()) {
             mIconTint.setEnabled(true);
         } else {
             mIconTint.setEnabled(false);
@@ -170,7 +170,7 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
             Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, value * 1);
         }
-        if (isDark()) {
+        if (isDarkOrBlack()) {
             mIconTint.setEnabled(true);
         } else {
             mIconTint.setEnabled(false);
@@ -305,15 +305,19 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
         return new String[0];
     }
 
-    public boolean isDark() {
-        OverlayInfo themeInfo = null;
+    public boolean isDarkOrBlack() {
+        OverlayInfo themeInfoDark = null;
+        OverlayInfo themeInfoBlack = null;
         try {
-            themeInfo = mOverlayService.getOverlayInfo("com.android.system.theme.dark",
+            themeInfoDark = mOverlayService.getOverlayInfo("com.android.system.theme.dark",
+                    UserHandle.myUserId());
+            themeInfoBlack = mOverlayService.getOverlayInfo("com.android.system.theme.black",
                     UserHandle.myUserId());
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        return themeInfo != null && themeInfo.isEnabled();
+        return (themeInfoDark != null && themeInfoDark.isEnabled()) ||
+            (themeInfoBlack != null && themeInfoBlack.isEnabled());
     }
 
     public static class OverlayManager {
