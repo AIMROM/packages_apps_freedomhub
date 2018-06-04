@@ -21,6 +21,18 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+<PreferenceCategory
+         android:key="themes_cat"
+         android:title="@string/aim_themes">
+
+     <PreferenceScreen
+         android:key="theme_settings"
+         android:title="@string/themes_menu_title"
+         android:summary="@string/themes_menu_summary"
+         android:fragment="com.aim.freedomhub.categories.AimThemes"
+         android:icon="@drawable/ic_themes" />
+
+     </PreferenceCategory>
 
 <PreferenceCategory
          android:key="animation_cat"
