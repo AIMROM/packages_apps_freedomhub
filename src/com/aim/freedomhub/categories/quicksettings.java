@@ -16,6 +16,8 @@
 
 package com.aim.freedomhub.categories;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import android.graphics.Color;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -41,6 +43,8 @@ import java.util.List;
 public class quicksettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
+    private static final String QS_PANEL_COLOR = "qs_panel_color";
+    private ColorPickerPreference mQsPanelColor;
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsRowsPort;
     private CustomSeekBarPreference mQsRowsLand;
@@ -83,6 +87,12 @@ public class quicksettings extends SettingsPreferenceFragment implements Prefere
                  Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
          mQsPanelAlpha.setValue(qsPanelAlpha);
          mQsPanelAlpha.setOnPreferenceChangeListener(this);
+
+	mQsPanelColor = (ColorPickerPreference) findPreference(QS_PANEL_COLOR);
+         int QsColor = Settings.System.getIntForUser(getContentResolver(),
+                 Settings.System.QS_PANEL_BG_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
+         mQsPanelColor.setNewPreviewColor(QsColor);
+         mQsPanelColor.setOnPreferenceChangeListener(this);
     }
 	
     @Override
@@ -116,6 +126,12 @@ public class quicksettings extends SettingsPreferenceFragment implements Prefere
              int bgAlpha = (Integer) objValue;
              Settings.System.putIntForUser(getContentResolver(),
                      Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
+                     UserHandle.USER_CURRENT);
+             return true;
+	} else if (preference == mQsPanelColor) {
+             int bgColor = (Integer) objValue;
+             Settings.System.putIntForUser(getContentResolver(),
+                     Settings.System.QS_PANEL_BG_COLOR, bgColor,
                      UserHandle.USER_CURRENT);
              return true;
         }
