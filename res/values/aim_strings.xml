@@ -303,6 +303,7 @@
      <string name="system_theme_style_auto">Wallpaper based</string>
      <string name="system_theme_style_light">Light style</string>
      <string name="system_theme_style_dark">Dark style</string>
+     <string name="system_theme_style_black">Black style</string>
  
 <!-- QuickSettings Panel Transparency -->
      <string name="qs_panel_alpha_title">Transparency</string>
