@@ -53,8 +53,15 @@
     <PreferenceCategory
         android:key="corners_category"
         android:title="@string/corners_category" >
+  
+	<com.aim.freedomhub.preference.SecureSettingSwitchPreference
+             android:key="sysui_rounded_fwvals"
+             android:title="@string/corner_fwvals"
+             android:summary="@string/corner_fwvals_summary"
+             android:defaultValue="true"
+             android:disableDependentsState="true" />
 
-        <com.aim.freedomhub.preference.CustomSeekBarPreference
+       <com.aim.freedomhub.preference.CustomSeekBarPreference
 	        android:key="sysui_rounded_size"
 	        android:title="@string/corner_radius"
 	        android:max="25"
