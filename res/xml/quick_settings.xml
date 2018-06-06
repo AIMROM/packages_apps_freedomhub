@@ -74,7 +74,7 @@
         android:summary="@string/qqs_scroll_summary"
         android:defaultValue="false"/>
 
-<com.aim.freedomhub.preferences.CustomSeekBarPreference
+<com.aim.freedomhub.preference.CustomSeekBarPreference
          android:key="qs_panel_alpha"
          android:title="@string/qs_panel_alpha_title"
          android:max="255"
@@ -88,7 +88,7 @@
          android:defaultValue="0xffffff"
          android:persistent="false" />
  
-<com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+<com.aim.freedomhub.preference.SystemSettingSwitchPreference
          android:key="qs_panel_bg_use_wall"
          android:title="@string/qs_bg_wall_title"
          android:summary="@string/qs_bg_wall_summary"

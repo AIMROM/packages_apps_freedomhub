@@ -43,7 +43,7 @@ import libcore.util.Objects;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
-import com.aim.freedomhub.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.preference.CustomSeekBarPreference;
 
 public class AimThemes extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
