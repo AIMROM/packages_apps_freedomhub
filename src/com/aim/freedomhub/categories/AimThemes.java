@@ -74,7 +74,7 @@ public class AimThemes extends SettingsPreferenceFragment implements Preference.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.themes_main);
+        addPreferencesFromResource(R.xml.aim_themes);
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.themes_warning_text);
         mSystemThemeBase = (ListPreference) findPreference(KEY_THEME_BASE);
         mSystemThemeColor = (ListPreference) findPreference(KEY_THEME_COLOR);

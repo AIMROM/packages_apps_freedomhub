@@ -123,13 +123,13 @@ public class quicksettings extends SettingsPreferenceFragment implements Prefere
                     Settings.System.QS_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
             return true;
 	} else if (preference == mQsPanelAlpha) {
-             int bgAlpha = (Integer) objValue;
+             int bgAlpha = (Integer) newValue;
              Settings.System.putIntForUser(getContentResolver(),
                      Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
                      UserHandle.USER_CURRENT);
              return true;
 	} else if (preference == mQsPanelColor) {
-             int bgColor = (Integer) objValue;
+             int bgColor = (Integer) newValue;
              Settings.System.putIntForUser(getContentResolver(),
                      Settings.System.QS_PANEL_BG_COLOR, bgColor,
                      UserHandle.USER_CURRENT);
