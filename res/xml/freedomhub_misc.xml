@@ -107,6 +107,12 @@
         android:summary="@string/wake_when_plugged_or_unplugged_summary"
         android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
 
+    <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+        android:key="sensor_block"
+        android:title="@string/sensor_block_title"
+        android:summary="@string/sensor_block_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="alternative_recents_category"
         android:title="@string/alternative_recents_category">
