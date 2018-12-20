@@ -35,6 +35,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.aim.Utils;
+import com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference;
 
 import com.aim.freedomhub.fragments.ImeSettings;
 import com.aim.freedomhub.fragments.GamingMode;
@@ -44,9 +45,15 @@ public class Misc extends SettingsPreferenceFragment implements
 
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String PREF_STOCK_RECENTS_CATEGORY = "stock_recents_category";
+    private static final String PREF_ALTERNATIVE_RECENTS_CATEGORY = "alternative_recents_category";
+    private static final String PREF_SWIPE_UP_ENABLED = "swipe_up_enabled_warning";
 
     private SwitchPreference mShowCpuInfo;
     private ListPreference mFlashlightOnCall;
+    private PreferenceCategory mStockRecentsCategory;
+    private PreferenceCategory mAlternativeRecentsCategory;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -64,6 +71,75 @@ public class Misc extends SettingsPreferenceFragment implements
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         if (!Utils.deviceSupportsFlashLight(mContext))
             prefScreen.removePreference(mFlashlightOnCall);
+
+        mStockRecentsCategory = (PreferenceCategory) findPreference(PREF_STOCK_RECENTS_CATEGORY);
+        mAlternativeRecentsCategory =
+                (PreferenceCategory) findPreference(PREF_ALTERNATIVE_RECENTS_CATEGORY);
+
+        // Alternative recents en-/disabling
+        Preference.OnPreferenceChangeListener alternativeRecentsChangeListener =
+                new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                updateDependencies(preference, (Boolean) newValue);
+                return true;
+            }
+        };
+        for (int i = 0; i < mAlternativeRecentsCategory.getPreferenceCount(); i++) {
+            Preference preference = mAlternativeRecentsCategory.getPreference(i);
+            if (preference instanceof SystemSettingMasterSwitchPreference) {
+                preference.setOnPreferenceChangeListener(alternativeRecentsChangeListener);
+            }
+        }
+
+        updateDependencies();
+
+        // Warning for alternative recents when gesture navigation is enabled,
+        // which directly controls quickstep (launcher) recents.
+        final int navigationMode = getActivity().getResources()
+                .getInteger(com.android.internal.R.integer.config_navBarInteractionMode);
+        // config_navBarInteractionMode:
+        // 0: 3 button mode (supports slim recents)
+        // 1: 2 button mode (currently does not support alternative recents)
+        // 2: gesture only (currently does not support alternative recents)
+        if (navigationMode != 0) {
+            for (int i = 0; i < mAlternativeRecentsCategory.getPreferenceCount(); i++) {
+                Preference preference = mAlternativeRecentsCategory.getPreference(i);
+                if (PREF_SWIPE_UP_ENABLED.equals(preference.getKey())) {
+                    // We want to have that one enabled
+                    continue;
+                }
+                preference.setEnabled(false);
+            }
+        } else {
+            mAlternativeRecentsCategory.removePreference(findPreference(PREF_SWIPE_UP_ENABLED));
+        }
+    }
+
+    private void updateDependencies() {
+        updateDependencies(null, null);
+    }
+
+    private void updateDependencies(Preference updatedPreference, Boolean newValue) {
+        // Disable stock recents category if alternative enabled
+        boolean alternativeRecentsEnabled = newValue != null && newValue;
+        if (!alternativeRecentsEnabled) {
+            for (int i = 0; i < mAlternativeRecentsCategory.getPreferenceCount(); i++) {
+                Preference preference = mAlternativeRecentsCategory.getPreference(i);
+                if (preference == updatedPreference) {
+                    // Already used newValue
+                    continue;
+                }
+                if (preference instanceof SystemSettingMasterSwitchPreference
+                        && ((SystemSettingMasterSwitchPreference) preference).isChecked()) {
+                    alternativeRecentsEnabled = true;
+                    break;
+                }
+            }
+        }
+        if (mStockRecentsCategory != null) {
+            mStockRecentsCategory.setEnabled(!alternativeRecentsEnabled);
+        }
     }
 
     private static void writeCpuInfoOptions(Context mContext, boolean value) {
