@@ -47,6 +47,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String KEY_OLD_MOBILETYPE = "use_old_mobiletype";
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
     private LineageSystemSettingListPreference mStatusBarClock;
     private SwitchPreference mOldMobileType;
@@ -67,6 +68,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.USE_OLD_MOBILETYPE,
                 mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mOldMobileType.setChecked(showing);
+
+        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+        if (!hasPhysicalDisplayCutout(getContext()))
+            getPreferenceScreen().removePreference(mCutoutPref);
 
         mStatusBarClock =
                 (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
@@ -90,6 +95,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private static boolean hasPhysicalDisplayCutout(Context context) {
+        return context.getResources().getBoolean(
+                com.android.internal.R.bool.config_physicalDisplayCutout);
     }
 
     public static void reset(Context mContext) {
