@@ -45,6 +45,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
     private LineageSystemSettingListPreference mStatusBarClock;
 
@@ -55,6 +56,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Context mContext = getActivity().getApplicationContext();
+
+        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+        if (!hasPhysicalDisplayCutout(getContext()))
+            getPreferenceScreen().removePreference(mCutoutPref);
 
         mStatusBarClock =
                 (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
@@ -78,6 +83,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private static boolean hasPhysicalDisplayCutout(Context context) {
+        return context.getResources().getBoolean(
+                com.android.internal.R.bool.config_physicalDisplayCutout);
     }
 
     public static void reset(Context mContext) {

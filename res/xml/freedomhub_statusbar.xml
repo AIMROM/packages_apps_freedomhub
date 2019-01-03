@@ -24,6 +24,12 @@
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
        </PreferenceScreen>
 
+       <Preference
+           android:key="cutout_settings"
+           android:title="@string/cutout_main"
+           android:summary="@string/cutout_main_summary"
+           android:fragment="com.aim.freedomhub.fragments.CutoutFragment"/>
+
         <lineageos.preference.LineageSystemSettingListPreference
             android:key="status_bar_clock"
             android:title="@string/status_bar_clock_position_title"
