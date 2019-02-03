@@ -887,4 +887,23 @@
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Hide the lock icon on lockscreen</string>
 
+    <!-- QS header image -->
+    <string name="custom_header_title">Header image</string>
+    <string name="custom_header_summary">Use a custom image for QS header</string>
+    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="file_header_provider" translatable="false">file</string>
+    <string name="custom_header_provider_title">Image type</string>
+    <string name="daylight_header_provider_title">Automatic (Time based)</string>
+    <string name="file_header_provider_title">Static</string>
+    <string name="daylight_header_pack_title">Image collection</string>
+    <string name="header_provider_disabled">Disabled</string>
+    <string name="custom_header_browse_title">Pick image from collection</string>
+    <string name="custom_header_browse_summary">Select an image from pre-installed image collections</string>
+    <string name="file_header_select_title">Pick image from storage</string>
+    <string name="file_header_select_summary">Select an image from internal storage</string>
+    <string name="status_bar_custom_header_shadow_title">Darken image</string>
+    <string name="custom_header_browse_summary_new">Browse all available header collections</string>
+    <string name="custom_header_pick_title">Select header image</string>
+    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
+
 </resources>
