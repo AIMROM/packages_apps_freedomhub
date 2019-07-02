@@ -30,6 +30,13 @@
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
+    <Preference
+        android:key="double_tap"
+        android:fragment="com.aim.freedomhub.fragments.DoubleTapAmbientSettings"
+        android:title="@string/doze_double_tap_title"
+        android:summary="@string/doze_double_tap_summary"
+        settings:userRestriction="no_ambient_display" />
+
     <lineageos.preference.RemotePreference
         android:key="doze_device_settings"
         android:title="@string/ambient_display_screen_title">
