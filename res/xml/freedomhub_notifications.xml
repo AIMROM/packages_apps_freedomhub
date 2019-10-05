@@ -75,4 +75,10 @@
         settings:units="sec"
         android:persistent="false" />
 
+    <com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference
+        android:key="heads_up_notifications_enabled"
+        android:fragment="com.aim.freedomhub.fragments.HeadsUp"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_notifications_summary"
+        android:defaultValue="true" />
 </PreferenceScreen>
