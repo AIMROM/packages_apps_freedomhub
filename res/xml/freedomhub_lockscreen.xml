@@ -46,6 +46,20 @@
             android:summary="@string/music_visualizer_summary"
             android:fragment="com.aim.freedomhub.fragments.Visualizer" />
 
+        <Preference
+            android:key="lockscreen_clock"
+            android:title="@string/lockscreen_clock_title"
+            android:summary="@string/lockscreen_clock_summary"
+            android:fragment="com.aim.freedomhub.fragments.LockScreenClock"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="lockscreen_info"
+            android:title="@string/lockscreen_info_title"
+            android:summary="@string/lockscreen_info_summary"
+            android:fragment="com.aim.freedomhub.fragments.LockScreenDate"
+            android:defaultValue="true" />
+
         <com.aim.freedomhub.preferences.GlobalSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
                android:title="@string/lockscreen_enable_power_menu_title"
