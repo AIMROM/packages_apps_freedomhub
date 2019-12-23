@@ -482,4 +482,7 @@
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
+    <!-- Enable/Disable Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sounds</string>
+
 </resources>

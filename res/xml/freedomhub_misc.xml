@@ -21,4 +21,10 @@
     <org.lineageos.internal.lineageparts.LineagePartsPreference
       android:key="charging_sounds_settings"/>
 
+        <!-- Enable/Disable Screenshot sound -->
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+          android:key="screenshot_sound"
+          android:title="@string/screenshot_sound_title"
+          android:defaultValue="false" />
+
 </PreferenceScreen>
