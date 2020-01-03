@@ -75,4 +75,23 @@
             android:title="@string/battery_estimate_title"
             android:summary="@string/battery_estimate_summary" />
 
+        <!-- Battery styles -->
+        <com.aim.freedomhub.preferences.SystemSettingListPreference
+            android:key="qs_battery_style"
+            android:title="@string/status_bar_battery_style_title"
+            android:dialogTitle="@string/status_bar_battery_style_title"
+            android:entries="@array/qs_battery_style_entries"
+            android:entryValues="@array/qs_battery_style_values"
+            android:defaultValue="-1" />
+
+        <!-- Battery location -->
+        <com.aim.freedomhub.preferences.SystemSettingListPreference
+            android:key="qs_battery_location"
+            android:icon="@drawable/ic_battery"
+            android:title="@string/qs_battery_location_title"
+            android:dialogTitle="@string/qs_battery_location_title"
+            android:entries="@array/qs_battery_location_entries"
+            android:entryValues="@array/qs_battery_location_values"
+            android:defaultValue="0" />
+
 </PreferenceScreen>
