@@ -883,4 +883,8 @@
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
 
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Hide lock icon</string>
+    <string name="hide_lockicon_summary">Hide the lock icon on lockscreen</string>
+
 </resources>
