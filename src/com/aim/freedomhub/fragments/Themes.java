@@ -69,6 +69,8 @@ public class Themes extends DashboardFragment implements Indexable  {
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.icon_pack.android"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new AccentColorPreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
