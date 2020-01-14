@@ -858,6 +858,9 @@
     <string name="theme_type_du_pitchblack">Pitch black</string>
     <string name="theme_type_dark_grey">Dark Grey</string>
 
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Statusbar Icon</string>
+
     <!-- In-call feedback -->
     <string name="incall_feeedback_vibrate_title">In-Call vibration</string>
     <string name="incall_feeedback_summary">Vibrate to indicate call status</string>
