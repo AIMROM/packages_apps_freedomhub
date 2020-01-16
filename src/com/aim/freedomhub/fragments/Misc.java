@@ -42,6 +42,7 @@ import com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference;
 
 import com.aim.freedomhub.fragments.ImeSettings;
 import com.aim.freedomhub.fragments.GamingMode;
+import com.aim.freedomhub.fragments.SmartCharging;
 
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -52,6 +53,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String PREF_ALTERNATIVE_RECENTS_CATEGORY = "alternative_recents_category";
     private static final String PREF_SWIPE_UP_ENABLED = "swipe_up_enabled_warning";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+    private static final String SMART_CHARGING = "smart_charging";
 
     private SwitchPreference mShowCpuInfo;
     private ListPreference mFlashlightOnCall;
@@ -59,6 +61,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private PreferenceCategory mAlternativeRecentsCategory;
     private Context mContext;
     private ListPreference mNavbarRecentsStyle;
+    private Preference mSmartCharging;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -67,6 +70,7 @@ public class Misc extends SettingsPreferenceFragment implements
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Context mContext = getActivity().getApplicationContext();
+        final Resources res = getResources();
 
         mShowCpuInfo = (SwitchPreference) prefScreen.findPreference(SHOW_CPU_INFO_KEY);
         mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
@@ -76,6 +80,12 @@ public class Misc extends SettingsPreferenceFragment implements
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         if (!Utils.deviceSupportsFlashLight(mContext))
             prefScreen.removePreference(mFlashlightOnCall);
+
+        mSmartCharging = (Preference) prefScreen.findPreference(SMART_CHARGING);
+        boolean mSmartChargingSupported = res.getBoolean(
+                com.android.internal.R.bool.config_smartChargingAvailable);
+        if (!mSmartChargingSupported)
+            prefScreen.removePreference(mSmartCharging);
 
         mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
         int recentsStyle = Settings.System.getInt(resolver,
@@ -189,6 +199,7 @@ public class Misc extends SettingsPreferenceFragment implements
         writeCpuInfoOptions(mContext, false);
         ImeSettings.reset(mContext);
         GamingMode.reset(mContext);
+        SmartCharging.reset(mContext);
     }
 
     @Override

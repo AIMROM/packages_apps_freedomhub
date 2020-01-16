@@ -24,6 +24,12 @@
         android:summary="@string/gaming_mode_summary"
         android:fragment="com.aim.freedomhub.fragments.GamingMode"/>
 
+    <Preference
+        android:key="smart_charging"
+        android:title="@string/smart_charging_title"
+        android:summary="@string/smart_charging_summary"
+        android:fragment="com.aim.freedomhub.fragments.SmartCharging"/>
+
     <!-- Audio Panel view  -->
     <PreferenceScreen
         android:key="volume_panel"
