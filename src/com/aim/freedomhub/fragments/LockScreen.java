@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import androidx.preference.ListPreference;
@@ -47,17 +48,20 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
 
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
+    private PreferenceCategory mFODIconPickerCategory;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.freedomhub_lockscreen);
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getContext();
 
         mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
         mArtFilter.setOnPreferenceChangeListener(this);
@@ -66,6 +70,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
         mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
+
+        PackageManager packageManager = mContext.getPackageManager();
+        boolean hasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
+
+        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null && !hasFod) {
+            prefSet.removePreference(mFODIconPickerCategory);
+        }
     }
 
     @Override
