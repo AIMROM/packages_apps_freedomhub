@@ -36,6 +36,7 @@ import com.aim.freedomhub.preferences.CustomSeekBarPreference;
 import com.aim.freedomhub.fragments.Visualizer;
 import com.aim.freedomhub.preferences.SystemSettingListPreference;
 import com.aim.freedomhub.preferences.SystemSettingSwitchPreference;
+import com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference;
 import com.aim.freedomhub.preferences.SystemSettingSeekBarPreference;
 import com.aim.freedomhub.R;
 import lineageos.providers.LineageSettings;
@@ -51,11 +52,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FOD_ANIMATION = "fod_anim";
+    private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
+    private static final String LOCKSCREEN_INFO = "lockscreen_info";
 
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
     private PreferenceCategory mFODIconPickerCategory;
     private Preference mFODAnimation;
+    private SystemSettingMasterSwitchPreference mClockEnabled;
+    private SystemSettingMasterSwitchPreference mInfoEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -81,12 +86,27 @@ public class LockScreen extends SettingsPreferenceFragment implements
         if (mFODIconPickerCategory != null && !hasFod) {
             prefSet.removePreference(mFODIconPickerCategory);
         }
+
         boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
         mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
         if ((mFODIconPickerCategory != null && mFODAnimation != null && !hasFod) ||
                 (mFODIconPickerCategory != null && mFODAnimation != null && !showFODAnimationPicker)) {
             mFODIconPickerCategory.removePreference(mFODAnimation);
         }
+
+        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled.setOnPreferenceChangeListener(this);
+        int clockEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_CLOCK, 1);
+        mClockEnabled.setChecked(clockEnabled != 0);
+
+        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled.setOnPreferenceChangeListener(this);
+        int infoEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_INFO, 1);
+        mInfoEnabled.setChecked(infoEnabled != 0);
+        mInfoEnabled.setEnabled(clockEnabled != 0);
+
     }
 
     @Override
@@ -112,6 +132,17 @@ public class LockScreen extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
             mBlurSeekbar.setEnabled(value > 2);
+            return true;
+        } else if (preference == mClockEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_CLOCK, value ? 1 : 0);
+            mInfoEnabled.setEnabled(value);
+            return true;
+        } else if (preference == mInfoEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_INFO, value ? 1 : 0);
             return true;
         }
         return false;
