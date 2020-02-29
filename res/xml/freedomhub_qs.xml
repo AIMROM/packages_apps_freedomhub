@@ -171,4 +171,9 @@
             settings:min="0"
             settings:units="" />
 
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="qs_background_blur"
+            android:title="@string/qs_blur_title"
+            android:summary="@string/qs_blur_summary" />
+
 </PreferenceScreen>
