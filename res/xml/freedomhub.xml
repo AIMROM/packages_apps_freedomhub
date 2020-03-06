@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 AIMROM
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/freedomhub_title" >
+
+    <Preference
+        android:key="freedomhub_statusbar_cat"
+        android:title="@string/statusbar_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.StatusBar" 
+        android:icon="@drawable/ic_statusbar" />
+
+    <Preference
+        android:key="freedomhub_qs_cat"
+        android:title="@string/qs_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.QuickSettings" 
+        android:icon="@drawable/ic_qs" />
+
+    <Preference
+        android:key="freedomhub_notifications_cat"
+        android:title="@string/notifications_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Notifications" 
+        android:icon="@drawable/ic_notifications" />
+
+    <Preference
+        android:key="freedomhub_lockscreen_cat"
+        android:title="@string/lockscreen_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.LockScreen" 
+        android:icon="@drawable/ic_lockscreen" />
+
+    <Preference
+        android:key="freedomhub_buttons_cat"
+        android:title="@string/buttons_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Buttons" 
+        android:icon="@drawable/ic_buttons" />
+
+    <Preference
+        android:key="freedomhub_navbar_cat"
+        android:title="@string/navbar_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Navbar" 
+        android:icon="@drawable/ic_navbar" />
+
+    <Preference
+        android:key="freedomhub_interface_cat"
+        android:title="@string/interface_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Interface" 
+        android:icon="@drawable/ic_interface" />
+
+    <Preference
+        android:key="freedomhub_gestures_cat"
+        android:title="@string/gestures_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Gestures" 
+        android:icon="@drawable/ic_gestures" />
+
+    <Preference
+        android:key="freedomhub_misc_cat"
+        android:title="@string/misc_cat_title"
+        android:fragment="com.aim.freedomhub.fragments.Misc" 
+        android:icon="@drawable/ic_misc" />
+
+</PreferenceScreen>
