@@ -34,15 +34,30 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.aim.freedomhub.fragments.ClockSettings;
+
+import lineageos.preference.LineageSystemSettingListPreference;
+import lineageos.providers.LineageSettings;
+
+import org.lineageos.internal.util.FileUtils;
+
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+
+    private LineageSystemSettingListPreference mStatusBarClock;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.freedomhub_statusbar);
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
+
+        mStatusBarClock =
+                (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
     }
 
     @Override
@@ -63,5 +78,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+
+        ClockSettings.reset(mContext);
     }
 }
