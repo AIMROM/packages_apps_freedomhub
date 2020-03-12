@@ -51,11 +51,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String FOD_ANIMATION = "fod_anim";
 
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
     private SystemSettingSwitchPreference mFpKeystore;
     private PreferenceCategory mFODIconPickerCategory;
+    private Preference mFODAnimation;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -85,6 +87,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !hasFod) {
             prefSet.removePreference(mFODIconPickerCategory);
+        }
+        boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
+        mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
+        if ((mFODIconPickerCategory != null && mFODAnimation != null && !hasFod) ||
+                (mFODIconPickerCategory != null && mFODAnimation != null && !showFODAnimationPicker)) {
+            mFODIconPickerCategory.removePreference(mFODAnimation);
         }
     }
 
