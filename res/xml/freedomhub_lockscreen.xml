@@ -15,4 +15,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_cat_title" >
 
+        <com.aim.freedomhub.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/lockscreen_media_art_title"
+            android:defaultValue="true" />
+
+        <com.aim.freedomhub.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_visualizer"
+            android:title="@string/lockscreen_visualizer_title"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
