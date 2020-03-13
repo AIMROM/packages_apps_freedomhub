@@ -16,9 +16,11 @@
 
 package com.aim.freedomhub.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
 import androidx.preference.ListPreference;
@@ -29,7 +31,13 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
-import com.android.settings.R;
+import com.aim.freedomhub.preferences.CustomSeekBarPreference;
+import com.aim.freedomhub.fragments.Visualizer;
+import com.aim.freedomhub.preferences.SystemSettingListPreference;
+import com.aim.freedomhub.R;
+import lineageos.providers.LineageSettings;
+import lineageos.app.LineageContextConstants;
+
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -63,5 +71,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
+        Visualizer.reset(mContext);
     }
 }

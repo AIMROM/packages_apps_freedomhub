@@ -259,19 +259,9 @@
     <string name="navbar_layout_leftleaning">Left-leaning</string>
     <string name="navbar_layout_rightleaning">Right-leaning</string>
 
-    <!-- Lock screen cover art -->
-    <string name="lockscreen_media_art_title">Display media cover art</string>
-
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">Display music visualizer</string>
-
     <!-- Lockscreen tap-to sleep -->
     <string name="double_tap_sleep_anywhere_title">Tap to sleep (Lockscreen)</string>
     <string name="double_tap_sleep_anywhere_summary">Double-tap anywhere on the lockscreen to put device asleep</string>
-
-    <!-- Double tap to sleep on status bar -->
-    <string name="status_bar_double_tap_to_sleep_title">Tap to sleep (Statusbar)</string>
-    <string name="status_bar_double_tap_to_sleep_summary">Double-tap on the status bar to turn off the display</string>
 
     <!-- Notification channels -->
     <string name="channel_light_settings_id" translatable="false">light_settings</string>
@@ -339,4 +329,33 @@
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
     <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+
+    <!-- Music Visualizer -->
+    <string name="music_visualizer_title">Music visualizer</string>
+    <string name="music_visualizer_summary">Display music visualizer when available</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Display media cover art when available</string>
+
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Tap to sleep</string>
+    <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>
+
+    <!-- Lockscreen Visualizer -->
+    <string name="lockscreen_autocolor_title">Automatic color</string>
+    <string name="lockscreen_autocolor_summary">Sync color with background</string>
+    <string name="lockscreen_visualizer_color_title">Visualizer color</string>
+    <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
+    <string name="lockscreen_lavalamp_title">Lava lamp</string>
+    <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
+    <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
+    <string name="lockscreen_solid_units_count_title">Solid lines count</string>
+    <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
+    <string name="lockscreen_solid_units_opacity_title">Solid lines opacity</string>
+
+    <!-- Units -->
+    <string name="unit_milliseconds">milliseconds</string>
+    <string name="unit_pixels">dp</string>
+
 </resources>
