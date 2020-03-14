@@ -404,4 +404,8 @@
     <string name="qs_brightness_slider_top">Top</string>
     <string name="qs_brightness_slider_bottom">Bottom</string>
 
+    <!-- QS Tile title visibility -->
+    <string name="qs_tile_title_visibility_title">Tile title</string>
+    <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
+
 </resources>

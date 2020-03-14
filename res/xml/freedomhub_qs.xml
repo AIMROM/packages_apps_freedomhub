@@ -55,6 +55,13 @@
 
     </PreferenceCategory>
 
+        <!-- QS Tile title visibility -->
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:summary="@string/qs_tile_title_visibility_summary"
+            android:defaultValue="true" />
+
         <!-- QS clock -->
         <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"
