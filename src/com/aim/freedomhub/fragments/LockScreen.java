@@ -90,8 +90,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
-            return true;
             mBlurSeekbar.setEnabled(value > 2);
+            return true;
         }
         return false;
     }
