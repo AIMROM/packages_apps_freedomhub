@@ -14,6 +14,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/misc_cat_title" >
+
+    <!-- Custom charging sounds -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+      android:key="charging_sounds_settings"/>
 
 </PreferenceScreen>
