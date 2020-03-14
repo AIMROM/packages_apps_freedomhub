@@ -88,7 +88,6 @@
         <!-- Battery location -->
         <com.aim.freedomhub.preferences.SystemSettingListPreference
             android:key="qs_battery_location"
-            android:icon="@drawable/ic_battery"
             android:title="@string/qs_battery_location_title"
             android:dialogTitle="@string/qs_battery_location_title"
             android:entries="@array/qs_battery_location_entries"
@@ -98,18 +97,20 @@
     <PreferenceCategory
         android:title="@string/status_bar_brightness_category">
 
-        <lineageos.preference.LineageSecureSettingSwitchPreference
+        <!-- QS Brightness Slider position -->
+        <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/status_bar_brightness_slider_title"
-            android:summary="@string/status_bar_brightness_slider_summary"
-            android:defaultValue="true" />
+            android:entries="@array/qs_brightness_slider_entries"
+            android:entryValues="@array/qs_brightness_slider_values"
+            android:defaultValue="1" />
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
             android:title="@string/status_bar_brightness_slider_auto_title"
             android:summary="@string/status_bar_brightness_slider_auto_summary"
-            android:dependency="qs_show_brightness_slider"
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
