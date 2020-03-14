@@ -106,6 +106,12 @@
             android:title="@string/button_wake_title"
             android:defaultValue="false" />
 
+        <lineageos.preference.LineageSecureSettingSwitchPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
