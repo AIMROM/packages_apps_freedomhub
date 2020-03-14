@@ -44,6 +44,10 @@ import com.android.internal.logging.nano.MetricsProto;
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+
+    private SystemSettingListPreference mArtFilter;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -51,6 +55,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.freedomhub_lockscreen);
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
+        mArtFilter.setOnPreferenceChangeListener(this);
+        int artFilter = Settings.System.getInt(resolver,
+                LOCKSCREEN_ALBUM_ART_FILTER, 0);
     }
 
     @Override
@@ -69,7 +78,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mArtFilter) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
+            return true;
+        }
         return false;
     }
 
