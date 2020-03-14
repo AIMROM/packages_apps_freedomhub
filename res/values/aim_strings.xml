@@ -370,4 +370,8 @@
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Media artwork blur level</string>
 
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Show on Ambient Display</string>
+    <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display</string>
+
 </resources>
