@@ -16,4 +16,44 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navbar_cat_title" >
 
+        <SwitchPreference
+            android:key="force_show_navbar"
+            android:title="@string/navigation_bar_title"
+            android:summary="@string/navigation_bar_summary" />
+
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+                android:key="navigation_bar_menu_arrow_keys"
+                android:title="@string/navigation_bar_arrow_keys_title"
+                android:summary="@string/navigation_bar_arrow_keys_summary"
+                android:defaultValue="false" />
+
+        <lineageos.preference.SecureSettingSwitchPreference
+                android:key="sysui_nav_bar_inverse"
+                android:title="@string/navigation_bar_invert_layout_title"
+                android:defaultValue="false" />
+
+        <ListPreference
+            android:key="navigation_home_long_press"
+            android:dialogTitle="@string/navigation_bar_home_long_press_title"
+            android:title="@string/navigation_bar_home_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="navigation_home_double_tap"
+            android:dialogTitle="@string/navigation_bar_home_double_tap_title"
+            android:title="@string/navigation_bar_home_double_tap_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="navigation_app_switch_long_press"
+            android:dialogTitle="@string/navigation_bar_app_switch_long_press_title"
+            android:title="@string/navigation_bar_app_switch_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
 </PreferenceScreen>

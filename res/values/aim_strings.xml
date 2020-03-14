@@ -147,6 +147,10 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
+    <!-- Navigation bar -->
+    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_summary">Show on-screen navigation keys</string>
+
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Disable HW keys</string>
     <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
@@ -211,6 +215,17 @@
     <string name="backlight_summary_disabled">Disabled</string>
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
+
+    <!-- Navigation Bar -->
+    <string name="nav_keys_title">Navigation bar keys</string>
+    <string name="navigation_bar_category">Navigation bar keys</string>
+    <string name="navigation_bar_invert_layout_title">Invert layout</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+    <string name="navigation_bar_arrow_keys_title">Show arrow keys while typing</string>
+    <string name="navigation_bar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
+    <string name="navigation_bar_home_long_press_title">Home long press action</string>
+    <string name="navigation_bar_home_double_tap_title">Home double tap action</string>
+    <string name="navigation_bar_app_switch_long_press_title">Recents long press action</string>
 
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
