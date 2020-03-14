@@ -61,4 +61,12 @@
             android:summary="@string/qs_clock_summary"
             android:defaultValue="true" />
 
+        <!-- Battery mode -->
+        <com.aim.freedomhub.preferences.SystemSettingListPreference
+            android:key="qs_battery_mode"
+            android:title="@string/battery_percentage_title"
+            android:entries="@array/qs_battery_mode_entries"
+            android:entryValues="@array/qs_battery_mode_values"
+            android:defaultValue="1" />
+
 </PreferenceScreen>
