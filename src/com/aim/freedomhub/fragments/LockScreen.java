@@ -34,6 +34,7 @@ import android.provider.Settings;
 import com.aim.freedomhub.preferences.CustomSeekBarPreference;
 import com.aim.freedomhub.fragments.Visualizer;
 import com.aim.freedomhub.preferences.SystemSettingListPreference;
+import com.aim.freedomhub.preferences.SystemSettingSeekBarPreference;
 import com.aim.freedomhub.R;
 import lineageos.providers.LineageSettings;
 import lineageos.app.LineageContextConstants;
@@ -45,8 +46,10 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+    private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
     private SystemSettingListPreference mArtFilter;
+    private SystemSettingSeekBarPreference mBlurSeekbar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -60,6 +63,9 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mArtFilter.setOnPreferenceChangeListener(this);
         int artFilter = Settings.System.getInt(resolver,
                 LOCKSCREEN_ALBUM_ART_FILTER, 0);
+
+        mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
+        mBlurSeekbar.setEnabled(artFilter > 2);
     }
 
     @Override
@@ -85,6 +91,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
             return true;
+            mBlurSeekbar.setEnabled(value > 2);
         }
         return false;
     }
