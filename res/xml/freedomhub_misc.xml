@@ -17,6 +17,12 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/misc_cat_title" >
 
+    <!-- CPU Info -->
+    <SwitchPreference
+        android:key="show_cpu_info"
+        android:title="@string/show_cpu_info"
+        android:summary="@string/show_cpu_info_summary" />
+
     <!-- Custom charging sounds -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
       android:key="charging_sounds_settings"/>

@@ -599,4 +599,8 @@
     <string name="toast_icon_title">Toast icon</string>
     <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
 
+    <!-- CPU Info -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+
 </resources>

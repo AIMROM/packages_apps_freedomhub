@@ -18,8 +18,10 @@ package com.aim.freedomhub.fragments;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -36,12 +38,33 @@ import com.android.internal.logging.nano.MetricsProto;
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+
+    private SwitchPreference mShowCpuInfo;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.freedomhub_misc);
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mShowCpuInfo = (SwitchPreference) prefScreen.findPreference(SHOW_CPU_INFO_KEY);
+        mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
+                Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
+        mShowCpuInfo.setOnPreferenceChangeListener(this);
+    }
+
+    private static void writeCpuInfoOptions(Context mContext, boolean value) {
+        Settings.Global.putInt(mContext.getContentResolver(),
+                Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
+        Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+        if (value) {
+            mContext.startService(service);
+        } else {
+            mContext.stopService(service);
+        }
     }
 
     @Override
@@ -59,8 +82,19 @@ public class Misc extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+       writeCpuInfoOptions(mContext, false);
+    }
+
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
+        if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions(mContext, (Boolean) newValue);
+            return true;
+        }
         return false;
     }
 }
