@@ -17,6 +17,13 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/misc_cat_title" >
 
+    <!-- Audio Panel view  -->
+    <PreferenceScreen
+        android:key="volume_panel"
+        android:title="@string/audio_panel_view_title"
+        android:summary="@string/audio_panel_view_summary"
+        android:fragment="com.aim.freedomhub.fragments.VolumePanel" />
+
     <!-- Keyboard -->
     <Preference
         android:key="ime_settings"
