@@ -64,6 +64,12 @@
             android:summary="@string/fprint_sucess_vib_summary"
             android:persistent="true" />
 
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="fingerprint_error_vib"
+            android:title="@string/fprint_error_vib_title"
+            android:summary="@string/fprint_error_vib_summary"
+            android:defaultValue="true" />
+
     <PreferenceCategory
             android:key="fod_icon_picker"
             android:title="@string/fod_icon_picker_title" >
