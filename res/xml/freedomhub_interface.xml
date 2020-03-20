@@ -16,6 +16,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/interface_cat_title" >
 
+    <!-- Ambient Display -->
+    <PreferenceScreen
+        android:key="doze_fragment"
+        android:title="@string/doze_display_title"
+        android:summary="@string/doze_display_summary"
+        android:fragment="com.aim.freedomhub.fragments.doze.DozeSettings" />
+
         <!-- Rounded Corners -->
         <PreferenceScreen
             android:key="rounded_corners"
