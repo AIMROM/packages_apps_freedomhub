@@ -36,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.aim.freedomhub.fragments.ImeSettings;
+import com.aim.freedomhub.fragments.GamingMode;
 
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -89,6 +90,7 @@ public class Misc extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         writeCpuInfoOptions(mContext, false);
         ImeSettings.reset(mContext);
+        GamingMode.reset(mContext);
     }
 
     @Override
