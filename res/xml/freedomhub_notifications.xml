@@ -29,4 +29,10 @@
             android:summary="@string/notification_light_summary"
             android:fragment="com.aim.freedomhub.fragments.lights.NotificationLightSettings" />
 
+    <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+        android:key="notification_sound_vib_screen_on"
+        android:title="@string/notification_sound_vib_screen_on_title"
+        android:summary="@string/notification_sound_vib_screen_on_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
