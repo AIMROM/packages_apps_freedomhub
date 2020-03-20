@@ -35,6 +35,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.aim.freedomhub.fragments.ImeSettings;
+
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -48,6 +50,7 @@ public class Misc extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.freedomhub_misc);
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
 
         mShowCpuInfo = (SwitchPreference) prefScreen.findPreference(SHOW_CPU_INFO_KEY);
         mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
@@ -84,7 +87,8 @@ public class Misc extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-       writeCpuInfoOptions(mContext, false);
+        writeCpuInfoOptions(mContext, false);
+        ImeSettings.reset(mContext);
     }
 
     @Override
