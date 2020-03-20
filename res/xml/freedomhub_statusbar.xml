@@ -112,6 +112,12 @@
             settings:min="0"
             settings:units="" />
 
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
     </PreferenceCategory>
 
     <PreferenceScreen

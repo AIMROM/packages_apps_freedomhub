@@ -613,4 +613,8 @@
     <string name="ime_show_enter_key_title">Show enter key</string>
     <string name="ime_show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
 
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+
 </resources>
