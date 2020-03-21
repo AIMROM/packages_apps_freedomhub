@@ -34,6 +34,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.aim.Utils;
 
 import com.aim.freedomhub.fragments.ImeSettings;
 import com.aim.freedomhub.fragments.GamingMode;
@@ -42,8 +43,10 @@ public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private SwitchPreference mShowCpuInfo;
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -57,6 +60,10 @@ public class Misc extends SettingsPreferenceFragment implements
         mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
+
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        if (!Utils.deviceSupportsFlashLight(mContext))
+            prefScreen.removePreference(mFlashlightOnCall);
     }
 
     private static void writeCpuInfoOptions(Context mContext, boolean value) {
@@ -88,6 +95,8 @@ public class Misc extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
         writeCpuInfoOptions(mContext, false);
         ImeSettings.reset(mContext);
         GamingMode.reset(mContext);

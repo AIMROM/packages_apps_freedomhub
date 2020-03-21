@@ -74,4 +74,12 @@
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
 
+     <!-- Flashlight on Call -->
+     <com.aim.freedomhub.preferences.SystemSettingListPreference
+        android:key="flashlight_on_call"
+        android:title="@string/flashlight_on_call_title"
+        android:entries="@array/flashlight_on_call_entries"
+        android:entryValues="@array/flashlight_on_call_values"
+        android:defaultValue="0" />
+
 </PreferenceScreen>
