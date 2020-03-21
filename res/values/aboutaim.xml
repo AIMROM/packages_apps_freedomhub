@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!-- Copyright (C) 2020 AIMROM
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+     <string name="about_aim">About</string>
+     <string name="about_info">About Us</string>
+     <string name="about_info_summary">AIMROM is an aftermarket firmware based on LineageOS, with some added extras along the way. We are targeting a ROM that delivers exceptional performance, a balance of features, and remarkable battery life.</string>
+     <string name="dev_info">About AIMROM</string>
+     <string name="devs_header">Meet Our Team</string>
+     <string name="founder"> Emmanuel N. D. DENLINGER</string>
+     <string name="founder_description">Founder</string>
+     <string name="cofounder">Anand Ramachandran (Anandnv)</string>
+     <string name="cofounder_description">Co-Founder | Lazy Ass</string>
+     <string name="lead">Ravi Pingat</string>
+     <string name="lead_description">Lead Developer</string>
+     <string name="dev1">Albert I (krasCGQ)</string>
+     <string name="dev1_description">Developer | Moderator</string>
+     <string name="social_header">#Lets Aim-ify</string>
+     <string name="aim_web">Website</string>
+     <string name="aim_web_description">Official AIM ROM website for Infos and more.</string>
+     <string name="aim_web_link">http://aimrom.github.io</string>
+     <string name="aim_telegram">Telegram</string>
+     <string name="aim_telegram_description">Discussion group for AIM ROM.</string>
+     <string name="aim_telegram_link">https://t.me/joinchat/EFeeN0GlvTieeq_QyPB1JA</string>
+     <string name="aim_github">Github</string>
+     <string name="aim_github_description">We are open source!</string>
+     <string name="aim_github_link">https://github.com/AIMROM/</string>
+     <string name="donate">Show your support</string>
+     <string name="donate_description">Donation is not necessary, but each and every penny from you will help us to pay server bills.</string>
+     <string name="donation_link">https://paypal.me</string>
+
+     <!-- Aim Rom device maintainers -->
+     <string name="official_devices">Official Devices</string>
+     <string name="maintainers_header">Our Maintainers</string>
+     <string name="maintainers_summary">official devices and maintainers</string>
+
+</resources>

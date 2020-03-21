@@ -70,4 +70,10 @@
         android:fragment="com.aim.freedomhub.fragments.Misc" 
         android:icon="@drawable/ic_misc" />
 
+    <Preference
+        android:key="freedomhub_about"
+        android:title="@string/about_aim"
+        android:fragment="com.aim.freedomhub.fragments.About"
+        android:icon="@drawable/ic_about" />
+
 </PreferenceScreen>
