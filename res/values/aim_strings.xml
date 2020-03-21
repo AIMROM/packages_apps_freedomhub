@@ -715,4 +715,8 @@
     <string name="pulse_on_new_tracks_title">Music ticker</string>
     <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
 
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Notification vibration</string>
+    <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
+
 </resources>
