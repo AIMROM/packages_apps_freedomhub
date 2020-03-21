@@ -50,6 +50,10 @@ import com.android.internal.logging.nano.MetricsProto;
 public class Notifications extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+
+    private Preference mAlertSlider;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -57,7 +61,14 @@ public class Notifications extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.freedomhub_notifications);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+
+        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefScreen.removePreference(mAlertSlider);
     }
 
     @Override

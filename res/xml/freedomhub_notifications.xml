@@ -40,6 +40,13 @@
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
 
+    <!-- Alert Slider Notifications -->
+    <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+        android:key="alert_slider_notifications"
+        android:title="@string/alert_slider_notifications_title"
+        android:summary="@string/alert_slider_notifications_summary"
+        android:defaultValue="true" />
+
     <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
         android:key="vibrate_on_notifications"
         android:title="@string/vibrate_on_notifications_title"
