@@ -23,6 +23,11 @@
         android:summary="@string/doze_display_summary"
         android:fragment="com.aim.freedomhub.fragments.doze.DozeSettings" />
 
+    <com.aim.freedomhub.preferences.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary" />
+
         <!-- Rounded Corners -->
         <PreferenceScreen
             android:key="rounded_corners"
