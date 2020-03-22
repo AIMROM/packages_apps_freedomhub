@@ -74,6 +74,13 @@
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
 
+    <com.aim.freedomhub.preferences.SystemSettingListPreference
+        android:key="screenshot_type"
+        android:entries="@array/screenshot_type_entries"
+        android:entryValues="@array/screenshot_type_values"
+        android:title="@string/screenshot_type_title"
+        android:defaultValue="0" />
+
      <!-- Flashlight on Call -->
      <com.aim.freedomhub.preferences.SystemSettingListPreference
         android:key="flashlight_on_call"
