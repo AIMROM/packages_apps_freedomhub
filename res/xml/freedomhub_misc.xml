@@ -89,4 +89,10 @@
         android:entryValues="@array/flashlight_on_call_values"
         android:defaultValue="0" />
 
+    <com.aim.freedomhub.preferences.GlobalSettingSwitchPreference
+        android:key="allow_signature_fake"
+        android:title="@string/allow_signature_fake"
+        android:summary="@string/allow_signature_fake_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
