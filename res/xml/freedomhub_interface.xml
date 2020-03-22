@@ -16,6 +16,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/interface_cat_title" >
 
+    <PreferenceScreen
+        android:key="themes"
+        android:title="@string/themes_title"
+        android:fragment="com.aim.freedomhub.fragments.Themes" />
+
     <!-- Ambient Display -->
     <PreferenceScreen
         android:key="doze_fragment"

@@ -24,6 +24,7 @@
     <string name="notifications_cat_title">Notifications</string>
     <string name="qs_cat_title">Quick Settings</string>
     <string name="statusbar_cat_title">Status Bar</string>
+    <string name="themes_title">Themes</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
