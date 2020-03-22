@@ -762,4 +762,9 @@
     <string name="qs_footer_settings_title">Settings icon</string>
     <string name="qs_footer_settings_summary">Display Settings icon in quick settings footer</string>
 
+    <!-- QS Footer Text -->
+    <string name="footer_text_show_title">Footer text</string>
+    <string name="footer_text_show_summary">Show text in expanded qs footer</string>
+    <string name="footer_text_string_title">Customize footer text</string>
+
 </resources>

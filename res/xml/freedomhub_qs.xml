@@ -126,6 +126,18 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="footer_text_show"
+            android:title="@string/footer_text_show_title"
+            android:summary="@string/footer_text_show_summary"
+            android:defaultValue="true" />
+
+        <com.aim.freedomhub.preferences.SystemSettingEditTextPreference
+            android:key="footer_text_string"
+            android:title="@string/footer_text_string_title"
+            android:dependency="footer_text_show"
+            android:defaultValue="#LetsAIMify" />
+
         <com.aim.freedomhub.preferences.SecureSettingSwitchPreference
             android:key="qs_show_secure"
             android:title="@string/qs_footer_warnings_title"

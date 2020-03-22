@@ -39,8 +39,14 @@ import android.view.View;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.aim.freedomhub.preferences.SystemSettingEditTextPreference;
+
 public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
+
+    private static final String FOOTER_TEXT_STRING = "footer_text_string";
+
+    private SystemSettingEditTextPreference mFooterString;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -48,10 +54,35 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.freedomhub_qs);
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
+        mFooterString.setOnPreferenceChangeListener(this);
+        String footerString = Settings.System.getString(getContentResolver(),
+                FOOTER_TEXT_STRING);
+        if (TextUtils.isEmpty(footerString) || footerString == null) {
+            mFooterString.setText("#LetsAIMify");
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
+        } else {
+            mFooterString.setText(footerString);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mFooterString) {
+            String value = (String) newValue;
+            if (TextUtils.isEmpty(value) || value == null) {
+                mFooterString.setText("#LetsAIMify");
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
+            } else {
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, value);
+            }
+            return true;
+        }
         return false;
     }
 
