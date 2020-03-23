@@ -1,26 +1,25 @@
 /*
- * Copyright (C) 2016-2017 The Dirty Unicorns Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
-
 package com.aim.freedomhub.preferences;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
-import androidx.preference.*;
 import androidx.core.content.res.TypedArrayUtils;
+import androidx.preference.*;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -263,28 +262,34 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.reset) {
-            Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
-                    Toast.LENGTH_LONG).show();
-        } else if (id == R.id.minus) {
-            setValue(mValue - mInterval, true);
-        } else if (id == R.id.plus) {
-            setValue(mValue + mInterval, true);
+        switch (v.getId()) {
+            case R.id.reset:
+                Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
+                        Toast.LENGTH_LONG).show();
+                break;
+            case R.id.minus:
+                setValue(mValue - mInterval, true);
+                break;
+            case R.id.plus:
+                setValue(mValue + mInterval, true);
+                break;
         }
     }
 
     @Override
     public boolean onLongClick(View v) {
-        int id = v.getId();
-        if (id == R.id.reset) {
-            setValue(mDefaultValue, true);
-            //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
-            //        Toast.LENGTH_LONG).show();
-        } else if (id == R.id.minus) {
-            setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);
-        } else if (id == R.id.plus) {
+        switch (v.getId()) {
+            case R.id.reset:
+                setValue(mDefaultValue, true);
+                //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
+                //        Toast.LENGTH_LONG).show();
+                break;
+            case R.id.minus:
+                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);
+                break;
+            case R.id.plus:
                 setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue > mValue * 2 ? -1 * Math.floorDiv(-1 * (mMaxValue + mMinValue), 2) : mMaxValue, true);
+                break;
         }
         return true;
     }
@@ -324,16 +329,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         } else if (newValue != null && !newValue.isEmpty()) {
             setDefaultValue(Integer.parseInt(newValue), update);
         }
-    }
-
-    public void setMax(int max) {
-        mMaxValue = max;
-        mSeekBar.setMax(mMaxValue - mMinValue);
-    }
-
-    public void setMin(int min) {
-        mMinValue = min;
-        mSeekBar.setMax(mMaxValue - mMinValue);
     }
 
     public void setValue(int newValue) {

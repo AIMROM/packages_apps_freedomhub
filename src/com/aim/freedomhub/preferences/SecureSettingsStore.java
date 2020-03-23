@@ -18,6 +18,7 @@ package com.aim.freedomhub.preferences;
 
 import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;
+import android.os.UserHandle;
 import android.provider.Settings;
 
 public class SecureSettingsStore extends androidx.preference.PreferenceDataStore
@@ -30,19 +31,19 @@ public class SecureSettingsStore extends androidx.preference.PreferenceDataStore
     }
 
     public boolean getBoolean(String key, boolean defValue) {
-        return getInt(key, defValue ? 1 : 0) != 0;
+        return Settings.Secure.getIntForUser(mContentResolver, key, defValue ? 1 : 0, UserHandle.USER_CURRENT) != 0;
     }
 
     public float getFloat(String key, float defValue) {
-        return Settings.Secure.getFloat(mContentResolver, key, defValue);
+        return Settings.Secure.getFloatForUser(mContentResolver, key, defValue, UserHandle.USER_CURRENT);
     }
 
     public int getInt(String key, int defValue) {
-        return Settings.Secure.getInt(mContentResolver, key, defValue);
+        return Settings.Secure.getIntForUser(mContentResolver, key, defValue, UserHandle.USER_CURRENT);
     }
 
     public long getLong(String key, long defValue) {
-        return Settings.Secure.getLong(mContentResolver, key, defValue);
+        return Settings.Secure.getLongForUser(mContentResolver, key, defValue, UserHandle.USER_CURRENT);
     }
 
     public String getString(String key, String defValue) {
@@ -55,19 +56,18 @@ public class SecureSettingsStore extends androidx.preference.PreferenceDataStore
     }
 
     public void putFloat(String key, float value) {
-        Settings.Secure.putFloat(mContentResolver, key, value);
+        Settings.Secure.putFloatForUser(mContentResolver, key, value, UserHandle.USER_CURRENT);
     }
 
     public void putInt(String key, int value) {
-        Settings.Secure.putInt(mContentResolver, key, value);
+        Settings.Secure.putIntForUser(mContentResolver, key, value, UserHandle.USER_CURRENT);
     }
 
     public void putLong(String key, long value) {
-        Settings.Secure.putLong(mContentResolver, key, value);
+        Settings.Secure.putLongForUser(mContentResolver, key, value, UserHandle.USER_CURRENT);
     }
 
     public void putString(String key, String value) {
         Settings.Secure.putString(mContentResolver, key, value);
     }
-
 }
