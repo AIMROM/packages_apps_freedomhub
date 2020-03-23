@@ -81,6 +81,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_VOLUME_PANEL_ON_LEFT = "volume_panel_on_left";
     private static final String KEY_POWER_MENU = "power_menu";
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
@@ -122,6 +123,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mVolumeWakeScreen;
     private SwitchPreference mVolumeMusicControls;
     private SwitchPreference mSwapVolumeButtons;
+    private SwitchPreference mVolumePanelOnLeft;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mTorchLongPressPowerGesture;
@@ -354,6 +356,15 @@ public class Buttons extends SettingsPreferenceFragment implements
             if (mSwapVolumeButtons != null) {
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
+
+            final boolean volumePanelOnLeft = LineageSettings.Secure.getIntForUser(
+                    getContentResolver(), LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, 0,
+                    UserHandle.USER_CURRENT) != 0;
+            mVolumePanelOnLeft = (SwitchPreference)
+                    prefScreen.findPreference(KEY_VOLUME_PANEL_ON_LEFT);
+            if (mVolumePanelOnLeft != null) {
+                mVolumePanelOnLeft.setChecked(volumePanelOnLeft);
+            }
         } else {
             prefScreen.removePreference(volumeCategory);
         }
@@ -498,6 +509,11 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
             LineageSettings.System.putIntForUser(getActivity().getContentResolver(),
                     LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value, UserHandle.USER_CURRENT);
+        } else if (preference == mVolumePanelOnLeft) {
+            LineageSettings.Secure.putIntForUser(getActivity().getContentResolver(),
+                    LineageSettings.Secure.VOLUME_PANEL_ON_LEFT,
+                    mVolumePanelOnLeft.isChecked() ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mPowerEndCall) {
             handleTogglePowerButtonEndsCallPreferenceClick();
             return true;
