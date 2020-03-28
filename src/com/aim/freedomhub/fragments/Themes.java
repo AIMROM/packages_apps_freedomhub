@@ -35,6 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.aim.freedomhub.R;
 import com.aim.freedomhub.fragments.themes.AccentColorPreferenceController;
+import com.aim.freedomhub.fragments.themes.ThemePreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +71,7 @@ public class Themes extends DashboardFragment implements Indexable  {
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new AccentColorPreferenceController(context));
+        controllers.add(new ThemePreferenceController(context));
         return controllers;
     }
 }
