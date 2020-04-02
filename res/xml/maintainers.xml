@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017 AIMROM
+<!-- Copyright (C) 2017-2020 AIMROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,5 +16,20 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/maintainers_header">
+
+     <PreferenceCategory
+              android:key="xiaomi_devices"
+              android:title="@string/xiaomi_devices_cat" >
+
+        <Preference
+            android:title="@string/pocof1_maintainer"
+            android:summary="@string/device_pocof1"
+            android:icon="@drawable/ic_devs_phone" >
+              <intent
+                  android:action="android.intent.action.VIEW"
+                  android:data="https://github.com/PainKiller3" />
+        </Preference>
+
+     </PreferenceCategory>
 
 </PreferenceScreen>
