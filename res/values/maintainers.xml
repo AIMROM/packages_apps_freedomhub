@@ -20,7 +20,9 @@
    <string name="xiaomi_devices_cat">Xiaomi</string>
 
    <!-- Xiaomi Device maintainers -->
-   <string name="device_pocof1">Xiaomi Pocophone F1</string>
-   <string name="pocof1_maintainer">Ninad Patil (REIGNZ)</string>
+   <string name="device_beryllium">Poco F1 (beryllium)</string>
+   <string name="beryllium_maintainer">Ninad Patil (REIGNZ)</string>
+   <string name="device_mido">Redmi Note 4/4X (mido)</string>
+   <string name="mido_maintainer">Albert I (krasCGQ)</string>
 
 </resources>

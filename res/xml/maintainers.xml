@@ -14,20 +14,29 @@
      limitations under the License.
 -->
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/maintainers_header">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/maintainers_header">
 
-     <PreferenceCategory
-              android:key="xiaomi_devices"
-              android:title="@string/xiaomi_devices_cat" >
+    <PreferenceCategory
+        android:key="xiaomi_devices"
+        android:title="@string/xiaomi_devices_cat" >
 
         <Preference
-            android:title="@string/pocof1_maintainer"
-            android:summary="@string/device_pocof1"
+            android:title="@string/beryllium_maintainer"
+            android:summary="@string/device_beryllium"
             android:icon="@drawable/ic_devs_phone" >
-              <intent
-                  android:action="android.intent.action.VIEW"
-                  android:data="https://github.com/PainKiller3" />
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/PainKiller3" />
+        </Preference>
+
+        <Preference
+            android:title="@string/mido_maintainer"
+            android:summary="@string/device_mido"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/krasCGQ" />
         </Preference>
 
      </PreferenceCategory>
