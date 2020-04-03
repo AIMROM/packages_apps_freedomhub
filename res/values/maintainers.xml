@@ -24,5 +24,8 @@
    <string name="beryllium_maintainer">Ninad Patil (REIGNZ)</string>
    <string name="device_mido">Redmi Note 4/4X (mido)</string>
    <string name="mido_maintainer">Albert I (krasCGQ)</string>
+   <string name="device_goldfish">Redmi Note 7/7s(lavender)</string>
+   <string name="goldfish_maintainer">Lovepreet Singh Gill (zenitsu)</string>
+
 
 </resources>
