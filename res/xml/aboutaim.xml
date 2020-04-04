@@ -34,7 +34,6 @@
 
      </PreferenceCategory>
 
-
      <PreferenceCategory
               android:key="social"
               android:title="@string/social_header" >
@@ -120,6 +119,18 @@
      </PreferenceCategory>
  
      <PreferenceCategory
+              android:key="designers"
+              android:title="@string/designers_header" >
+
+        <Preference
+             android:title="@string/designer1"
+             android:summary="@string/designer1_description"
+             android:icon="@drawable/ic_design">
+        </Preference>
+
+      </PreferenceCategory>
+
+      <PreferenceCategory
                android:key="aim_maintainers"
                android:title="@string/official_devices" >
 

@@ -29,6 +29,9 @@
      <string name="lead_description">Lead Developer</string>
      <string name="dev1">Albert I (krasCGQ)</string>
      <string name="dev1_description">Developer | Moderator</string>
+     <string name="designers_header">Designers</string>
+     <string name="designer1">Sahil Ashraf</string>
+     <string name="designer1_description">Logos, Headers, Bootanimation</string>
      <string name="social_header">#Lets Aim-ify</string>
      <string name="aim_web">Website</string>
      <string name="aim_web_description">Official AIM ROM website for Infos and more.</string>
