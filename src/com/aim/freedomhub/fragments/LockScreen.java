@@ -54,6 +54,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String FOD_ANIMATION = "fod_anim";
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
+    private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
 
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
@@ -61,6 +62,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private Preference mFODAnimation;
     private SystemSettingMasterSwitchPreference mClockEnabled;
     private SystemSettingMasterSwitchPreference mInfoEnabled;
+    private SwitchPreference mScreenOffFOD;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -86,6 +88,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         if (mFODIconPickerCategory != null && !hasFod) {
             prefSet.removePreference(mFODIconPickerCategory);
         }
+
+        boolean mScreenOffFODValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_OFF_FOD, 0) != 0;
+
+        mScreenOffFOD = (SwitchPreference) findPreference(KEY_SCREEN_OFF_FOD);
+        mScreenOffFOD.setChecked(mScreenOffFODValue);
+        mScreenOffFOD.setOnPreferenceChangeListener(this);
 
         boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
         mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
@@ -143,6 +152,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_INFO, value ? 1 : 0);
+            return true;
+        } else if (preference == mScreenOffFOD) {
+            int mScreenOffFODValue = (Boolean) newValue ? 1 : 0;
+            Settings.System.putInt(resolver, Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
             return true;
         }
         return false;
