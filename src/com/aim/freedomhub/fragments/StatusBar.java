@@ -35,6 +35,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.aim.freedomhub.fragments.ClockSettings;
+import com.aim.freedomhub.preferences.SystemSettingSwitchPreference;
 
 import lineageos.preference.LineageSystemSettingListPreference;
 import lineageos.providers.LineageSettings;
@@ -45,8 +46,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String KEY_OLD_MOBILETYPE = "use_old_mobiletype";
 
     private LineageSystemSettingListPreference mStatusBarClock;
+    private SwitchPreference mOldMobileType;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,6 +58,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Context mContext = getActivity().getApplicationContext();
+
+        mOldMobileType = (SwitchPreference) findPreference(KEY_OLD_MOBILETYPE);
+        boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_useOldMobileIcons);
+
+        boolean showing = Settings.System.getIntForUser(resolver,
+                Settings.System.USE_OLD_MOBILETYPE,
+                mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        mOldMobileType.setChecked(showing);
 
         mStatusBarClock =
                 (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
@@ -82,11 +94,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_useOldMobileIcons);
 
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.USE_OLD_MOBILETYPE, mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT);
 
         ClockSettings.reset(mContext);
     }
