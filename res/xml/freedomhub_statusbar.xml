@@ -118,6 +118,12 @@
             android:summary="@string/bluetooth_battery_summary"
             android:defaultValue="true"/>
 
+        <com.aim.freedomhub.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_privacy_indicators"
+            android:title="@string/statusbar_privacy_indicators_title"
+            android:summary="@string/statusbar_privacy_indicators_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceScreen

@@ -930,4 +930,8 @@
     <!-- Show Statusbar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Status bar</string>
     <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
+
+    <!-- statusbar_privacy_indicators -->
+    <string name="statusbar_privacy_indicators_title">Statusbar privacy indicators</string>
+    <string name="statusbar_privacy_indicators_summary">Show permission hub icons on statusbar</string>
 </resources>
