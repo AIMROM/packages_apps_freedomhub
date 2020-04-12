@@ -25,7 +25,6 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -46,12 +45,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String FOOTER_TEXT_STRING = "footer_text_string";
-    private static final String QS_FOOTER = "quick_footer";
-    private static final String QS_USER_TOGGLE = "qs_user_toggle";
 
     private SystemSettingEditTextPreference mFooterString;
-    private PreferenceCategory mQsFooter;
-    private SwitchPreference mUserIcon;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -70,13 +65,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
         } else {
             mFooterString.setText(footerString);
-        }
-
-        mUserIcon = (SwitchPreference) findPreference(QS_USER_TOGGLE);
-        boolean userIcon = Settings.Global.getInt(getContentResolver(),
-                Settings.Global.USER_SWITCHER_ENABLED, 0) != 0;
-        if (!userIcon) {
-            mQsFooter.removePreference(mUserIcon);
         }
     }
 
