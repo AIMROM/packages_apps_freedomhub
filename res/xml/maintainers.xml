@@ -39,6 +39,15 @@
                 android:data="https://github.com/krasCGQ" />
         </Preference>
 
+        <Preference
+            android:title="@string/Raphael_maintainer"
+            android:summary="@string/device_Raphael"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/kunalshah912" />
+        </Preference>
+
      </PreferenceCategory>
 
 </PreferenceScreen>

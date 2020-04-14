@@ -24,5 +24,6 @@
    <string name="beryllium_maintainer">Ninad Patil (REIGNZ)</string>
    <string name="device_mido">Redmi Note 4/4X (mido)</string>
    <string name="mido_maintainer">Albert I (krasCGQ)</string>
-
+   <string name="device_raphael">Redmi K20 Pro (raphael)</string>
+   <string name="raphael_maintainer">Kunal Shah</string>
 </resources>
