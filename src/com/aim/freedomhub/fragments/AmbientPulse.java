@@ -16,82 +16,88 @@
 
 package com.aim.freedomhub.fragments;
 
-import android.app.Activity;
-import android.app.ActivityManagerNative;
-import android.content.Context;
-import android.content.Intent;
 import android.content.ContentResolver;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import androidx.preference.Preference;
-import androidx.preference.ListPreference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
 import android.provider.Settings;
-import android.util.Log;
-import android.view.WindowManagerGlobal;
-import android.view.IWindowManager;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 
-import java.util.Locale;
-import android.text.TextUtils;
-import android.view.View;
-
-import com.aim.freedomhub.R;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-public class AmbientPulse extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener {
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
-    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-    private ColorPickerPreference mEdgeLightColorPreference;
+public class AmbientPulse extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
+
+    private static final String PULSE_AMBIENT_LIGHT_COLOR_LEFT = "pulse_ambient_light_color_left";
+    private static final String PULSE_AMBIENT_LIGHT_COLOR_RIGHT = "pulse_ambient_light_color_right";
+    private static final String AMBIENT_NOTIFICATION_LIGHT_ENABLED = "ambient_notification_light_enabled";
+    private static final String AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD = "ambient_notification_light_hide_aod";
+
+    private ColorPickerPreference mLeftEdgeLightColorPreference;
+    private ColorPickerPreference mRightEdgeLightColorPreference;
+    private SwitchPreference mAmbientNotifLight;
+    private SwitchPreference mAmbientContentHide;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.pulse_notify);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
-        int edgeLightColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
-        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
-        mEdgeLightColorPreference.setAlphaSliderEnabled(false);
-        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
-        if (edgeLightColorHex.equals("#ff3980ff")) {
-            mEdgeLightColorPreference.setSummary(R.string.default_string);
+        mLeftEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR_LEFT);
+        mLeftEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        int leftEdgeLightColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR_LEFT, 0xFF3980FF);
+        String leftEdgeLightColorHex = String.format("#%08x", (0xFF3980FF & leftEdgeLightColor));
+        if (leftEdgeLightColorHex.equals("#ff3980ff")) {
+            mLeftEdgeLightColorPreference.setSummary(R.string.default_string);
         } else {
-            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
+            mLeftEdgeLightColorPreference.setSummary(leftEdgeLightColorHex);
         }
-        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
-    }
+        mLeftEdgeLightColorPreference.setNewPreviewColor(leftEdgeLightColor);
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.FREEDOMHUB;
-    }
+        mRightEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR_RIGHT);
+        mRightEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        int rightEdgeLightColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR_RIGHT, 0xFF3980FF);
+        String rightEdgeLightColorHex = String.format("#%08x", (0xFF3980FF & rightEdgeLightColor));
+        if (rightEdgeLightColorHex.equals("#ff3980ff")) {
+            mRightEdgeLightColorPreference.setSummary(R.string.default_string);
+        } else {
+            mRightEdgeLightColorPreference.setSummary(rightEdgeLightColorHex);
+        }
+        mRightEdgeLightColorPreference.setNewPreviewColor(rightEdgeLightColor);
 
-    @Override
-    public void onResume() {
-        super.onResume();
+        mAmbientNotifLight = (SwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT_ENABLED);
+        mAmbientContentHide = (SwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD);
+        boolean mAlwaysOnByDefault = getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
+        boolean mAODDisabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.DOZE_ALWAYS_ON, mAlwaysOnByDefault ? 1 : 0,
+                UserHandle.USER_CURRENT) == 0;
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable)) {
+            prefScreen.removePreference(mAmbientNotifLight);
+            prefScreen.removePreference(mAmbientContentHide);
+        } else if (!mAODDisabled) {
+            prefScreen.removePreference(mAmbientContentHide);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mEdgeLightColorPreference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLeftEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#ff3980ff")) {
@@ -101,10 +107,26 @@ public class AmbientPulse extends SettingsPreferenceFragment
             }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR_LEFT, intHex);
             return true;
-	}
+        } else if (preference == mRightEdgeLightColorPreference) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff3980ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR_RIGHT, intHex);
+            return true;
+        }
         return false;
     }
-}
 
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.FREEDOMHUB;
+    }
+}
