@@ -17,7 +17,7 @@
     android:title="@string/notifications_cat_title" >
 
         <com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference
-            android:key="ambient_pulse"
+            android:key="pulse_ambient_light"
             android:title="@string/ambient_light_notify_title"
             android:fragment="com.aim.freedomhub.fragments.AmbientPulse"
             android:defaultValue="false" />

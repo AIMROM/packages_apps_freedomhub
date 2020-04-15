@@ -111,7 +111,7 @@
             android:dependency="ambient_notification_light_accent_right"
             android:disableDependentsState="true" />
 
-        <com.aim.freedomhub.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="pulse_ambient_light_color_right"
             android:title="@string/pulse_ambient_light_color_title"
             android:persistent="false"

@@ -92,8 +92,8 @@ public class Notifications extends SettingsPreferenceFragment
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        } else if (preference == mEdgePulse) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mEdgePulse) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(),
 		            PULSE_AMBIENT_LIGHT, value ? 1 : 0);
