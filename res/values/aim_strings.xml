@@ -928,6 +928,7 @@
     <string name="custom_header_browse_summary_new">Browse all available header collections</string>
     <string name="custom_header_pick_title">Select header image</string>
     <string name="custom_header_pick_summary">Select an image to use for static mode</string>
+    <string name="status_bar_custom_header_height_title">Image height offset</string>
 
     <!-- Smart charging -->
     <string name="smart_charging_title">Smart Charging</string>
