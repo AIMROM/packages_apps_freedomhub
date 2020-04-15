@@ -26,4 +26,6 @@
    <string name="mido_maintainer">Albert I (krasCGQ)</string>
    <string name="device_raphael">Redmi K20 Pro (raphael)</string>
    <string name="raphael_maintainer">Kunal Shah</string>
+   <string name="device_santoni">Redmi 4X (santoni)</string>
+   <string name="santoni_maintainer">Amith Acharya</string>
 </resources>
