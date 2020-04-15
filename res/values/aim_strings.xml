@@ -680,8 +680,28 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_auto_color_title">Automatic color</string>
+    <string name="pulse_ambient_light_auto_color_summary">Sync color with wallpaper</string>
+    <string name="pulse_ambient_light_duration">Edge light pulse duration</string>
+    <string name="edgelight_left">Left Edge</string>
+    <string name="edgelight_right">Right Edge</string>
+    <string name="ambient_notification_light_enabled_sumary">Show Always On light bars when receiving a notification</string>
+    <string name="ambient_notification_light_enabled_title">Show on AoD</string>
+    <string name="ambient_notification_light_enabled_sumary">Keep showing on always on display. Until the screen is turned on</string>
+    <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
+    <string name="ambient_notification_light_hide_aod_sumary">Hide other AoD content when bars are showing</string>
+    <string name="pulse_ambient_light_pulse_for_all_title">Pulse for all doze events</string>
+    <string name="pulse_ambient_light_pulse_for_all_summary">Pulses for any doze wake and not just notifications when enabled</string>
+    <string name="ambient_notification_light_accent_title">Accent color</string>
+    <string name="ambient_notification_light_accent_summary">Sync color with accent color</string>
+    <string name="pulse_ambient_light_pulse_for_all_repeat_title">Repeat edge lighting</string>
+    <string name="pulse_ambient_light_pulse_for_all_repeat_summary">Repeat edge lighting animation on doze wake</string>
+    <string name="pulse_ambient_light_repeat_mode_title">Edge Light Animation</string>
+    <string name="pulse_ambient_light_anim_restart">Restart</string>
+    <string name="pulse_ambient_light_anim_reverse">Reverse</string>
+    <string name="pulse_ambient_light_layout_title">Edge Light View</string>
+    <string name="pulse_ambient_light_layout_solid">Solid</string>
+    <string name="pulse_ambient_light_layout_faded">Faded</string>
 
     <!-- Doze: switches -->
     <string name="doze_display_title">Ambient display</string>

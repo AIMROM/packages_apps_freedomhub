@@ -47,12 +47,16 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.aim.freedomhub.preferences.SystemSettingMasterSwitchPreference;
+
 public class Notifications extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
 
     private Preference mAlertSlider;
+    private SystemSettingMasterSwitchPreference mEdgePulse;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -69,6 +73,12 @@ public class Notifications extends SettingsPreferenceFragment
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
+
+        mEdgePulse = (SystemSettingMasterSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
+        mEdgePulse.setOnPreferenceChangeListener(this);
+        int edgePulse = Settings.System.getInt(getContentResolver(),
+                PULSE_AMBIENT_LIGHT, 0);
+        mEdgePulse.setChecked(edgePulse != 0);
     }
 
     @Override
@@ -83,6 +93,12 @@ public class Notifications extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        } else if (preference == mEdgePulse) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+		            PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 }
