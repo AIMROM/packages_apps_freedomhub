@@ -48,6 +48,15 @@
                 android:data="https://github.com/kunalshah912" />
         </Preference>
 
+        <Preference>
+            android:title="@string/santoni_maintainer"
+            android:summary="@string/device_snatoni"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/amith07" />
+        </Preference>
+
      </PreferenceCategory>
 
 </PreferenceScreen>
