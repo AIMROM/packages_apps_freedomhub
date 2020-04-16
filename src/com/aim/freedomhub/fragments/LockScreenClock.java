@@ -60,7 +60,7 @@ public class LockScreenClock extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.ion_settings_lockscreen_clock);
+        addPreferencesFromResource(R.xml.lockscreen_clock);
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();

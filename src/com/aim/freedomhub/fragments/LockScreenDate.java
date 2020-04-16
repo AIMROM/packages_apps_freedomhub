@@ -58,7 +58,7 @@ public class LockScreenDate extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.ion_settings_lockscreen_date);
+        addPreferencesFromResource(R.xml.lockscreen_date);
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
