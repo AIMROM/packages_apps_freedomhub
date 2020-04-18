@@ -61,6 +61,11 @@
             android:dependency="lockscreen_clock"
             android:defaultValue="true" />
 
+        <lineageos.preference.LineageSecureSettingSwitchPreference
+            android:key="lockscreen_translucent_notifications_bg_enabled"
+            android:title="@string/translucent_lockscreen_notifications_bg_title"
+            android:defaultValue="false" />
+
         <com.aim.freedomhub.preferences.GlobalSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
                android:title="@string/lockscreen_enable_power_menu_title"
