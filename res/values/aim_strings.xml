@@ -752,10 +752,6 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
-    <!-- Fingerprint unlock keystore -->
-    <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
-
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
@@ -940,7 +936,4 @@
     <string name="qs_services_toggle_title">Running Services icon</string>
     <string name="qs_services_toggle_summary">Display Running Services icon in quick settings footer</string>
 
-    <!-- QS Users -->
-    <string name="qs_user_toggle_title">User switcher icon</string>
-    <string name="qs_user_toggle_summary">Display Multi-user switcher icon in quick settings footer</string>
 </resources>
