@@ -1083,4 +1083,7 @@
     <string name="add_heads_up_blacklist_summary">Disable heads up for these applications</string>
     <string name="profile_choose_app">Choose app</string>
 
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">Show notification headers</string>
+    <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
 </resources>
