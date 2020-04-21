@@ -96,9 +96,13 @@ public final class Utils {
     }
 
     public static void launchDozePulse(Context context) {
-        if (DEBUG) Log.d(TAG, "Launch doze pulse");
-        context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
-                new UserHandle(UserHandle.USER_CURRENT));
+        final boolean fodEnabled = Settings.System.getInt(context.getContentResolver(),
+                Settings.System.SCREEN_OFF_FOD, 0) != 0;
+        if (!fodEnabled) {
+            if (DEBUG) Log.d(TAG, "Launch doze pulse");
+            context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
+                    new UserHandle(UserHandle.USER_CURRENT));
+        }
     }
 
     public static boolean tiltEnabled(Context context) {
