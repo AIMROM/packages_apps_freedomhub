@@ -34,12 +34,12 @@
      <string name="designer1_description">Logos, Headers, Bootanimation</string>
      <string name="social_header">#Lets Aim-ify</string>
      <string name="aim_web">Website</string>
-     <string name="aim_web_description">Official AIM ROM website for Infos and more.</string>
+     <string name="aim_web_description">Official AIMROM website for Infos and more.</string>
      <string name="aim_web_link">http://aimrom.github.io</string>
      <string name="aim_telegram">Telegram</string>
-     <string name="aim_telegram_description">Discussion group for AIM ROM.</string>
+     <string name="aim_telegram_description">Discussion group for AIMROM.</string>
      <string name="aim_telegram_link">https://t.me/joinchat/EFeeN0GlvTieeq_QyPB1JA</string>
-     <string name="aim_github">Github</string>
+     <string name="aim_github">GitHub</string>
      <string name="aim_github_description">We are open source!</string>
      <string name="aim_github_link">https://github.com/AIMROM/</string>
      <string name="donate">Show your support</string>
