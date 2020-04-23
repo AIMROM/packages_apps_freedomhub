@@ -21,7 +21,7 @@
          <ImageView
              android:layout_width="fill_parent" 
              android:layout_height="wrap_content" 
-             android:padding="5dp"
+             android:padding="-2dp"
              android:src="@drawable/aim_logo"
              android:scaleType="centerInside"
              android:adjustViewBounds="true" />
