@@ -116,6 +116,15 @@
                    android:data="https://github.com/krasCGQ" />
 	</Preference>
 
+        <Preference
+             android:title="@string/dev2"
+             android:summary="@string/dev2_description"
+             android:icon="@drawable/ic_devs_pc" >
+               <intent
+                   android:action="android.intent.action.VIEW"
+                   android:data="https://github.com/kunalshah912" />
+        </Preference>
+
      </PreferenceCategory>
  
      <PreferenceCategory

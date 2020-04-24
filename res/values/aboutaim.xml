@@ -29,6 +29,8 @@
      <string name="lead_description">Lead Developer</string>
      <string name="dev1">Albert I (krasCGQ)</string>
      <string name="dev1_description">Developer | Moderator</string>
+     <string name="dev2">Kunal Shah</string>
+     <string name="dev2_description">Contributor | Maintainer</string>
      <string name="designers_header">Designers</string>
      <string name="designer1">Sahil Ashraf</string>
      <string name="designer1_description">Logos, Headers, Bootanimation</string>
