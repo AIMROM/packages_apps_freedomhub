@@ -765,7 +765,6 @@
     <string name="fod_pressed_state_footer">Icons/colors may vary depending on which device you are using.</string>
     <string name="fod_pressed_state_icon">Icon (usually Cyan)</string>
     <string name="fod_pressed_state_icon_white">Icon (White)</string>
-    <string name="fod_pressed_state_solid_color">Solid color (usually Green)</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
