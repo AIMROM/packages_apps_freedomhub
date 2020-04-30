@@ -47,6 +47,14 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/kunalshah912" />
         </Preference>
+        <Preference
+            android:title="@string/violet_maintainer"
+            android:summary="@string/device_violet"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/R3DLIZ4RD" />
+        </Preference>
 
      </PreferenceCategory>
 
