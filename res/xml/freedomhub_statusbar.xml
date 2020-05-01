@@ -152,16 +152,4 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
-    <PreferenceCategory
-        android:title="@string/notification_category"
-        android:key="noti_category"
-        settings:allowDividerAbove="true" >
-
-        <Preference
-            android:key="notifications"
-            android:title="@string/heads_up"
-            android:summary="@string/heads_up_summary"
-            android:fragment="com.aim.freedomhub.fragments.Notifications" />
-    </PreferenceCategory>
-
 </PreferenceScreen>

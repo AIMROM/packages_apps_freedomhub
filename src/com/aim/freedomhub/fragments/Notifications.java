@@ -43,6 +43,7 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.aim.freedomhub.preferences.CustomSeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -55,12 +56,12 @@ public class Notifications extends SettingsPreferenceFragment
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
-    private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out"; 
+    private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
 
     private Preference mAlertSlider;
     private SystemSettingMasterSwitchPreference mEdgePulse;
-    private ListPreference mHeadsUpSnoozeTime;
-    private ListPreference mHeadsUpTimeOut;
+    private CustomSeekBarPreference mHeadsUpSnoozeTime;
+    private CustomSeekBarPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -91,83 +92,22 @@ public class Notifications extends SettingsPreferenceFragment
             return;
         }
 
-        int defaultSnooze = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
-        mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
+        mHeadsUpSnoozeTime = (CustomSeekBarPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
         mHeadsUpSnoozeTime.setOnPreferenceChangeListener(this);
         int headsUpSnooze = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, defaultSnooze);
-        mHeadsUpSnoozeTime.setValue(String.valueOf(headsUpSnooze));
-        updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
+                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, 3);
+        mHeadsUpSnoozeTime.setValue(headsUpSnooze / 60000); // milliseconds to minutes
 
-        int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
-        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
+        mHeadsUpTimeOut = (CustomSeekBarPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
         mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
         int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_TIMEOUT, defaultTimeOut);
-        mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
-        updateHeadsUpTimeOutSummary(headsUpTimeOut);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mHeadsUpSnoozeTime) {
-            int headsUpSnooze = Integer.valueOf((String) objValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, headsUpSnooze);
-            updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
-            return true;
-        } else if (preference == mHeadsUpTimeOut) {
-            int headsUpTimeOut = Integer.valueOf((String) objValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.HEADS_UP_TIMEOUT, headsUpTimeOut);
-            updateHeadsUpTimeOutSummary(headsUpTimeOut);
-            return true;
-        }
-        return false;
-    }
-
-    private void updateHeadsUpSnoozeTimeSummary(int value) {
-        if (value == 0) {
-            mHeadsUpSnoozeTime.setSummary(getResources().getString(R.string.heads_up_snooze_disabled_summary));
-        } else if (value == 60000) {
-            mHeadsUpSnoozeTime.setSummary(getResources().getString(R.string.heads_up_snooze_summary_one_minute));
-        } else {
-            String summary = getResources().getString(R.string.heads_up_snooze_summary, value / 60 / 1000);
-            mHeadsUpSnoozeTime.setSummary(summary);
-        }
-    }
-
-    private void updateHeadsUpTimeOutSummary(int value) {
-        String summary = getResources().getString(R.string.heads_up_time_out_summary,
-                value / 1000);
-        mHeadsUpTimeOut.setSummary(summary);
+                Settings.System.HEADS_UP_TIMEOUT, 5);
+        mHeadsUpTimeOut.setValue(headsUpTimeOut / 1000); // milliseconds to seconds
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.FREEDOMHUB;
-    }
-
-    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
-                @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                                                                            boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
-
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.notifications;
-                    result.add(sir);
-                    return result;
-                }
-
-    @Override
-    public List<String> getNonIndexableKeys(Context context) {
-           List<String> keys = super.getNonIndexableKeys(context);
-                    return keys;
     }
 
     @Override
@@ -181,6 +121,18 @@ public class Notifications extends SettingsPreferenceFragment
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(),
 		            PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+            return true;
+         } else if (preference == mHeadsUpSnoozeTime) {
+            int headsUpSnooze = (int) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
+                    headsUpSnooze * 60000); // minutes to milliseconds
+            return true;
+        } else if (preference == mHeadsUpTimeOut) {
+            int headsUpTimeOut = (int) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_TIMEOUT,
+                    headsUpTimeOut * 1000); // seconds to milliseconds
             return true;
         }
         return false;
