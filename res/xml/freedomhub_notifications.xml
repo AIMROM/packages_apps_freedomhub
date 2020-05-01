@@ -54,4 +54,15 @@
         android:summary="@string/vibrate_on_notifications_summary"
         android:defaultValue="true" />
 
+    <!-- heads up snooze time -->
+    <PreferenceScreen
+    android:title="@string/heads_up_settings_title"
+
+    <ListPreference
+        android:key="heads_up_snooze_time"
+        android:title="@string/heads_up_snooze_title"
+        android:entries="@array/heads_up_snooze_entries"
+        android:entryValues="@array/heads_up_snooze_values"
+        android:persistent="false" />
+
 </PreferenceScreen>
