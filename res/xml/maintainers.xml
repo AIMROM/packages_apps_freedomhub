@@ -18,6 +18,21 @@
     android:title="@string/maintainers_header">
 
     <PreferenceCategory
+        android:key="realme_devices"
+        android:title="@string/realme_devices_cat" >
+
+        <Preference
+            android:title="@string/RMX1921_maintainer"
+            android:summary="@string/device_RMX1921"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/ThatisJigen" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="xiaomi_devices"
         android:title="@string/xiaomi_devices_cat" >
 
