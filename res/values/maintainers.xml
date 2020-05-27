@@ -19,10 +19,15 @@
    <!-- Device Categories -->
    <string name="realme_devices_cat">Realme</string>
    <string name="xiaomi_devices_cat">Xiaomi</string>
+   <string name="Asus_devices_cat">Asus</string>
 
    <!-- Realme Device maintainers -->
    <string name="device_RMX1921">XT (RMX1921)</string>
    <string name="RMX1921_maintainer">Gianfranco Liguori (ThatisJigen)</string>
+      
+   <!-- Asus Device maintainers -->
+   <string name="device_X00T">Asus Zenfone max pro m1</string>
+   <string name="X00T_maintainer">Lokesh</string>
 
    <!-- Xiaomi Device maintainers -->
    <string name="device_beryllium">Poco F1 (beryllium)</string>
