@@ -17,8 +17,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
    <!-- Device Categories -->
+   <string name="Asus_devices_cat">Asus</string>
    <string name="realme_devices_cat">Realme</string>
    <string name="xiaomi_devices_cat">Xiaomi</string>
+    
+   <!-- Asus Device maintainers -->
+   <string name="device_X00T">Asus Zenfone maxpro m1</string>
+   <string name="X00T_maintainer">Lokesh</string>
 
    <!-- Realme Device maintainers -->
    <string name="device_RMX1921">XT (RMX1921)</string>
