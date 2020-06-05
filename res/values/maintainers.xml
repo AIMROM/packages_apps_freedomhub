@@ -31,4 +31,6 @@
    <string name="mido_maintainer">Albert I (krasCGQ)</string>
    <string name="device_raphael">Redmi K20/Mi 9T Pro (raphael)</string>
    <string name="raphael_maintainer">Kunal Shah</string>
+   <string name="device_riva">Redmi 5A (riva)</string>
+   <string name="riva_maintainer">Erwin Abs</string>
 </resources>
