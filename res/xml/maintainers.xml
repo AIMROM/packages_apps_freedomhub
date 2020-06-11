@@ -54,14 +54,14 @@
                 android:data="https://github.com/krasCGQ" />
         </Preference>
 
-        <Preference
+        <!-- <Preference
             android:title="@string/raphael_maintainer"
             android:summary="@string/device_raphael"
             android:icon="@drawable/ic_devs_phone" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/kunalshah912" />
-        </Preference>
+                android:data="" />
+        </Preference> -->
 
      </PreferenceCategory>
 
