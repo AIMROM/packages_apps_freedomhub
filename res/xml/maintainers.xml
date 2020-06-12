@@ -53,6 +53,15 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/krasCGQ" />
         </Preference>
+  
+        <Preference
+            android:title="@string/violet_maintainer"
+            android:summary="@string/device_violet"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Joker-V2" />
+        </Preference>
 
         <!-- <Preference
             android:title="@string/raphael_maintainer"
