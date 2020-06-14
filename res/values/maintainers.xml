@@ -31,4 +31,5 @@
    <string name="mido_maintainer">Albert I (krasCGQ)</string>
    <string name="device_raphael">Redmi K20/Mi 9T Pro (raphael)</string>
    <string name="raphael_maintainer"></string>
+   <string name="device_santoni">Redmi 4/4x (santoni)</string>
 </resources>
