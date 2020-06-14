@@ -54,6 +54,15 @@
                 android:data="https://github.com/krasCGQ" />
         </Preference>
 
+        <Preference
+            android:title="@string/santoni_maintainer"
+            android:summary="@string/device_santoni"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/aman25502" />
+        </Preference>
+
         <!-- <Preference
             android:title="@string/raphael_maintainer"
             android:summary="@string/device_raphael"
