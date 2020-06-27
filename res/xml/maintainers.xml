@@ -62,6 +62,15 @@
                 android:action="android.intent.action.VIEW"
                 android:data="" />
         </Preference> -->
+         
+          <Preference
+            android:title="@string/begonia_maintainer"
+            android:summary="@string/device_begonia"
+            android:icon="@drawable/ic_devs_phone" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/iitachiuchiha" />
+        </Preference>
 
      </PreferenceCategory>
 
