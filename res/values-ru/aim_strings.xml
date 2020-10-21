@@ -898,7 +898,7 @@
     <string name="pattern_dzzz_dzzz">дззз-дззз</string>
     <string name="pattern_dzzz_da">дззз-да</string>
     <string name="pattern_mm_mm_mm">мм-мм-мм</string>
-    <string name="pattern_da_da_dzzz"да-да-дззз</string>
+    <string name="pattern_da_da_dzzz">да-да-дззз</string>
     <string name="pattern_da_dzzz_da">да-дззз-да</string>
 
     <!-- Lock icon -->
