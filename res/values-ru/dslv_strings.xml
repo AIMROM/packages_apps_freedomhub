@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <!-- Slim lockscreen shortcuts -->
+    <string name="shortcut_action_none">Нет</string>
+    <string name="shortcut_action_longpress">Долгое нажатие:</string>
+    <string name="shortcut_action_select_action_longpress">Выберите действие длительного нажатия:</string>
+    <string name="shortcut_action_select_action">Выбрать действие:</string>
+    <string name="shortcut_action_select_action_newaction">Выбрать новое действие:</string>
+    <string name="shortcut_action_reset">Сбросить</string>
+    <string name="shortcut_action_add">Добавить</string>
+    <string name="shortcut_action_max">Достигнут максимальный размер записей</string>
+    <string name="shortcut_action_warning">Внимание!</string>
+    <string name="shortcut_action_warning_message">Невозможно удалить последнюю запись</string>
+    <string name="shortcut_action_disable_message">Отключено\nДобавьте запись, чтобы включить эту функцию</string>
+    <string name="shortcut_image_not_valid">Выбранное приложение не вернуло действительный значок или не поддерживает обрезку изображения. Используйте другое приложение.</string>
+    <string name="shortcut_duplicate_entry">Выбранное действие нельзя сделать дважды</string>
+    <string name="shortcut_action_help_shortcut">ярлык</string>
+    <string name="shortcut_action_help_button">кнопка</string>
+    <string name="shortcut_action_help_app">приложение</string>
+    <string name="shortcut_action_help_icon">, при выборе значка появятся параметры настройки</string>
+    <string name="shortcut_action_help_main">Чтобы добавить %1$s, выберите значок Добавить. Когда %1$s добавлен, выбор строки изменит цель%2$s\n\nЧтобы удалить %1$s, проведите по строке горизонтально влево или вправо. Повторный заказ %1$s в списке, перетащив ярлык слева по вертикали.\n\nЧтобы очистить или сбросить настройки по умолчанию, выберите значок сброса.</string>
+    <string name="shortcut_action_help_delete_last_entry">Удаление каждого %1$s в списке полностью отключит функцию.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление каждого %1$s в списке отключит второй слой пирога полностью.</string>
+    <string name="shortcuts_applications">Приложения</string>
+    <string name="shortcuts_select_custom_app_title">Выберите индивидуальное приложение</string>
+    <string name="shortcuts_icon_picker_type">Выберите тип значка:</string>
+    <string name="shortcuts_icon_default">По умолчанию</string>
+    <string name="shortcuts_icon_custom">Галерея</string>
+    <string name="reset_message">Сбросить все записи по умолчанию?</string>
+    <string name="help">Помогите</string>
+    <string name="shortcut_action_app">Пользовательское приложение</string>
+    <string name="shortcut_action_home">Домой</string>
+    <string name="shortcut_action_back">Назад</string>
+    <string name="shortcut_action_menu">Меню</string>
+    <string name="shortcut_action_ime">Открыть IME Switcher</string>
+    <string name="shortcut_action_power_menu">Меню питания</string>
+    <string name="shortcut_action_recent">Недавние</string>
+    <string name="shortcut_action_power">Отключение экрана</string>
+    <string name="shortcut_action_search">Искать в приложении</string>
+
+</resources>

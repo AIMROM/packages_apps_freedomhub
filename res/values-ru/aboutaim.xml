@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!-- Copyright (C) 2020 AIMROM
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+     <string name="about_aim">О прошивке</string>
+     <string name="about_info">О нас</string>
+     <string name="about_info_summary">AIMROM - это прошивка, основанная LineageOS, с некоторыми дополнительными настройками. Она нацелена на то, чтобы дать исключительную производительность, баланс функций и отличное время автономной работы.</string>
+     <string name="dev_info">Об AIMROM</string>
+     <string name="devs_header">Познакомьтесь с нашей командой</string>
+     <string name="founder"> Emmanuel N. D. DENLINGER</string>
+     <string name="founder_description">Основатель</string>
+     <string name="cofounder">Anand Ramachandran (Anandnv)</string>
+     <string name="cofounder_description">Сооснователь | Ленивая жопа</string>
+     <string name="lead">Ravi Pingat</string>
+     <string name="lead_description">Главный разработчик</string>
+     <string name="dev1">Albert I (krasCGQ)</string>
+     <string name="dev1_description">Разработчик | Модератор</string>
+     <string name="designers_header">Дизайнеры</string>
+     <string name="designer1">Sahil Ashraf</string>
+     <string name="designer1_description">Логотипы, заголовки, анимации загрузки</string>
+     <string name="social_header">#Lets Aim-ify</string>
+     <string name="aim_web">Сайт</string>
+     <string name="aim_web_description">Официальный сайт AIMROM для получения дополнительной информации.</string>
+     <string name="aim_web_link">http://aimrom.github.io</string>
+     <string name="aim_telegram">Telegram</string>
+     <string name="aim_telegram_description">Группа для обсуждения AIMROM.</string>
+     <string name="aim_telegram_link">https://t.me/joinchat/EFeeN0GlvTieeq_QyPB1JA</string>
+     <string name="aim_github">GitHub</string>
+     <string name="aim_github_description">А мы с открытыми исходниками!</string>
+     <string name="aim_github_link">https://github.com/AIMROM/</string>
+     <string name="donate">Покажите нам свою поддержку!</string>
+     <string name="donate_description">Вы можете поддержать нас, дабы наши сервера работали очень долго ради вас.</string>
+     <string name="donation_link">https://paypal.me</string>
+
+     <!-- Aim Rom device maintainers -->
+     <string name="official_devices">Официальный список устройств</string>
+     <string name="maintainers_header">Наши мейнтейнеры</string>
+     <string name="maintainers_summary">Официально поддерживающиеся устройства их мейнтейнеры</string>
+
+</resources>
